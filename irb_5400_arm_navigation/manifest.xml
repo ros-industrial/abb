@@ -1,0 +1,20 @@
+<package>
+  <description brief="irb_5400_arm_navigation">
+
+     irb_5400_arm_navigation
+
+  </description>
+  <author>Shaun Edwards</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/irb_5400_arm_navigation</url>
+  <depend package="planning_environment"/>
+  <depend package="arm_kinematics_constraint_aware"/>
+  <depend package="ompl_ros_interface"/>
+  <depend package="trajectory_filter_server"/>
+  <depend package="constraint_aware_spline_smoother"/>
+  <depend package="move_arm"/>
+
+</package>
+
+

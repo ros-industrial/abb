@@ -1,0 +1,9 @@
+<stack>
+  <description brief="abb">abb</description>
+  <author>Maintained by Shaun Edwards</author>
+  <license>BSD</license>  
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/abb</url>
+  <depend stack="ros" />
+
+</stack>
