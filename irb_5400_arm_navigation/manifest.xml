@@ -4,11 +4,12 @@
      irb_5400_arm_navigation
 
   </description>
-  <author>Shaun Edwards</author>
+  <author>Shaun M. Edwards</author>
   <license>BSD</license>
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/irb_5400_arm_navigation</url>
   <depend package="planning_environment"/>
+  <depend package="kinematics_base"/>
   <depend package="arm_kinematics_constraint_aware"/>
   <depend package="ompl_ros_interface"/>
   <depend package="trajectory_filter_server"/>
