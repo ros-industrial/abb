@@ -34,7 +34,7 @@
         			rpy="0 0 0" />
       			<geometry>
         			<mesh
-          			filename="package://abb_common/meshes/irb_2400/collision/link_1.STL" />
+          			filename="package://abb_common/meshes/irb_2400/visual/link_1.STL" />
       			</geometry>
       			<material name="abb_orange"/>
     		</visual>
