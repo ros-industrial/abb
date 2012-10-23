@@ -1,4 +1,4 @@
-MODULE ros_config(SYSMODULE)
+MODULE ROS_motion
 
 ! Software License Agreement (BSD License)
 !
@@ -27,53 +27,31 @@ MODULE ros_config(SYSMODULE)
 ! CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
 ! WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-RECORD jointTrajectoryPt
-	robjoint joint_pos;
-	num velocity;
-	bool stop;
-ENDRECORD
+LOCAL VAR num sequence_ptr := 0;
+LOCAL VAR JointTrajectoryPt motion_trajectory{100};
+LOCAL VAR jointtarget target := [[0,0,0,0,0,0], [9E9, 9E9, 9E9, 9E9, 9E9, 9E9] ];
 
-VAR string client_ip;
-VAR string server_ip := "192.168.0.50";
-PERS num trajectory_lock := 0; 
-
-PERS jointTrajectoryPt trajectory{100};
-
-PROC trajectory_acquireWriteLock()
-	WaitUntil trajectory_lock >= 0;
-	trajectory_lock := -1;
-ENDPROC
-
-PROC trajectory_acquireReadLock()
-	WaitUntil trajectory_lock >= 0;
-	trajectory_lock := -2;
-ENDPROC
-
-PROC trajectory_setIRQ()
-	trajectory_lock := 1;
-ENDPROC
-
-FUNC bool trajectory_checkIRQ()
-	IF trajectory_lock = 1 THEN
-		RETURN true;
-	ELSE
-		RETURN false;
-	ENDIF
-ENDFUNC
-
-FUNC bool trajectory_acquireReadLockIfIRQ()
-	IF trajectory_lock = 1 THEN
-		trajectory_lock := -2;
-		RETURN true;
-	ELSE
-		RETURN false;
-	ENDIF
-ENDFUNC
-
-PROC trajectory_releaseLock()
-	IF trajectory_lock < 0 THEN
-		trajectory_lock := 0;
-	ENDIF
+PROC main()
+	!Wait on IRQ for a new trajectory to load
+	WaitUntil trajectory_acquireReadLockIfIRQ();
+	motion_trajectory := trajectory; !Copy joint trajectory to local var
+	trajectory_releaseLock; !Release lock on the joint trajectory
+	
+	WHILE true DO
+		target.robax := motion_trajectory{sequence_ptr+1}.joint_pos;
+		IF motion_trajectory{sequence_ptr+1}.stop THEN !Check if stopped
+			MOVEABSJ target, v1000, fine, tool0; !Move to next point and stop
+		ELSE
+			MOVEABSJ target, v1000, z10, tool0; !Move to next point
+			sequence_ptr := sequence_ptr + 1; !If not stopped, advance pointer to next in sequence
+		ENDIF
+		!Check IRQ to see if there's a new trajectory to load
+		IF trajectory_acquireReadLockIfIRQ() THEN
+			motion_trajectory := trajectory; !Copy joint trajectory to local var
+			trajectory_releaseLock; !Release lock on the joint trajectory
+			sequence_ptr := 0;
+		ENDIF
+	ENDWHILE
 ENDPROC
 
 ENDMODULE

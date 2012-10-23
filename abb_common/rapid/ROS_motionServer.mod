@@ -1,4 +1,4 @@
-MODULE joint_trajectory_server
+MODULE ROS_motionServer
 
 ! Software License Agreement (BSD License)
 !
