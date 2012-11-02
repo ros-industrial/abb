@@ -1,8 +1,9 @@
-MODULE ROS_config(SYSMODULE)
+MODULE ROS_common(SYSMODULE)
 
 ! Software License Agreement (BSD License)
 !
 ! Copyright (c) 2012, Edward Venator, Case Western Reserve University
+! Copyright (c) 2012, Jeremy Zoss, Southwest Research Institute
 ! All rights reserved.
 !
 ! Redistribution and use in source and binary forms, with or without modification,
@@ -27,53 +28,17 @@ MODULE ROS_config(SYSMODULE)
 ! CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
 ! WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-RECORD jointTrajectoryPt
+RECORD ROS_joint_trajectory_pt
 	robjoint joint_pos;
 	num velocity;
-	bool stop;
 ENDRECORD
 
-VAR string client_ip;
-VAR string server_ip := "192.168.32.4";
-PERS num trajectory_lock := 0; 
+CONST num MAX_TRAJ_LENGTH := 100;
 
-PERS jointTrajectoryPt trajectory{100};
-
-PROC trajectory_acquireWriteLock()
-	WaitUntil trajectory_lock >= 0;
-	trajectory_lock := -1;
-ENDPROC
-
-PROC trajectory_acquireReadLock()
-	WaitUntil trajectory_lock >= 0;
-	trajectory_lock := -2;
-ENDPROC
-
-PROC trajectory_setIRQ()
-	trajectory_lock := 1;
-ENDPROC
-
-FUNC bool trajectory_checkIRQ()
-	IF trajectory_lock = 1 THEN
-		RETURN true;
-	ELSE
-		RETURN false;
-	ENDIF
-ENDFUNC
-
-FUNC bool trajectory_acquireReadLockIfIRQ()
-	IF trajectory_lock = 1 THEN
-		trajectory_lock := -2;
-		RETURN true;
-	ELSE
-		RETURN false;
-	ENDIF
-ENDFUNC
-
-PROC trajectory_releaseLock()
-	IF trajectory_lock < 0 THEN
-		trajectory_lock := 0;
-	ENDIF
-ENDPROC
+! These variables should use TestAndSet read/write protection to prevent conflicts
+PERS bool ROS_trajectory_lock := false;
+PERS ROS_joint_trajectory_pt ROS_trajectory{MAX_TRAJ_LENGTH};
+PERS num ROS_trajectory_size := 0;
+PERS bool ROS_new_trajectory := false;       ! can safely READ, but should use lock to WRITE
 
 ENDMODULE

@@ -3,6 +3,7 @@ MODULE ROS_motionServer
 ! Software License Agreement (BSD License)
 !
 ! Copyright (c) 2012, Edward Venator, Case Western Reserve University
+! Copyright (c) 2012, Jeremy Zoss, Southwest Research Institute
 ! All rights reserved.
 !
 ! Redistribution and use in source and binary forms, with or without modification,
@@ -27,153 +28,92 @@ MODULE ROS_motionServer
 ! CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
 ! WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+LOCAL CONST num server_port := 11000;
+
 LOCAL VAR socketdev server_socket;
 LOCAL VAR socketdev client_socket;
-LOCAL VAR num server_port := 11000;
-LOCAL VAR rawbytes buffer;
-LOCAL VAR rawbytes reply_msg;
-
-LOCAL VAR num sequence_ptr;
-LOCAL VAR JointTrajectoryPt tmp_trajectory{100};
+LOCAL VAR ROS_joint_trajectory_pt trajectory{MAX_TRAJ_LENGTH};
+LOCAL VAR num trajectory_size;
 
 PROC main()
-	VAR string client_ip;
-	!Set up reply message (it's always the same)
-	PackRawBytes 12, reply_msg, (RawBytesLen(reply_msg)+1), \IntX := DINT; !Packet length
-	PackRawBytes 1, reply_msg, (RawBytesLen(reply_msg)+1), \IntX := DINT; !Message type
-	PackRawBytes 1, reply_msg, (RawBytesLen(reply_msg)+1), \IntX := DINT; !Comm type
-	PackRawBytes 0, reply_msg, (RawBytesLen(reply_msg)+1), \IntX := DINT; !Reply code
+    VAR ROS_msg_joint_traj_pt message;
 
-	TCP_init;
-	WHILE ( true ) DO
-		!Recieve Joint Trajectory Pt Message
-		SocketReceive client_socket \RawData:=buffer \Time:=WAIT_MAX;
-		trajectory_pt_callback;
+    TPWrite "MotionServer: Waiting for connection.";
+	ROS_init_socket server_socket, server_port;
+    ROS_wait_for_client server_socket, client_socket;
+
+    WHILE ( true ) DO
+		! Recieve Joint Trajectory Pt Message
+        ROS_receive_msg_joint_traj_pt client_socket, message;
+		trajectory_pt_callback message;
 	ENDWHILE
-	SocketClose server_socket;
-	SocketClose client_socket;
-	ERROR
-		IF ERRNO=ERR_SOCK_TIMEOUT THEN
-			RETRY;
-		ELSEIF ERRNO=ERR_SOCK_CLOSED THEN
-			TPWrite "Connection lost. Waiting for client to reconnect.";
-			connect_client;
-			RETRY;
-		ELSE
-			! No error recovery handling
-		ENDIF
+
+ERROR (ERR_SOCK_TIMEOUT, ERR_SOCK_CLOSED)
+	IF (ERRNO=ERR_SOCK_TIMEOUT) OR (ERRNO=ERR_SOCK_CLOSED) THEN
+        SkipWarn;  ! TBD: include this error data in the message logged below?
+        ErrWrite \W, "ROS MotionServer disconnect", "Connection lost.  Resetting socket.";
+		ExitCycle;  ! restart program
+	ELSE
+		TRYNEXT;
+	ENDIF
+UNDO
+	IF (SocketGetStatus(client_socket) <> SOCKET_CLOSED) SocketClose client_socket;
+	IF (SocketGetStatus(server_socket) <> SOCKET_CLOSED) SocketClose server_socket;
 ENDPROC
 
-LOCAL PROC connect_client()
-	VAR string client_ip := "";
-	WHILE strlen(client_ip) = 0 DO
-		SocketAccept server_socket, client_socket, \ClientAddress:=client_ip;
-	ENDWHILE
-	TPWrite "Client at "+client_ip+" connected.";
-	TPWrite "Client connected.";
-	ERROR
-		IF ERRNO=ERR_SOCK_TIMEOUT THEN
-			TRYNEXT;
-		ELSEIF ERRNO=ERR_SOCK_CLOSED THEN
-			TCP_init;
-			RETRY;
-		ENDIF
-ENDPROC
-
-LOCAL PROC TCP_init()
-	VAR string client_ip;
-!	SocketClose server_socket;
-	SocketCreate server_socket;
-	SocketBind server_socket, server_ip, server_port;
-	SocketListen server_socket;
-	TPWrite "Server socket initializated. Waiting for client connection.";
-	connect_client;
-	ERROR
-		IF ERRNO=ERR_SOCK_CLOSED THEN
-			TRYNEXT;
-		ELSEIF ERRNO=ERR_SOCK_TIMEOUT THEN
-			RETRY;
-		ENDIF
-ENDPROC
-
-LOCAL PROC trajectory_pt_callback()
-	VAR num index :=1;
-	VAR num packet_length;
-	VAR num type;
-	VAR num reply_code;
-	VAR num sequence;
-	
-	VAR num joint_tmp;
-	VAR JointTrajectoryPt point;
+LOCAL PROC trajectory_pt_callback(ROS_msg_joint_traj_pt message)
+	VAR ROS_joint_trajectory_pt point;
 	VAR jointtarget current_pos;
-	
-	UnpackRawBytes buffer, index, packet_length, \IntX:=UDINT;
-	index := index + 4;
-	UnpackRawBytes buffer, index, type, \IntX:=UDINT;
-	index := index + 4;
-	index := index + 4; !skip comm type because we don't care
-	UnpackRawBytes buffer, index, reply_code, \IntX:=UDINT;
-	index := index + 4;
-	UnpackRawBytes buffer, index, sequence, \IntX:=DINT;
-	index := index + 4;
-	
-	UnpackRawBytes buffer, index, point.joint_pos.rax_1, \Float4; !Get the joint angle in radians
-	index := index + 4;
-	UnpackRawBytes buffer, index, point.joint_pos.rax_2, \Float4; !Get the joint angle in radians
-	index := index + 4;
-	UnpackRawBytes buffer, index, point.joint_pos.rax_3, \Float4; !Get the joint angle in radians
-	index := index + 4;
-	UnpackRawBytes buffer, index, point.joint_pos.rax_4, \Float4; !Get the joint angle in radians
-	index := index + 4;
-	UnpackRawBytes buffer, index, point.joint_pos.rax_5, \Float4; !Get the joint angle in radians
-	index := index + 4;
-	UnpackRawBytes buffer, index, point.joint_pos.rax_6, \Float4; !Get the joint angle in radians
-	index := index + 20;
-	UnpackRawBytes buffer, index, point.velocity, \Float4;
-	
-	TEST sequence
-		CASE -1: !Start of download
-			point.stop := false; !Don't stop on this point
-			sequence_ptr := 0; !This is the first point in the sequence
-			tmp_trajectory{sequence_ptr + 1} := point; !Add this point to the trajectory
-		CASE -2: !Start of stream. Handles streams the same as downloads for now.
-			point.stop := false; !Don't stop on this point
-			sequence_ptr := 0; !This is the first point in the sequence
-			tmp_trajectory{sequence_ptr + 1} := point; !Add this point to the trajectory
-		CASE -3: !End of stream
-			point.stop := true; !Stop on this point
-			sequence_ptr := sequence_ptr + 1; !Set sequence number to 1 higher than max
-			tmp_trajectory{sequence_ptr + 1} := point; !Add this point to the trajectory
-			trajectory_acquireWriteLock; !Wait for access to the trajectory to prevent race conditions
-			trajectory := tmp_trajectory; !Write the local trajectory to the shared trajectory
-			trajectory_setIRQ; !Set an interrupt so the motion process knows to get the trajectory
-		CASE -4: !Stop command
-			!Replace the current trajectory with a trajectory to stop at the current position
-			current_pos := CJointT(); !Get the current position
-			point.joint_pos := current_pos.robax; !Go to the current position
-			point.velocity := 0; !Velocity should be 0
-			point.stop := true; !Stop on the current position
-			trajectory_acquireWriteLock; !Wait for access to the trajectory to prevent race conditions
-			trajectory{1} := point; !Write the (single point) trajectory to the shared trajectory
-			trajectory_setIRQ; !Set an interrupt so the motion process knows to get the trajectory
+    VAR ROS_msg reply_msg;
+
+    point := [message.joints, message.velocity];
+    
+    ! use sequence_id to signal start/end of trajectory download
+	TEST message.sequence_id
+		CASE ROS_TRAJECTORY_START_DOWNLOAD:
+            TPWrite "Traj START received";
+			trajectory_size := 0;                 ! Reset trajectory size
+            add_traj_pt point;                    ! Add this point to the trajectory
+		CASE ROS_TRAJECTORY_END:
+            TPWrite "Traj END received";
+            add_traj_pt point;                    ! Add this point to the trajectory
+            activate_trajectory;
+		CASE ROS_TRAJECTORY_STOP:
+            TPWrite "Traj STOP received";
+            trajectory_size := 0;  ! empty trajectory
+            activate_trajectory;
+            StopMove; ClearPath; StartMove;  ! redundant, but re-issue stop command just to be safe
 		DEFAULT:
-			point.stop := false;
-			sequence_ptr := sequence; !Increment the max sequence number
-			tmp_trajectory{sequence_ptr + 1} := point; !Add this point to the trajectory
+            add_traj_pt point;                    ! Add this point to the trajectory
 	ENDTEST
-	
-	SocketSend client_socket \RawData := reply_msg;
-	
-	ERROR
-		IF ERRNO=ERR_SOCK_TIMEOUT THEN
-			RETRY;
-		ELSEIF ERRNO=ERR_SOCK_CLOSED THEN
-			TPWrite "Connection lost. Waiting for client to reconnect.";
-			connect_client;
-			RETRY;
-		ELSE
-			! No error recovery handling
-		ENDIF
+
+    ! send reply, if requested
+    IF (message.header.comm_type = ROS_COM_TYPE_SRV_REPLY) THEN
+        reply_msg.header := [ROS_MSG_TYPE_JOINT_TRAJ_PT, ROS_COM_TYPE_SRV_REPLY, ROS_REPLY_TYPE_SUCCESS];
+        ROS_send_msg client_socket, reply_msg;
+    ENDIF
+
+ERROR
+    RAISE;  ! raise errors to calling code
+ENDPROC
+
+LOCAL PROC add_traj_pt(ROS_joint_trajectory_pt point)
+    IF (trajectory_size = MAX_TRAJ_LENGTH) THEN
+        ErrWrite \W, "Too Many Trajectory Points", "Trajectory has already reached its maximum size",
+            \RL2:="max_size = " + ValToStr(MAX_TRAJ_LENGTH);
+    ELSE
+        Incr trajectory_size;
+        trajectory{trajectory_size} := point; !Add this point to the trajectory
+    ENDIF
+ENDPROC
+
+LOCAL PROC activate_trajectory()
+    WaitTestAndSet ROS_trajectory_lock;  ! acquire data-lock
+    TPWrite "Sending " + ValToStr(trajectory_size) + " points to MOTION task";
+    ROS_trajectory := trajectory;
+    ROS_trajectory_size := trajectory_size;
+    ROS_new_trajectory := TRUE;
+    ROS_trajectory_lock := FALSE;  ! release data-lock
 ENDPROC
 	
 ENDMODULE
