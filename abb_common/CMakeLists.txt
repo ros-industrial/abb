@@ -39,6 +39,10 @@ rosbuild_add_executable(robot_state
   src/abb_robot_state_node.cpp
   src/abb_utils.cpp)
 
+rosbuild_add_executable(motion_download_interface
+  src/abb_joint_downloader_node.cpp
+  src/abb_utils.cpp)
+
 # NOTE: Building URDF files does not appear to be working
 # CMakeLists example taken from http://ros.org/wiki/xacro
 # Build URDF files from xacro
