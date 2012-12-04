@@ -37,12 +37,19 @@ namespace abb
 namespace utils
 {
 
-void linkage_transform(const std::vector<double>& joints_in, std::vector<double>* joints_out, double J23_factor)
+// TBD: This transform should also account for velocity/acceleration affects due to linkage, so that velocity calculation is accurate
+void linkage_transform(const trajectory_msgs::JointTrajectoryPoint& pt_in, trajectory_msgs::JointTrajectoryPoint* pt_out, double J23_factor)
 {
-  ROS_ASSERT(joints_in.size() > 3);
+  *pt_out = pt_in;
+  linkage_transform(pt_in.positions, &(pt_out->positions), J23_factor);
+}
 
-  *joints_out = joints_in;
-  joints_out->at(2) += J23_factor * joints_out->at(1);
+void linkage_transform(const std::vector<double>& points_in, std::vector<double>* points_out, double J23_factor)
+{
+  ROS_ASSERT(points_in.size() > 3);
+
+  *points_out = points_in;
+  points_out->at(2) += J23_factor * points_out->at(1);
 }
 
 } //abb

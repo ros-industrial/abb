@@ -33,6 +33,7 @@
 #define ABB_UTILS_H_
 
 #include <vector>
+#include "trajectory_msgs/JointTrajectory.h"
 
 namespace abb
 {
@@ -48,6 +49,16 @@ namespace utils
  *   J3_out = J3_in + j23_factor * J2_in
  */
 void linkage_transform(const std::vector<double>& joints_in, std::vector<double>* joints_out, double J23_factor=0);
+
+/**
+ * \brief Corrects for parallel linkage coupling between joints.
+ *
+ * \param[in] pt_in input joint trajectory point
+ * \param[out] pt_out output joint trajectory point
+ * \param[in] J23_factor  Linkage factor for J2-J3.
+ *   J3_out = J3_in + j23_factor * J2_in
+ */
+void linkage_transform(const trajectory_msgs::JointTrajectoryPoint& pt_in, trajectory_msgs::JointTrajectoryPoint* pt_out, double J23_factor=0);
 
 } //abb
 } //utils

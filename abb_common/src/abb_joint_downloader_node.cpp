@@ -55,12 +55,18 @@ public:
     return true;
   }
 
-  bool transform(const std::vector<double>& pos_in, std::vector<double>* pos_out)
+  bool transform(const trajectory_msgs::JointTrajectoryPoint& pt_in, trajectory_msgs::JointTrajectoryPoint* pt_out)
   {
     // correct for parallel linkage effects, if desired
     //   - use POSITIVE factor for joint->motor correction
-    abb::utils::linkage_transform(pos_in, pos_out, J23_coupled_ ? +1:0 );
+    abb::utils::linkage_transform(pt_in, pt_out, J23_coupled_ ? +1:0 );
 
+    return true;
+  }
+
+  bool calc_velocity(const trajectory_msgs::JointTrajectoryPoint& pt, double* rbt_velocity)
+  {
+    *rbt_velocity = 0;  // unused by ABB driver
     return true;
   }
 };
