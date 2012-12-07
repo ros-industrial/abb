@@ -42,6 +42,7 @@ RECORD ROS_msg_joint_traj_pt
     num sequence_id;
     robjoint joints;  ! in DEGREES
     num velocity;
+    num duration;
 ENDRECORD
 
 RECORD ROS_msg_joint_data
@@ -88,9 +89,9 @@ PROC ROS_receive_msg_joint_traj_pt(VAR socketdev client_socket, VAR ROS_msg_join
     ENDIF
     
     ! Integrity Check: Data Size
-    IF (RawBytesLen(raw_message.data) < 48) THEN
+    IF (RawBytesLen(raw_message.data) < 52) THEN
         ErrWrite \W, "ROS Socket Missing Data", "Insufficient data for joint_trajectory_pt",
-                \RL2:="expected: 48",
+                \RL2:="expected: 52",
                 \RL3:="received: " + ValToStr(RawBytesLen(raw_message.data));
         RAISE ERR_OUTOFBND;  ! TBD: define specific error code
     ENDIF
@@ -108,6 +109,7 @@ PROC ROS_receive_msg_joint_traj_pt(VAR socketdev client_socket, VAR ROS_msg_join
     UnpackRawBytes raw_message.data, 25, message.joints.rax_6, \Float4;
     ! Skip bytes 29-44.  UNUSED.  Reserved for Joints 7-10.  TBD: copy to extAx?
     UnpackRawBytes raw_message.data, 29+(ROS_MSG_MAX_JOINTS-6)*4, message.velocity, \Float4;
+    UnpackRawBytes raw_message.data, 33+(ROS_MSG_MAX_JOINTS-6)*4, message.duration, \Float4;
     
     ! Convert data from ROS units to ABB units
     message.joints := rad2deg_robjoint(message.joints);

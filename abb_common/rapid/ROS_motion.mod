@@ -38,6 +38,7 @@ PROC main()
     VAR jointtarget target;
     VAR speeddata move_speed := v10;  ! default speed
     VAR zonedata stop_mode;
+    VAR bool skip_move;
     
     ! Set up interrupt to watch for new trajectory
     IDelete intr_new_trajectory;    ! clear interrupt handler, in case restarted with ExitCycle
@@ -53,14 +54,15 @@ PROC main()
         IF (trajectory_size > 0) THEN
             FOR current_index FROM 1 TO trajectory_size DO
                 target.robax := trajectory{current_index}.joint_pos;
-                
-                ! TBD : set move_speed based on trajectory{current_index}.velocity;
+
+                skip_move := (current_index = 1) AND is_near(target.robax, 0.1);
 
                 stop_mode := DEFAULT_CORNER_DIST;  ! assume we're smoothing between points
                 IF (current_index = trajectory_size) stop_mode := fine;  ! stop at path end
 
                 ! Execute move command
-                MoveAbsJ target, move_speed, stop_mode, tool0;
+                IF (NOT skip_move)
+                    MoveAbsJ target, move_speed, \T:=trajectory{current_index}.duration, stop_mode, tool0;
             ENDFOR
 
             trajectory_size := 0;  ! trajectory done
@@ -82,6 +84,19 @@ LOCAL PROC init_trajectory()
       ROS_new_trajectory := FALSE;
     ROS_trajectory_lock := FALSE;         ! release data-lock
 ENDPROC
+
+LOCAL FUNC bool is_near(robjoint target, num tol)
+    VAR jointtarget curr_jnt;
+    
+    curr_jnt := CJointT();
+    
+    RETURN ( ABS(curr_jnt.robax.rax_1 - target.rax_1) < tol )
+       AND ( ABS(curr_jnt.robax.rax_2 - target.rax_2) < tol )
+       AND ( ABS(curr_jnt.robax.rax_3 - target.rax_3) < tol )
+       AND ( ABS(curr_jnt.robax.rax_4 - target.rax_4) < tol )
+       AND ( ABS(curr_jnt.robax.rax_5 - target.rax_5) < tol )
+       AND ( ABS(curr_jnt.robax.rax_6 - target.rax_6) < tol );
+ENDFUNC
 
 LOCAL PROC abort_trajectory()
     trajectory_size := 0;  ! "clear" local trajectory
