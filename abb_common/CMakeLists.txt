@@ -38,10 +38,12 @@ set(URDF_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/urdf)
 rosbuild_add_executable(robot_state
   src/abb_robot_state_node.cpp
   src/abb_utils.cpp)
+target_link_libraries(robot_state industrial_robot_client)
 
 rosbuild_add_executable(motion_download_interface
   src/abb_joint_downloader_node.cpp
   src/abb_utils.cpp)
+target_link_libraries(motion_download_interface industrial_robot_client)
 
 # NOTE: Building URDF files does not appear to be working
 # CMakeLists example taken from http://ros.org/wiki/xacro
