@@ -72,7 +72,7 @@ int main(int argc, char** argv)
   // replace the JointRelayHandler with ABB-version
   ABB_JointRelayHandler jointHandler;  // for joint-linkage correction
   std::vector<std::string> joint_names;
-  getJointNames("controller_joint_names", 6, joint_names);
+  getJointNames("controller_joint_names", joint_names);
   jointHandler.init(rsi.get_connection(), joint_names);
   rsi.add_handler(&jointHandler);
 
