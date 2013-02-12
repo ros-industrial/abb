@@ -38,15 +38,15 @@
   <!-- Called when right arm executes trajectory using controllers -->
   <param name="execute_right_trajectory" value="none" />
   <!-- Called to get left arm inverse kinematics with collision checking -->
-  <param name="left_ik_name" value="/irb_2400_irb_2400_manipulator_kinematics/get_constraint_aware_ik" />
+  <param name="left_ik_name" value="/irb_2400_manipulator_kinematics/get_constraint_aware_ik" />
   <!-- Called to get right arm inverse kinematics with collision checking -->
   <param name="right_ik_name" value="/irb_2400_none_kinematics/get_constraint_aware_ik" />
   <!-- Called to get left arm inverse kinematics without collision checking -->
-  <param name="non_coll_left_ik_name" value="/irb_2400_irb_2400_manipulator_kinematics/get_ik" />
+  <param name="non_coll_left_ik_name" value="/irb_2400_manipulator_kinematics/get_ik" />
   <!-- Called to get right arm inverse kinematics without collision checking -->
   <param name="non_coll_right_ik_name" value="/irb_2400_none_kinematics/get_ik" />
   <!-- Kinematic chain group name representing the left arm -->
-  <param name="left_arm_group" value="irb_2400_manipulator" />
+  <param name="left_arm_group" value="manipulator" />
   <!-- Kinematic chain group name representing the right arm -->
   <param name="right_arm_group" value="none" />
   <!-- Degree of freedom representing inverse kinematics redundancy on the left arm -->

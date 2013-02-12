@@ -4,17 +4,17 @@ planner_configs:
   LBKPIECEkConfig1:
     type: kinematic::LBKPIECE
 groups:
-  - irb_2400_manipulator
-  - irb_2400_manipulator_cartesian
-irb_2400_manipulator:
+  - manipulator
+  - manipulator_cartesian
+manipulator:
   planner_type: JointPlanner
   planner_configs:
     - SBLkConfig1
     - LBKPIECEkConfig1
   projection_evaluator: joint_state
-irb_2400_manipulator_cartesian:
+manipulator_cartesian:
   parent_frame: base_link
-  physical_group: irb_2400_manipulator
+  physical_group: manipulator
   planner_type: RPYIKTaskSpacePlanner
   state_spaces:
     - x

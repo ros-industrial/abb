@@ -4,7 +4,7 @@ multi_dof_joints:
     parent_frame_id: base_link
     child_frame_id: base_link
 groups:
-  - name: irb_2400_manipulator
+  - name: manipulator
     base_link: base_link
     tip_link: tool0
 default_collision_operations:
