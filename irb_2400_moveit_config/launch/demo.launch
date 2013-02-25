@@ -1,5 +1,5 @@
 <launch>
-  <param name="robot_description" textfile="$(find irb_2400_arm_navigation)/urdf/irb_2400.urdf" />
+  <param name="robot_description" textfile="$(find abb_common)/urdf/irb_2400.urdf" />
 
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
     <param name="/use_gui" value="false"/>
