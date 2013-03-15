@@ -9,5 +9,7 @@
   <depend stack="robot_model" /> <!-- urdf -->
   <depend stack="ros" />
   <depend stack="ros_comm" /> <!-- std_msgs, rospy, roscpp -->
+  <depend stack="warehouse_ros"/>
+  <depend stack="moveit_core"/>
 
 </stack>
