@@ -184,11 +184,6 @@
 			<dynamics
 			  damping="0"
 			  friction="0" />
-<!--			<safety_controller
-			  soft_lower_limit="0"
-			  soft_upper_limit="0"
-			  k_position="0"
-			  k_velocity="0" /> -->
 		</joint>
 		<joint name="${prefix}joint_2" type="revolute">
 			<origin
@@ -211,11 +206,6 @@
 			<dynamics
 			  damping="0"
 			  friction="0" />
-<!--			<safety_controller
-			  soft_lower_limit="0"
-			  soft_upper_limit="0"
-			  k_position="0"
-			  k_velocity="0" /> -->
   		</joint>
 		<joint name="${prefix}joint_3" type="revolute">
 			<origin
@@ -238,11 +228,6 @@
 			<dynamics
 			  damping="0"
 			  friction="0" />
-<!--			<safety_controller
-			  soft_lower_limit="0"
-			  soft_upper_limit="0"
-			  k_position="0"
-			  k_velocity="0" /> -->
 		</joint>
 		<joint name="${prefix}joint_4" type="revolute">
 			<origin
@@ -265,11 +250,6 @@
 			<dynamics
 			  damping="0"
 			  friction="0" />
-<!--			<safety_controller
-			  soft_lower_limit="0"
-			  soft_upper_limit="0"
-			  k_position="0"
-			  k_velocity="0" /> -->
 		</joint>
 		<joint name="${prefix}joint_5" type="revolute">
 			<origin
@@ -292,11 +272,6 @@
 			<dynamics
 			  damping="0"
 			  friction="0" />
-<!--			<safety_controller
-			  soft_lower_limit="0"
-			  soft_upper_limit="0"
-			  k_position="0"
-			  k_velocity="0" /> -->
 		</joint>
 		<joint name="${prefix}joint_6" type="revolute">
 			<origin
@@ -319,16 +294,11 @@
 			<dynamics
 			  damping="0"
 			  friction="0" />
-<!--			<safety_controller
-			  soft_lower_limit="0"
-			  soft_upper_limit="0"
-			  k_position="0"
-			  k_velocity="0" /> -->
 		</joint>
 		<joint name="${prefix}joint_6-tool0" type="fixed">
 			<parent link="link_6"/>
 			<child link="tool0"/>
-			<origin xyz="0.085 0 0" rpy="0 0 0"/>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
 		</joint>
 		<!-- end of joint list -->
 	</xacro:macro>

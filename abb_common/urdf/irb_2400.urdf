@@ -128,7 +128,6 @@
     <limit effort="0" lower="-3.1416" upper="3.1416" velocity="2.618"/>
     <calibration falling="0" rising="0"/>
     <dynamics damping="0" friction="0"/>
-    <!--<safety_controller k_position="0" k_velocity="0" soft_lower_limit="0" soft_upper_limit="0"/> -->
   </joint>
   <joint name="joint_2" type="revolute">
     <origin rpy="0 0 0" xyz="0.1 0 0.615"/>
@@ -138,7 +137,6 @@
     <limit effort="0" lower="-1.7453" upper="1.9199" velocity="2.618"/>
     <calibration falling="0" rising="0"/>
     <dynamics damping="0" friction="0"/>
-    <!--<safety_controller k_position="0" k_velocity="0" soft_lower_limit="0" soft_upper_limit="0"/>-->
   </joint>
   <joint name="joint_3" type="revolute">
     <origin rpy="0 0 0" xyz="0 0 0.705"/>
@@ -148,7 +146,6 @@
     <limit effort="0" lower="-1.0472" upper="1.1345" velocity="2.618"/>
     <calibration falling="0" rising="0"/>
     <dynamics damping="0" friction="0"/>
-    <!--<safety_controller k_position="0" k_velocity="0" soft_lower_limit="0" soft_upper_limit="0"/>-->
   </joint>
   <joint name="joint_4" type="revolute">
     <origin rpy="0 0 0" xyz="0.258 0 0.135"/>
@@ -158,32 +155,29 @@
     <limit effort="0" lower="-3.49" upper="3.49" velocity="6.2832"/>
     <calibration falling="0" rising="0"/>
     <dynamics damping="0" friction="0"/>
-    <!--<safety_controller k_position="0" k_velocity="0" soft_lower_limit="0" soft_upper_limit="0"/>-->
   </joint>
   <joint name="joint_5" type="revolute">
-    <origin rpy="0 0 0" xyz="0.497 0 -4.4409E-16"/>
+    <origin rpy="0 0 0" xyz="0.497 0 0"/>
     <parent link="link_4"/>
     <child link="link_5"/>
     <axis xyz="0 1 0"/>
     <limit effort="0" lower="-2.0944" upper="2.0944" velocity="6.2832"/>
     <calibration falling="0" rising="0"/>
     <dynamics damping="0" friction="0"/>
-    <!--<safety_controller k_position="0" k_velocity="0" soft_lower_limit="0" soft_upper_limit="0"/>-->
   </joint>
   <joint name="joint_6" type="revolute">
-    <origin rpy="0 0 0" xyz="0.085 -4.1563E-17 2.2204E-16"/>
+    <origin rpy="0 0 0" xyz="0.085 0 0"/>
     <parent link="link_5"/>
     <child link="link_6"/>
     <axis xyz="1 0 0"/>
     <limit effort="0" lower="-6.9813" upper="6.9813" velocity="7.854"/>
     <calibration falling="0" rising="0"/>
     <dynamics damping="0" friction="0"/>
-    <!--<safety_controller k_position="0" k_velocity="0" soft_lower_limit="0" soft_upper_limit="0"/>-->
   </joint>
   <joint name="joint_6-tool0" type="fixed">
     <parent link="link_6"/>
     <child link="tool0"/>
-    <origin rpy="0 0 0" xyz="0.085 0 0"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
   </joint>
 </robot>
 
