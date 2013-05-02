@@ -1,0 +1,6 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: abb_common
+    relative_path: urdf/irb_2400.urdf
+  SRDF:
+    relative_path: config/irb_2400.srdf
