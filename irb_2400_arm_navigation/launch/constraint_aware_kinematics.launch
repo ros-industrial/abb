@@ -5,7 +5,6 @@
     <param name="group" type="string" value="manipulator"/>
     <param name="manipulator/root_name" type="string" value="base_link"/>
     <param name="manipulator/tip_name" type="string" value="tool0"/>
-    <param name="kinematics_solver" type="string" value="irb_2400_manipulator_kinematics/IKFastKinematicsPlugin"/>
-    <param name="OLDkinematics_solver" type="string" value="arm_kinematics_constraint_aware/KDLArmKinematicsPlugin"/>
+    <param name="kinematics_solver" type="string" value="arm_kinematics_constraint_aware/KDLArmKinematicsPlugin"/>
   </node>
 </launch>
