@@ -113,7 +113,8 @@ namespace irb_2400_manipulator_kinematics
       bool getPositionIK(const geometry_msgs::Pose &ik_pose,
                          const std::vector<double> &ik_seed_state,
                          std::vector<double> &solution,
-                         moveit_msgs::MoveItErrorCodes &error_code) const;
+                         moveit_msgs::MoveItErrorCodes &error_code,
+                         bool lock_redundant_joints=false) const;
 
       /**
        * @brief Given a desired pose of the end-effector, search for the joint angles required to reach it.
@@ -127,7 +128,8 @@ namespace irb_2400_manipulator_kinematics
                           const std::vector<double> &ik_seed_state,
                           double timeout,
                           std::vector<double> &solution,
-                          moveit_msgs::MoveItErrorCodes &error_code) const;
+                          moveit_msgs::MoveItErrorCodes &error_code,
+                          bool lock_redundant_joints=false) const;
 
       /**
        * @brief Given a desired pose of the end-effector, search for the joint angles required to reach it.
@@ -143,7 +145,8 @@ namespace irb_2400_manipulator_kinematics
                             double timeout,
                             const std::vector<double> &consistency_limits,
                             std::vector<double> &solution,
-                            moveit_msgs::MoveItErrorCodes &error_code) const;
+                            moveit_msgs::MoveItErrorCodes &error_code,
+                            bool lock_redundant_joints=false) const;
 
       /**
        * @brief Given a desired pose of the end-effector, search for the joint angles required to reach it.
@@ -160,7 +163,8 @@ namespace irb_2400_manipulator_kinematics
                           std::vector<double> &solution,
                           const boost::function<void(const geometry_msgs::Pose &ik_pose,const std::vector<double> &ik_solution,
                                                                                                moveit_msgs::MoveItErrorCodes &error_code)> &solution_callback,
-                          moveit_msgs::MoveItErrorCodes &error_code) const;
+                          moveit_msgs::MoveItErrorCodes &error_code,
+                          bool lock_redundant_joints=false) const;
 
         /**
          * @brief Given a desired pose of the end-effector, search for the joint angles required to reach it.
@@ -179,7 +183,8 @@ namespace irb_2400_manipulator_kinematics
                               std::vector<double> &solution,
                               const boost::function<void(const geometry_msgs::Pose &ik_pose,const std::vector<double> &ik_solution,
                                                                                                   moveit_msgs::MoveItErrorCodes &error_code)> &solution_callback,
-                              moveit_msgs::MoveItErrorCodes &error_code) const;
+                              moveit_msgs::MoveItErrorCodes &error_code,
+                              bool lock_redundant_joints=false) const;
 
     private:
 
@@ -509,7 +514,8 @@ namespace irb_2400_manipulator_kinematics
   bool IKFastKinematicsPlugin::getPositionIK(const geometry_msgs::Pose &ik_pose,
                                              const std::vector<double> &ik_seed_state,
                                              std::vector<double> &solution,
-                                             moveit_msgs::MoveItErrorCodes &error_code) const
+                                             moveit_msgs::MoveItErrorCodes &error_code,
+                                             bool lock_redundant_joints) const
   {
     std::vector<double> vfree(free_params_.size());
     for(std::size_t i = 0; i < free_params_.size(); ++i){
@@ -564,9 +570,10 @@ namespace irb_2400_manipulator_kinematics
                                                 const std::vector<double> &ik_seed_state,
                                                 double timeout,
                                                 std::vector<double> &solution,
-                                                moveit_msgs::MoveItErrorCodes &error_code) const
+                                                moveit_msgs::MoveItErrorCodes &error_code,
+                                                bool lock_redundant_joints) const
   {
-    if(free_params_.size()==0){
+    if(lock_redundant_joints || free_params_.size()==0){
       return getPositionIK(ik_pose, ik_seed_state,solution, error_code);
     }
 	
@@ -655,9 +662,10 @@ namespace irb_2400_manipulator_kinematics
                                                 double timeout,
                                                 const std::vector<double> &consistency_limits,
                                                 std::vector<double> &solution,
-                                               moveit_msgs::MoveItErrorCodes &error_code) const
+                                               moveit_msgs::MoveItErrorCodes &error_code,
+                                               bool lock_redundant_joints) const
   {
-    if(free_params_.size()==0){
+    if(lock_redundant_joints || free_params_.size()==0){
       //TODO - how to check consistency when there are no free params?
       return getPositionIK(ik_pose, ik_seed_state,solution, error_code);
       ROS_WARN_STREAM("No free parameters, so can't search");
@@ -756,10 +764,11 @@ namespace irb_2400_manipulator_kinematics
                                                 std::vector<double> &solution,
                                                 const boost::function<void(const geometry_msgs::Pose &ik_pose,const std::vector<double> &ik_solution,
                                                                                                                  moveit_msgs::MoveItErrorCodes &error_code)> &solution_callback,
-                                                moveit_msgs::MoveItErrorCodes &error_code) const
+                                                moveit_msgs::MoveItErrorCodes &error_code,
+                                                bool lock_redundant_joints) const
   {
     // If manipulator has no free links
-    if(free_params_.size()==0){
+    if(lock_redundant_joints || free_params_.size()==0){
       // Find first IK solution, within joint limits
       if(!getPositionIK(ik_pose, ik_seed_state,solution, error_code)) {
         ROS_DEBUG_STREAM("No solution whatsoever");
@@ -858,9 +867,10 @@ namespace irb_2400_manipulator_kinematics
                                                 std::vector<double> &solution,
                                                 const boost::function<void(const geometry_msgs::Pose &ik_pose,const std::vector<double> &ik_solution,
                                                                                                                  moveit_msgs::MoveItErrorCodes &error_code)> &solution_callback,
-                                                moveit_msgs::MoveItErrorCodes &error_code) const
+                                                moveit_msgs::MoveItErrorCodes &error_code,
+                                                bool lock_redundant_joints) const
   {
-    if(free_params_.size()==0){
+    if(lock_redundant_joints || free_params_.size()==0){
       if(!getPositionIK(ik_pose, ik_seed_state,solution, error_code)) {
         ROS_DEBUG_STREAM("No solution whatsoever");
         error_code.val = moveit_msgs::MoveItErrorCodes::NO_IK_SOLUTION; 
