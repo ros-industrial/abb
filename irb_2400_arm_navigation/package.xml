@@ -22,6 +22,5 @@
   <run_depend>move_arm_warehouse</run_depend>
 
   <export>
-    <kinematics_base plugin="${prefix}/kinematics_plugins.xml"/>
   </export>
 </package>
