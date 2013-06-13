@@ -4,3 +4,5 @@ moveit_setup_assistant_config:
     relative_path: urdf/irb_2400.urdf
   SRDF:
     relative_path: config/irb_2400.srdf
+  CONFIG:
+    generated_timestamp: 1368675011
