@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+<xacro:macro name="irb_6600" params="prefix">
+  <!--link list-->
+  <link name="${prefix}base_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://abb_common/meshes/irb_6600/visual/base.dae" />
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://abb_common/meshes/irb_6600/collision/base_collision.dae" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="${prefix}link_1">
+    <visual>
+      <geometry>
+        <mesh filename="package://abb_common/meshes/irb_6600/visual/link_1.dae" />
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://abb_common/meshes/irb_6600/collision/link_1_collision.dae" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="${prefix}link_2">
+    <visual>
+      <geometry>
+        <mesh filename="package://abb_common/meshes/irb_6600/visual/link_2.dae" />
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://abb_common/meshes/irb_6600/collision/link_2_collision.dae" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="${prefix}link_3">
+    <visual>
+      <geometry>
+        <mesh filename="package://abb_common/meshes/irb_6600/visual/link_3.dae" />
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://abb_common/meshes/irb_6600/collision/link_3_collision.dae" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="${prefix}link_4">
+    <visual>
+      <geometry>
+        <mesh filename="package://abb_common/meshes/irb_6600/visual/link_4.dae" />
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://abb_common/meshes/irb_6600/collision/link_4_collision.dae" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="${prefix}link_5">
+    <visual>
+      <geometry>
+        <mesh filename="package://abb_common/meshes/irb_6600/visual/link_5.dae" />
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://abb_common/meshes/irb_6600/collision/link_5_collision.dae" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="${prefix}link_6">
+    <visual>
+      <geometry>
+        <mesh filename="package://abb_common/meshes/irb_6600/visual/link_6.dae" />
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://abb_common/meshes/irb_6600/collision/link_6_collision.dae" />
+      </geometry>
+    </collision>
+  </link>
+
+  <!--joint list-->
+  <joint name="${prefix}joint_1" type="revolute">
+    <parent link="${prefix}base"/>
+    <child link="${prefix}link_1"/>
+    <origin xyz="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="1000" lower="-3.142" upper="3.142" velocity="1.92" />
+  </joint>
+
+  <joint name="${prefix}joint_2" type="revolute">
+    <parent link="${prefix}link_1"/>
+    <child link="${prefix}link_2"/>
+    <origin xyz="0.32 0 0.78" />
+    <axis xyz="0 1 0" />
+    <limit effort="1000" lower="-1.134" upper="1.396" velocity="1.571" />
+  </joint>
+
+  <joint name="${prefix}joint_3" type="revolute">
+    <parent link="${prefix}link_2"/>
+    <child link="${prefix}link_3"/>
+    <origin xyz="0 0 1.075" />
+    <axis xyz="0 1 0" />
+    <limit effort="1000" lower="-3.142" upper="1.047" velocity="1.571" />
+  </joint>
+
+  <joint name="${prefix}joint_4" type="revolute">
+    <parent link="${prefix}link_3"/>
+    <child link="${prefix}link_4"/>
+    <origin xyz="0 0 0.2" />
+    <axis xyz="1 0 0" />
+    <limit effort="1000" lower="-5.24" upper="5.24" velocity="2.618" />
+  </joint>
+
+  <joint name="${prefix}joint_5" type="revolute">
+    <parent link="${prefix}link_4"/>
+    <child link="${prefix}link_5"/>
+    <origin xyz="1.142 0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="1000" lower="-2.094" upper="2.094" velocity="2.094"/>
+  </joint>
+
+  <joint name="${prefix}joint_6" type="revolute">
+    <parent link="${prefix}link_5"/>
+    <child link="${prefix}link_6"/>
+    <origin xyz="0.2 0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="1000" lower="-5.24" upper="5.24" velocity="3.316"/>
+  </joint>
+</xacro:macro>
+</robot>
