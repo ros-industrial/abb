@@ -62,16 +62,20 @@ catkin_package(
 ###########
 ## Build ##
 ###########
-add_executable(abb_robot_state #MD: old name "robot_state" conflicted with that from industrial_robot_client
+add_executable(abb_robot_state
   src/abb_robot_state_node.cpp
   src/abb_utils.cpp)
-target_link_libraries(abb_robot_state ${catkin_LIBRARIES})
+target_link_libraries(abb_robot_state
+  industrial_robot_client 
+  ${catkin_LIBRARIES})
 set_target_properties(abb_robot_state PROPERTIES OUTPUT_NAME robot_state PREFIX "")
 
 add_executable(abb_motion_download_interface
   src/abb_joint_downloader_node.cpp
   src/abb_utils.cpp)
-target_link_libraries(abb_motion_download_interface ${catkin_LIBRARIES})
+target_link_libraries(abb_motion_download_interface
+  industrial_robot_client 
+  ${catkin_LIBRARIES})
 set_target_properties(abb_motion_download_interface PROPERTIES OUTPUT_NAME motion_download_interface PREFIX "")
 
 
