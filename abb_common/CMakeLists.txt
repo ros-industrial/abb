@@ -78,4 +78,18 @@ target_link_libraries(abb_motion_download_interface
   ${catkin_LIBRARIES})
 set_target_properties(abb_motion_download_interface PROPERTIES OUTPUT_NAME motion_download_interface PREFIX "")
 
+#############
+## Install ##
+#############
 
+install(TARGETS
+    abb_robot_state
+    abb_motion_download_interface
+
+    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
+foreach(dir launch meshes rapid urdf)
+   install(DIRECTORY ${dir}/
+      DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
+endforeach(dir)
