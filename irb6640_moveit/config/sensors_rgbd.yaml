@@ -1,0 +1,8 @@
+sensors: 
+ - sensor_plugin: occupancy_map_monitor/PointCloudOctomapUpdater
+   point_cloud_topic: /shuttered_pcl
+   max_range: 5.0
+   frame_subsample: 1
+   point_subsample: 1
+   shape_padding: 0.02
+   shape_scale: 1.0

@@ -1,0 +1,8 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: irb6640_description
+    relative_path: urdf/irb6640.urdf
+  SRDF:
+    relative_path: config/irb6640.srdf
+  CONFIG:
+    generated_timestamp: 1378470711
