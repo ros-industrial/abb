@@ -1,4 +1,4 @@
-# Motoman
+# ABB
 
 [ROS-Industrial][] motoman meta-package.  See the [ROS wiki][] page for more information.  
 
