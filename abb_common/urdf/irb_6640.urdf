@@ -4,10 +4,10 @@
 <!-- |    EDITING THIS FILE BY HAND IS NOT RECOMMENDED                                 | -->
 <!-- =================================================================================== -->
 <robot name="irb_6640" xmlns:xacro="http://ros.org/wiki/xacro">
-  <link name="link_base">
+  <link name="base_link">
     <collision name="collision">
       <geometry>
-        <mesh filename="package://abb_common/meshes/irb_6640/collision/LINK_BASE.stl"/>
+        <mesh filename="package://abb_common/meshes/irb_6640/collision/BASE_LINK.stl"/>
       </geometry>
       <material name="yellow">
         <color rgba="0 1 1 1"/>
@@ -15,7 +15,7 @@
     </collision>
     <visual name="visual">
       <geometry>
-        <mesh filename="package://abb_common/meshes/irb_6640/visual/LINK_BASE.stl"/>
+        <mesh filename="package://abb_common/meshes/irb_6640/visual/BASE_LINK.stl"/>
       </geometry>
       <material name="orange">
         <color rgba="1 0.43 0 1"/>
@@ -138,7 +138,7 @@
   <joint name="joint_1" type="revolute">
     <origin rpy="0 0 0" xyz="0 0 0.227"/>
     <axis xyz="0 0 1"/>
-    <parent link="link_base"/>
+    <parent link="base_link"/>
     <child link="link_1"/>
     <limit effort="0" lower="-2.967" upper="2.967" velocity="1.7453"/>
   </joint>

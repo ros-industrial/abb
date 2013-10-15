@@ -4,10 +4,10 @@
 		<!-- link list -->
 
 
-<link name="${prefix}link_base">
+<link name="${prefix}base_link">
    <collision name="collision">
        <geometry>
-         <mesh filename="package://abb_common/meshes/irb_6640/collision/LINK_BASE.stl"/>          
+         <mesh filename="package://abb_common/meshes/irb_6640/collision/BASE_LINK.stl"/>          
        </geometry>
         <material name="yellow">
           <color rgba="0 1 1 1"/>
@@ -15,7 +15,7 @@
      </collision>
      <visual name="visual">
        <geometry>
-         <mesh filename="package://abb_common/meshes/irb_6640/visual/LINK_BASE.stl"/>
+         <mesh filename="package://abb_common/meshes/irb_6640/visual/BASE_LINK.stl"/>
        </geometry>
         <material name="orange">
           <color rgba="1 0.43 0 1"/>
@@ -153,8 +153,7 @@
   <joint type="revolute" name="${prefix}joint_1">
     <origin xyz="0 0 0.227" rpy="0 0 0"/>
     <axis xyz="0 0 1"/>
-    <parent link="${prefix}link_base"/>
-    <child link="${prefix}link_1"/>
+    <parent link="${prefix}base_link">
     <limit effort="0" lower="-2.967" upper="2.967" velocity="1.7453"/>
   </joint>
 
