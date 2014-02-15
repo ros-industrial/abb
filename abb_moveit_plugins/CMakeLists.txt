@@ -45,7 +45,7 @@ include_directories(include ${Boost_INCLUDE_DIR} ${catkin_INCLUDE_DIRS})
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-    DEPENDS moveit_core roscpp
+    DEPENDS 
     CATKIN_DEPENDS moveit_core roscpp
     INCLUDE_DIRS include
     LIBRARIES 
