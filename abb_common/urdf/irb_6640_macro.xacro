@@ -154,6 +154,7 @@
     <origin xyz="0 0 0.227" rpy="0 0 0"/>
     <axis xyz="0 0 1"/>
     <parent link="${prefix}base_link"/>
+    <child link="${prefix}link_1"/>
     <limit effort="0" lower="-2.967" upper="2.967" velocity="1.7453"/>
   </joint>
 
