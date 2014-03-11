@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(abb_common)
-find_package(catkin REQUIRED COMPONENTS industrial_robot_client)
+find_package(catkin REQUIRED COMPONENTS industrial_robot_client simple_message)
 
 
 #######################################
@@ -19,7 +19,7 @@ add_definitions(-DLINUXSOCKETS=1)  #build using LINUX SOCKETS libraries
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
     DEPENDS 
-    CATKIN_DEPENDS industrial_robot_client
+    CATKIN_DEPENDS industrial_robot_client simple_message
     INCLUDE_DIRS include
     LIBRARIES
 )
@@ -33,6 +33,7 @@ add_executable(abb_robot_state
   src/abb_utils.cpp)
 target_link_libraries(abb_robot_state
   industrial_robot_client 
+  simple_message
   ${catkin_LIBRARIES})
 set_target_properties(
   abb_robot_state
@@ -43,6 +44,7 @@ add_executable(abb_motion_download_interface
   src/abb_utils.cpp)
 target_link_libraries(abb_motion_download_interface
   industrial_robot_client 
+  simple_message
   ${catkin_LIBRARIES})
 set_target_properties(abb_motion_download_interface
   PROPERTIES OUTPUT_NAME motion_download_interface PREFIX "")
