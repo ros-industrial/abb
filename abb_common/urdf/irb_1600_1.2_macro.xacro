@@ -187,7 +187,7 @@
 		</joint>
 		<joint name="${prefix}joint_2" type="revolute">
 			<origin
-			  xyz="0.1 0 0.615"
+			  xyz="0.15 0 0.4865"
 			  rpy="0 0 0" />
 			<parent
 			  link="${prefix}link_1" />
@@ -196,10 +196,10 @@
 			<axis
 			  xyz="0 1 0" />
 			<limit
-			  lower="-1.7453"
-			  upper="1.9199"
+			  lower="-1,0995"
+			  upper="1.9198"
 			  effort="0"
-			  velocity="2.618" />
+			  velocity="2.7925" />
 			<calibration
 			  rising="0"
 			  falling="0" />
@@ -209,7 +209,7 @@
   		</joint>
 		<joint name="${prefix}joint_3" type="revolute">
 			<origin
-			  xyz="0 0 0.705"
+			  xyz="0 0 0.475"
 			  rpy="0 0 0" />
 			<parent
 			  link="${prefix}link_2" />
@@ -218,10 +218,10 @@
 			<axis
 			  xyz="0 1 0" />
 			<limit
-			  lower="-1.0472"
-			  upper="1.1345"
+			  lower="−4,1015"
+			  upper="0,9599"
 			  effort="0"
-			  velocity="2.618" />
+			  velocity="2.9670" />
 			<calibration
 			  rising="0"
 			  falling="0" />
@@ -231,7 +231,7 @@
 		</joint>
 		<joint name="${prefix}joint_4" type="revolute">
 			<origin
-			  xyz="0.258 0 0.135"
+			  xyz="0.300 0 0"
 			  rpy="0 0 0" />
 			<parent
 			  link="${prefix}link_3" />
@@ -240,10 +240,10 @@
 			<axis
 			  xyz="1 0 0" />
 			<limit
-			  lower="-3.49"
-			  upper="3.49"
+			  lower="3,4906"
+			  upper="3.4906"
 			  effort="0"
-			  velocity="6.2832" />
+			  velocity="5.5850" />
 			<calibration
 			  rising="0"
 			  falling="0" />
@@ -253,7 +253,7 @@
 		</joint>
 		<joint name="${prefix}joint_5" type="revolute">
 			<origin
-			  xyz="0.497 0 0"
+			  xyz="0.300 0 0"
 			  rpy="0 0 0" />
 			<parent
 			  link="${prefix}link_4" />
@@ -262,10 +262,10 @@
 			<axis
 			  xyz="0 1 0" />
 			<limit
-			  lower="-2.0944"
-			  upper="2.0944"
+			  lower="-2.0071"
+			  upper="2.0071"
 			  effort="0"
-			  velocity="6.2832" />
+			  velocity="6.9813" />
 			<calibration
 			  rising="0"
 			  falling="0" />
@@ -275,7 +275,7 @@
 		</joint>
 		<joint name="${prefix}joint_6" type="revolute">
 			<origin
-			  xyz="0.085 0 0"
+			  xyz="0.065 0 0"
 			  rpy="0 0 0" />
 			<parent
 			  link="${prefix}link_5" />

@@ -172,7 +172,7 @@
     <dynamics damping="0" friction="0"/>
   </joint>
   <joint name="joint_2" type="revolute">
-    <origin rpy="0 0 0" xyz="0.1 0 0.615"/>
+    <origin rpy="0 0 0" xyz="0.15 0 0.4865"/>
     <parent link="link_1"/>
     <child link="link_2"/>
     <axis xyz="0 1 0"/>
@@ -181,7 +181,7 @@
     <dynamics damping="0" friction="0"/>
   </joint>
   <joint name="joint_3" type="revolute">
-    <origin rpy="0 0 0" xyz="0 0 0.705"/>
+    <origin rpy="0 0 0" xyz="0 0 0.475"/>
     <parent link="link_2"/>
     <child link="link_3"/>
     <axis xyz="0 1 0"/>
@@ -190,7 +190,7 @@
     <dynamics damping="0" friction="0"/>
   </joint>
   <joint name="joint_4" type="revolute">
-    <origin rpy="0 0 0" xyz="0.258 0 0.135"/>
+    <origin rpy="0 0 0" xyz="0.300 0 0"/>
     <parent link="link_3"/>
     <child link="link_4"/>
     <axis xyz="1 0 0"/>
@@ -199,7 +199,7 @@
     <dynamics damping="0" friction="0"/>
   </joint>
   <joint name="joint_5" type="revolute">
-    <origin rpy="0 0 0" xyz="0.497 0 0"/>
+    <origin rpy="0 0 0" xyz="0.300 0 0"/>
     <parent link="link_4"/>
     <child link="link_5"/>
     <axis xyz="0 1 0"/>
@@ -208,7 +208,7 @@
     <dynamics damping="0" friction="0"/>
   </joint>
   <joint name="joint_6" type="revolute">
-    <origin rpy="0 0 0" xyz="0.085 0 0"/>
+    <origin rpy="0 0 0" xyz="0.065 0 0"/>
     <parent link="link_5"/>
     <child link="link_6"/>
     <axis xyz="1 0 0"/>
