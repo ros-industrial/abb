@@ -3,13 +3,13 @@
 	<xacro:macro name="irb_1600_12" params="prefix">
 		<!-- link list -->
 		<link name="${prefix}base_link">
-			<!-- <visual>
+			<visual>
      			<origin
         		xyz="0 0 0"
        			rpy="0 0 0" />
       			<geometry>
         			<mesh
-          			filename="package://abb_common/meshes/irb_2400/visual/base_link.STL" />
+          			filename="package://abb_common/meshes/irb_1600_12/visual/base_link.STL" />
       			</geometry>
       			<material
         			name="abb_orange">
@@ -19,22 +19,22 @@
     		</visual>
  			<collision>
 				<geometry>
-					<mesh filename="package://abb_common/meshes/irb_2400/collision/base_link.STL" />
+					<mesh filename="package://abb_common/meshes/irb_1600_12/collision/base_link.STL" />
 				</geometry>
 				<material name="yellow">
 					<color rgba="0 1 1 1"/>
 				</material>
 			</collision>
--->
+
 		</link>
 		<link name="${prefix}link_1">
-<!--			<visual>
+			<visual>
       			<origin
         			xyz="0 0 0"
         			rpy="0 0 0" />
       			<geometry>
         			<mesh
-          			filename="package://abb_common/meshes/irb_2400/visual/link_1.STL" />
+          			filename="package://abb_common/meshes/irb_1600_12/visual/link_1.STL" />
       			</geometry>
       			<material name="abb_orange"/>
     		</visual>
@@ -43,20 +43,20 @@
         			xyz="0 0 0"
         			rpy="0 0 0" />
 				<geometry>
-					<mesh filename="package://abb_common/meshes/irb_2400/collision/link_1.STL" />
+					<mesh filename="package://abb_common/meshes/irb_1600_12/collision/link_1.STL" />
 				</geometry>
 				<material name="yellow"/>
 			</collision>
 -->
 		</link>
 		<link name="${prefix}link_2">
-<!--		    <visual>
+		    <visual>
       			<origin
         			xyz="0 0 0"
         			rpy="0 0 0" />
       			<geometry>
         			<mesh
-          			filename="package://abb_common/meshes/irb_2400/visual/link_2.STL" />
+          			filename="package://abb_common/meshes/irb_1600_12/visual/link_2.STL" />
       			</geometry>
       			<material name="abb_orange"/>
     		</visual>
@@ -65,20 +65,20 @@
         			xyz="0 0 0"
         			rpy="0 0 0" />
 				<geometry>
-					<mesh filename="package://abb_common/meshes/irb_2400/collision/link_2_whole.STL" />
+					<mesh filename="package://abb_common/meshes/irb_1600_12/collision/link_2.STL" />
 				</geometry>
 				<material name="yellow"/>
 			</collision>
--->
+
 		</link>
 		<link name="${prefix}link_3">
-<!--			<visual>
+			<visual>
 				<origin
 					xyz="0 0 0"
 					rpy="0 0 0" />
 			  	<geometry>
 					<mesh
-				  	filename="package://abb_common/meshes/irb_2400/visual/link_3.STL" />
+				  	filename="package://abb_common/meshes/irb_1600_12/visual/link_3.STL" />
 			  	</geometry>
 			  	<material name="abb_orange"/>
 			</visual>
@@ -87,20 +87,20 @@
         			xyz="0 0 0"
         			rpy="0 0 0" />
 				<geometry>
-					<mesh filename="package://abb_common/meshes/irb_2400/collision/link_3.STL" />
+					<mesh filename="package://abb_common/meshes/irb_1600_12/collision/link_3.STL" />
 				</geometry>
 				<material name="yellow"/>
 			</collision>
--->
+
 		</link>
 		<link name="${prefix}link_4">
-<!--			<visual>
+			<visual>
 				  <origin
 					xyz="0 0 0"
 					rpy="0 0 0" />
 				  <geometry>
 					<mesh
-					  filename="package://abb_common/meshes/irb_2400/visual/link_4.STL" />
+					  filename="package://abb_common/meshes/irb_1600_12/visual/link_4.STL" />
 				  </geometry>
 				  <material name="abb_orange"/>
 			</visual>
@@ -109,20 +109,20 @@
         			xyz="0 0 0"
         			rpy="0 0 0" />
 				<geometry>
-					<mesh filename="package://abb_common/meshes/irb_2400/collision/link_4.STL" />
+					<mesh filename="package://abb_common/meshes/irb_1600_12/collision/link_4.STL" />
 				</geometry>
 				<material name="yellow"/>
 			</collision>
--->
+
 		</link>
 		<link name="${prefix}link_5">
-<!--			<visual>
+			<visual>
 				<origin
 					xyz="0 0 0"
 					rpy="0 0 0" />
 				<geometry>
 					<mesh
-					  filename="package://abb_common/meshes/irb_2400/visual/link_5.STL" />
+					  filename="package://abb_common/meshes/irb_1600_12/visual/link_5.STL" />
 				</geometry>
 				<material name="abb_orange"/>
 			</visual>
@@ -131,20 +131,20 @@
         			xyz="0 0 0"
         			rpy="0 0 0" />
 				<geometry>
-					<mesh filename="package://abb_common/meshes/irb_2400/collision/link_5.STL" />
+					<mesh filename="package://abb_common/meshes/irb_1600_12/collision/link_5.STL" />
 				</geometry>
 				<material name="yellow"/>
 			</collision>
--->
+
 		</link>
 		<link name="${prefix}link_6">
-<!--			<visual>
+			<visual>
 				<origin
 					xyz="0 0 0"
 					rpy="0 0 0" />
 				<geometry>
 					<mesh
-					  filename="package://abb_common/meshes/irb_2400/visual/link_6.STL" />
+					  filename="package://abb_common/meshes/irb_1600_12/visual/link_6.STL" />
 				</geometry>
 				<material name="abb_orange"/>
 			</visual>
@@ -153,11 +153,11 @@
         			xyz="0 0 0"
         			rpy="0 0 0" />
 				<geometry>
-					<mesh filename="package://abb_common/meshes/irb_2400/collision/link_6.STL" />
+					<mesh filename="package://abb_common/meshes/irb_1600_12/collision/link_6.STL" />
 				</geometry>
 				<material name="yellow"/>
 			</collision>
--->
+
 		</link>
 		<link name="${prefix}tool0"/>
 		<!-- end of link list -->
