@@ -20,7 +20,7 @@ add_definitions(-DLINUXSOCKETS=1)  #build using LINUX SOCKETS libraries
 catkin_package(
     DEPENDS 
     CATKIN_DEPENDS industrial_robot_client
-    INCLUDE_DIRS include
+    INCLUDE_DIRS
     LIBRARIES
 )
 
