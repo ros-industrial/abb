@@ -3,36 +3,25 @@ project(abb_common)
 find_package(catkin REQUIRED COMPONENTS industrial_robot_client simple_message)
 
 
-#######################################
-## Adding directories and definitions #
-#######################################
-include_directories(include ${Boost_INCLUDE_DIR} ${catkin_INCLUDE_DIRS})
 add_definitions(-DLINUXSOCKETS=1)  #build using LINUX SOCKETS libraries
 
 
-###################################
-## catkin specific configuration ##
-###################################
-## Declare artifacts to be passed to dependent projects
-## LIBRARIES: libraries you create in this project that dependent projects also need
-## CATKIN_DEPENDS: catkin_packages dependent projects also need
-## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-    DEPENDS 
     CATKIN_DEPENDS industrial_robot_client simple_message
-    INCLUDE_DIRS include
-    LIBRARIES
+)
+
+include_directories(
+  include 
+  ${Boost_INCLUDE_DIR} 
+  ${catkin_INCLUDE_DIRS}
 )
 
 
-###########
-## Build ##
-###########
 add_executable(abb_robot_state
   src/abb_robot_state_node.cpp
   src/abb_utils.cpp)
 target_link_libraries(abb_robot_state
-  industrial_robot_client 
+  industrial_robot_client
   simple_message
   ${catkin_LIBRARIES})
 set_target_properties(
@@ -43,16 +32,12 @@ add_executable(abb_motion_download_interface
   src/abb_joint_downloader_node.cpp
   src/abb_utils.cpp)
 target_link_libraries(abb_motion_download_interface
-  industrial_robot_client 
+  industrial_robot_client
   simple_message
   ${catkin_LIBRARIES})
 set_target_properties(abb_motion_download_interface
   PROPERTIES OUTPUT_NAME motion_download_interface PREFIX "")
 
-
-#############
-## Install ##
-#############
 
 install(
   TARGETS
