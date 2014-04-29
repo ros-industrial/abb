@@ -1,16 +1,19 @@
 <package>
   <name>abb</name>
-  <version>1.0.0</version>
+  <version>1.1.0</version>
   <description>abb</description>
-  <maintainer email="sedwards@swri.org">Shaun Edwards</maintainer>
+  <maintainer email="shaun.edwards@gmail.com">Shaun Edwards</maintainer>
   <license>BSD</license>
-  <url type="website">http://ros.org/wiki/industrial_core</url>
-  <author email="sedwards@swri.org">Shaun Edwards</author>
+  <license>Apache 2.0</license>
+  <url type="website">http://ros.org/wiki/abb</url>
+  <url type="repository">https://github.com/ros-industrial/abb</url>
+  <url type="bugtracker">https://github.com/ros-industrial/abb/issues</url>
+  <author email="shaun.edwards@gmail.com">Shaun Edwards</author>
 
   <buildtool_depend>catkin</buildtool_depend>
-  <run_depend>irb_5400_arm_navigation</run_depend>
   <run_depend>abb_common</run_depend>
-  <run_depend>irb_2400_arm_navigation</run_depend>
+  <run_depend>irb_2400_moveit_config</run_depend>
+  <run_depend>irb_6640_moveit_config</run_depend>
   <run_depend>abb_moveit_plugins</run_depend>
 
 
