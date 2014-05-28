@@ -2,8 +2,8 @@
 Changelog for package irb_2400_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.1.1 (2014-05-27)
+------------------
 * Updated package versions to match abb meta-package version, in prep for release
 * 2400_moveit_cfg: match velocity limits with urdf. Fix `#19 <https://github.com/ros-industrial/abb/issues/19>`_.
 * moveit_cfgs: add GetPlanningScene capability. Fix `#18 <https://github.com/ros-industrial/abb/issues/18>`_.

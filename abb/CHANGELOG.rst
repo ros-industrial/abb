@@ -2,8 +2,8 @@
 Changelog for package abb
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.1.1 (2014-05-27)
+------------------
 * Updated abb packages to Catkin
 * Fixed minor issues with MoveIt configurations (updates from groovy to hydro)
 * Removed arm navigation

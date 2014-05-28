@@ -1,6 +1,6 @@
 <package>
   <name>abb_common</name>
-  <version>1.1.0</version>
+  <version>1.1.1</version>
   <description>abb_common</description>
   <maintainer email="sedwards@swri.org">Shaun Edwards</maintainer>
   <license>BSD</license>

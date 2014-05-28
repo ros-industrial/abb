@@ -2,8 +2,8 @@
 Changelog for package abb_moveit_plugins
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.1.1 (2014-05-27)
+------------------
 * Updated package versions to match abb meta-package version, in prep for release
 * moveit_plugins: add install targets. Fix `#9 <https://github.com/ros-industrial/abb/issues/9>`_.
 * moveit_plugins: catkin pkgs are not system depends. Fix `#15 <https://github.com/ros-industrial/abb/issues/15>`_.

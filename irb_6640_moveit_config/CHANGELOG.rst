@@ -2,8 +2,8 @@
 Changelog for package irb_6640_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.1.1 (2014-05-27)
+------------------
 * Updated package versions to match abb meta-package version, in prep for release
 * Added new files missed in last commit
 * Regenerated moveit package for irb 6640

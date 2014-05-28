@@ -2,8 +2,8 @@
 Changelog for package abb_common
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.1.1 (2014-05-27)
+------------------
 * Updated package versions to match abb meta-package version, in prep for release
 * Manually merged removal of include install and cleaned up CMakelist
 * Cleaned up CMakelist comments and spacing
