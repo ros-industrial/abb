@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(abb_moveit_plugins)
-find_package(catkin REQUIRED COMPONENTS moveit_core roscpp)
+find_package(catkin REQUIRED COMPONENTS moveit_core roscpp tf_conversions)
 
 #######################################
 ## Adding directories and definitions #
