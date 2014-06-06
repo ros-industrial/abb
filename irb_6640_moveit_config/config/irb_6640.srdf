@@ -12,19 +12,10 @@
     <group name="manipulator">
         <chain base_link="base_link" tip_link="tool0" />
     </group>
-    <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
-    <group_state name="Home" group="manipulator">
-        <joint name="joint_1" value="0" />
-        <joint name="joint_2" value="0" />
-        <joint name="joint_3" value="0" />
-        <joint name="joint_4" value="0" />
-        <joint name="joint_5" value="0" />
-        <joint name="joint_6" value="0" />
-    </group_state>
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="FixedBase" type="fixed" parent_frame="world" child_link="base_link" />
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
-    <disable_collisions link1="link_1" link2="link_2" reason="Adjacent" />
+   <disable_collisions link1="link_1" link2="link_2" reason="Adjacent" />
     <disable_collisions link1="link_1" link2="link_3" reason="Never" />
     <disable_collisions link1="link_1" link2="base_link" reason="Adjacent" />
     <disable_collisions link1="link_1" link2="link_cylinder" reason="Adjacent" />
