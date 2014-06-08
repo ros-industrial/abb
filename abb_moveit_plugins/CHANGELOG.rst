@@ -2,8 +2,8 @@
 Changelog for package abb_moveit_plugins
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.1.2 (2014-06-07)
+------------------
 * Merge pull request `#36 <https://github.com/ros-industrial/abb/issues/36>`_ from cottsay/moveit_plugins_dep
   moveit_plugins: add depend on tf_conversions
 * Contributors: Scott K Logan, Shaun Edwards
