@@ -1,0 +1,39 @@
+<package>
+  <name>abb_irb6640_moveit_config</name>
+  <version>1.1.1</version>
+  <description>
+    <p>
+      MoveIt package for the ABB IRB 6640.
+    </p>
+    <p>
+      An automatically generated package with all the configuration and launch
+      files for using the ABB IRB 6640 with the MoveIt Motion Planning
+      Framework.
+    </p>
+  </description>
+  <author email="assistant@moveit.ros.org">MoveIt Setup Assistant</author>
+  <maintainer email="sedewards@swri.org">Shaun Edwards (Southwest Research Institute)</maintainer>
+
+  <license>BSD</license>
+
+  <url type="website">http://ros.org/wiki/abb_irb6640_moveit_config</url>
+  <url type="bugtracker">https://github.com/ros-industrial/abb/issues</url>
+  <url type="repository">https://github.com/ros-industrial/abb</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>moveit_simple_controller_manager</run_depend>
+  <run_depend>moveit_planners_ompl</run_depend>
+  <run_depend>moveit_ros_visualization</run_depend>
+  <run_depend>joint_state_publisher</run_depend>
+  <run_depend>robot_state_publisher</run_depend>
+  <run_depend>moveit_ros_move_group</run_depend>
+
+  <run_depend>xacro</run_depend>
+
+  <run_depend>abb_irb6600_support</run_depend>
+
+  <export>
+    <architecture_independent />
+  </export>
+</package>
