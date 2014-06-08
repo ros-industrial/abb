@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='ASCII'?>
+<package>
+  <name>abb_irb2400_moveit_plugins</name>
+  <version>1.1.1</version>
+  <description>
+    <p>
+      MoveIt plugins for the ABB 2400 (and variants).
+    </p>
+    <p>
+      This package contains plugins for use with MoveIt and ABB 2400 manipulators.
+      Plugins included support the 2400. See the ABB 2400 support package for
+      information on used joint angle and velocity limits.
+    </p>
+    <p>
+      Before using any of the plugins included in this package, be sure to
+      check they are correct for the particular robot model and configuration
+      you intend to use them with.
+    </p>
+  </description>
+  <author>G.A. vd. Hoorn (TU Delft Robotics Institute)</author>
+  <author email="jzoss@swri.org">Jeremy Zoss</author>
+  <maintainer email="sedewards@swri.org">Shaun Edwards (Southwest Research Institute)</maintainer>
+  <license>BSD</license>
+
+  <url type="website">http://ros.org/wiki/abb_irb2400_moveit_plugins</url>
+  <url type="bugtracker">https://github.com/ros-industrial/abb/issues</url>
+  <url type="repository">https://github.com/ros-industrial/abb</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>moveit_core</build_depend>
+  <build_depend>pluginlib</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>tf_conversions</build_depend>
+
+  <run_depend>moveit_core</run_depend>
+  <run_depend>pluginlib</run_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>tf_conversions</run_depend>
+
+  <export>
+    <moveit_core plugin="${prefix}/irb2400_kinematics/abb_irb2400_manipulator_moveit_ikfast_plugin_description.xml"/>
+  </export>
+</package>
