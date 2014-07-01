@@ -3,7 +3,9 @@
   <name>irb_2400_moveit_config</name>
   <version>1.1.1</version>
   <description>
-     An automatically generated package with all the configuration and launch files for using the irb_2400 with the MoveIt Motion Planning Framework
+     An automatically generated package with all the configuration and launch
+     files for using the irb_2400 with the MoveIt Motion Planning Framework
+     (deprecated).
   </description>
   <author email="assistant@moveit.ros.org">MoveIt Setup Assistant</author>
   <maintainer email="assistant@moveit.ros.org">MoveIt Setup Assistant</maintainer>
@@ -23,4 +25,7 @@
   <run_depend>moveit_simple_controller_manager</run_depend>
   <run_depend>industrial_robot_simulator</run_depend>
 
+  <export>
+    <deprecated>This package has been deprecated in Hydro, and will be removed in Indigo. Please use the abb_irb2400_moveit_config package as a replacement.</deprecated>
+  </export>
 </package>

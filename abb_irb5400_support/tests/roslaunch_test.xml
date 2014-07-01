@@ -1,0 +1,39 @@
+<launch>
+  <arg name="ip_str" value="127.0.0.1" />
+
+  <group ns="load_irb5400__">
+    <include file="$(find abb_irb5400_support)/launch/load_irb5400.launch"/>
+  </group>
+
+  <group ns="test_irb5400__">
+    <include file="$(find abb_irb5400_support)/launch/test_irb5400.launch"/>
+  </group>
+
+  <group ns="robot_interface_download_irb5400__">
+    <include file="$(find abb_irb5400_support)/launch/robot_interface_download_irb5400.launch">
+      <arg name="robot_ip" value="$(arg ip_str)" />
+      <arg name="J23_coupled" value="true" />
+    </include>
+  </group>
+
+  <group ns="robot_state_visualize_irb5400__">
+    <include file="$(find abb_irb5400_support)/launch/robot_state_visualize_irb5400.launch">
+      <arg name="robot_ip" value="$(arg ip_str)" />
+      <arg name="J23_coupled" value="true" />
+    </include>
+  </group>
+
+  <group ns="robot_interface_download_irb5400_false__">
+    <include file="$(find abb_irb5400_support)/launch/robot_interface_download_irb5400.launch">
+      <arg name="robot_ip" value="$(arg ip_str)" />
+      <arg name="J23_coupled" value="false" />
+    </include>
+  </group>
+
+  <group ns="robot_state_visualize_irb5400__false__">
+    <include file="$(find abb_irb5400_support)/launch/robot_state_visualize_irb5400.launch">
+      <arg name="robot_ip" value="$(arg ip_str)" />
+      <arg name="J23_coupled" value="false" />
+    </include>
+  </group>
+</launch>

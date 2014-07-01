@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='ASCII'?>
+<library path="lib/libabb_irb2400_manipulator_moveit_ikfast_plugin">
+  <class name="abb_irb2400_manipulator_kinematics/IKFastKinematicsPlugin" type="ikfast_kinematics_plugin::IKFastKinematicsPlugin" base_class_type="kinematics::KinematicsBase">
+    <description>IKFast61 plugin for closed-form kinematics for the ABB IRB 2400</description>
+  </class>
+</library>
