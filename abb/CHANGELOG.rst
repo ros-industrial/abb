@@ -2,6 +2,10 @@
 Changelog for package abb
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.1.2 (2014-06-07)
+------------------
+* No changes
+
 1.1.1 (2014-05-27)
 ------------------
 * Updated abb packages to Catkin
