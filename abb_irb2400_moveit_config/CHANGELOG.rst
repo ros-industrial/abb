@@ -2,8 +2,8 @@
 Changelog for package abb_irb2400_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.1.3 (2014-09-05)
+------------------
 * Bump versions.
 * irb2400: update MoveIt config to use IKFast plugin.
 * irb2400: (re)add plan execution support to MoveIt package.

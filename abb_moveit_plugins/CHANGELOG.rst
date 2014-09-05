@@ -2,8 +2,8 @@
 Changelog for package abb_moveit_plugins
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.1.3 (2014-09-05)
+------------------
 * Merged changes from hydro (release) branch.  Changes include only release artifacts
 * Add deprecation notice to old packages.
   And point users to the replacements.

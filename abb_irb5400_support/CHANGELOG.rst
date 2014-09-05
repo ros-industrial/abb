@@ -2,8 +2,8 @@
 Changelog for package abb_irb5400_support
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.1.3 (2014-09-05)
+------------------
 * Bump versions.
 * support: add roslaunch testing.
 * support: add robot interface and visualisation convenience launchfiles.

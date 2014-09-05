@@ -2,8 +2,8 @@
 Changelog for package abb_irb6640_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.1.3 (2014-09-05)
+------------------
 * Bump versions.
 * irb6640: (re)add plan execution support to MoveIt package.
 * irb6640: add basic (regenerated) MoveIt package.

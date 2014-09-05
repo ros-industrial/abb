@@ -2,8 +2,8 @@
 Changelog for package abb
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.1.3 (2014-09-05)
+------------------
 * Merged changes from hydro (release) branch.  Changes include only release artifacts
 * meta: add IRB 2400 & 6640 MoveIt configs and plugin pkgs.
 * meta: add new IRB support packages (2400, 5400 & 6600).
