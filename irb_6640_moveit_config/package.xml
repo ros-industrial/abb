@@ -3,7 +3,9 @@
   <name>irb_6640_moveit_config</name>
   <version>1.1.2</version>
   <description>
-     An automatically generated package with all the configuration and launch files for using the irb_6640 with the MoveIt Motion Planning Framework
+     An automatically generated package with all the configuration and launch
+     files for using the irb_6640 with the MoveIt Motion Planning Framework
+     (deprecated).
   </description>
   <author email="assistant@moveit.ros.org">MoveIt Setup Assistant</author>
   <maintainer email="assistant@moveit.ros.org">MoveIt Setup Assistant</maintainer>
@@ -26,5 +28,8 @@
   <run_depend>industrial_robot_simulator</run_depend>
 
   <buildtool_depend>catkin</buildtool_depend>
-  
+
+  <export>
+    <deprecated>This package has been deprecated in Hydro, and will be removed in Indigo. Please use the abb_irb6640_moveit_config package as a replacement.</deprecated>
+  </export>
 </package>

@@ -17,5 +17,6 @@
 
   <export>
     <moveit_core plugin="${prefix}/irb_2400_moveit_kinematics_plugin.xml"/>
+    <deprecated>This package has been deprecated in Hydro, and will be removed in Indigo. Please use the abb_irb2400_moveit_plugins package as a replacement.</deprecated>
   </export>
 </package>
