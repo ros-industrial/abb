@@ -94,6 +94,20 @@
       <material name="yellow"/>
     </collision>
   </link>
+  <link name="link_5b">
+    <visual>
+      <geometry>
+        <mesh filename="package://abb_irb5400_support/meshes/irb5400/visual/link_5b.stl"/>
+      </geometry>
+      <material name="lt_black"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://abb_irb5400_support/meshes/irb5400/collision/link_5b.stl"/>
+      </geometry>
+      <material name="yellow"/>
+    </collision>
+  </link>
   <link name="link_6">
     <visual>
       <geometry>
@@ -144,10 +158,18 @@
     <axis xyz="1 0 0"/>
     <limit effort="100" lower="-6.0" upper="6.0" velocity="6.1086"/>
   </joint>
-  <joint name="joint6" type="revolute">
+  <joint name="joint5b" type="revolute">
     <parent link="link_5"/>
-    <child link="link_6"/>
+    <child link="link_5b"/>
     <origin rpy="0 -1.2217 0" xyz=".106246 0 0.074394"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="100" lower="-6.0" upper="6.0" velocity="6.1086"/>
+    <mimic joint="joint5" multiplier="-1.0" offset="0"/>
+  </joint>
+  <joint name="joint6" type="revolute">
+    <parent link="link_5b"/>
+    <child link="link_6"/>
+    <origin rpy="0 0.6109 0" xyz="0.0672 0 -0.0470"/>
     <axis xyz="1 0 0"/>
     <limit effort="100" lower="-6.0" upper="6.0" velocity="9.3375"/>
   </joint>
@@ -157,4 +179,3 @@
     <origin rpy="0.0 0.6109 0.0" xyz="0.0672 0 -0.0470"/>
   </joint>
 </robot>
-
