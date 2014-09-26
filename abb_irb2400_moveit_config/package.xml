@@ -33,6 +33,7 @@
 
   <run_depend>industrial_robot_simulator</run_depend>
   <run_depend>abb_irb2400_support</run_depend>
+  <run_depend>abb_irb2400_moveit_plugins</run_depend>
 
   <export>
     <architecture_independent />
