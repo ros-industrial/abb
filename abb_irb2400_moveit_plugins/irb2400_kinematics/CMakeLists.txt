@@ -12,4 +12,4 @@ install(
 
 install(
   FILES abb_irb2400_manipulator_moveit_ikfast_plugin_description.xml 
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/irb6640_kinematics)
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/irb2400_kinematics)
