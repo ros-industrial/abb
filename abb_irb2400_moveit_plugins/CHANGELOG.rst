@@ -2,8 +2,8 @@
 Changelog for package abb_irb2400_moveit_plugins
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.1.4 (2014-12-14)
+------------------
 * Merged release artifacts from hydro branch
 * fix installation destination of plugin description
   The plugin description used to be installed here:

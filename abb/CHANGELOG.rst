@@ -2,8 +2,8 @@
 Changelog for package abb
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.1.4 (2014-12-14)
+------------------
 * Merged release artifacts from hydro branch
 * meta: update description.
 * Contributors: Shaun Edwards, gavanderhoorn
