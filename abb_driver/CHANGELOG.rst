@@ -2,6 +2,10 @@
 Changelog for package abb_driver
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* No changes
+
 1.1.3 (2014-09-05)
 ------------------
 * driver: reintroduce coupling factor default.

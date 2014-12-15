@@ -2,6 +2,18 @@
 Changelog for package abb_irb2400_moveit_plugins
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merged release artifacts from hydro branch
+* fix installation destination of plugin description
+  The plugin description used to be installed here:
+  /opt/ros/hydro/share/abb_irb2400_moveit_plugins/irb6640_kinematics/abb_irb2400_manipulator_moveit_ikfast_plugin_description.xml
+  But it's supposed to be here:
+  /opt/ros/hydro/share/abb_irb2400_moveit_plugins/irb2400_kinematics/abb_irb2400_manipulator_moveit_ikfast_plugin_description.xml
+  Also see: https://groups.google.com/d/msg/moveit-users/LQFJwqd0N5I/eThqWkXXRMgJ
+* irb2400: add depend on liblapack-dev to Moveit plugin.
+* Contributors: Martin Günther, Scott K Logan, Shaun Edwards
+
 1.1.3 (2014-09-05)
 ------------------
 * Bump versions.

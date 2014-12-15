@@ -2,6 +2,12 @@
 Changelog for package abb
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merged release artifacts from hydro branch
+* meta: update description.
+* Contributors: Shaun Edwards, gavanderhoorn
+
 1.1.3 (2014-09-05)
 ------------------
 * Merged changes from hydro (release) branch.  Changes include only release artifacts
