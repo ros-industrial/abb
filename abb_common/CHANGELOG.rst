@@ -2,8 +2,8 @@
 Changelog for package abb_common
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.1.4 (2014-12-14)
+------------------
 * Backported correct 5400 wrist to deprecated abb_common package
 * Contributors: Daniel Solomon
 
