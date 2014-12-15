@@ -2,6 +2,13 @@
 Changelog for package irb_6640_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.1.3 (2014-09-05)
+------------------
+* Merged changes from hydro (release) branch.  Changes include only release artifacts
+* Add deprecation notice to old packages.
+  And point users to the replacements.
+* Contributors: Shaun Edwards, gavanderhoorn
+
 1.1.2 (2014-06-07)
 ------------------
 * No changes

@@ -2,6 +2,15 @@
 Changelog for package abb
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.1.3 (2014-09-05)
+------------------
+* Merged changes from hydro (release) branch.  Changes include only release artifacts
+* meta: add IRB 2400 & 6640 MoveIt configs and plugin pkgs.
+* meta: add new IRB support packages (2400, 5400 & 6600).
+* driver: move driver (Rapid and nodes) into separate package.
+  Node sources, headers and launch files copied from abb_common.
+* Contributors: Shaun Edwards, gavanderhoorn
+
 1.1.2 (2014-06-07)
 ------------------
 * No changes
