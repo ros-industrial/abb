@@ -44,6 +44,6 @@
     <arg name="config" value="true"/>
   </include>
   
-  <include file="$(find abb_irb2400_moveit_config)/launch/default_warehouse_db.launch" />
+  <include file="$(find abb_irb2400_moveit_config)/launch/default_warehouse_db.launch" if="$(arg db)"/>
 
 </launch>

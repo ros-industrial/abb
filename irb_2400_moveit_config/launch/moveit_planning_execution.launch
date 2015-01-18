@@ -38,7 +38,7 @@
     <arg name="config" value="true" />
   </include>
   
-  <include file="$(find irb_2400_moveit_config)/launch/default_warehouse_db.launch" />
+  <include file="$(find irb_2400_moveit_config)/launch/default_warehouse_db.launch" if="$(arg db)"/>
 
 </launch>
 
