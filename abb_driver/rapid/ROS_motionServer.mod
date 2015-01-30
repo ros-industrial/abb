@@ -88,7 +88,7 @@ LOCAL PROC trajectory_pt_callback(ROS_msg_joint_traj_pt message)
 	ENDTEST
 
     ! send reply, if requested
-    IF (message.header.comm_type = ROS_COM_TYPE_SRV_REPLY) THEN
+    IF (message.header.comm_type = ROS_COM_TYPE_SRV_REQ) THEN
         reply_msg.header := [ROS_MSG_TYPE_JOINT_TRAJ_PT, ROS_COM_TYPE_SRV_REPLY, ROS_REPLY_TYPE_SUCCESS];
         ROS_send_msg client_socket, reply_msg;
     ENDIF
