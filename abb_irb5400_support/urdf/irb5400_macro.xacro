@@ -180,5 +180,13 @@
         <origin xyz="0.0672 0 -0.0470" rpy="0.0 0.6109 0.0"/>
     </joint>
     <!-- end of joint list -->
+
+    <!-- ROS base_link to ABB World Coordinates transform -->
+    <link name="${prefix}base" />
+    <joint name="${prefix}base_link-base" type="fixed">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <parent link="${prefix}base_link"/>
+        <child link="${prefix}base"/>
+    </joint>
 </xacro:macro>
 </robot>
