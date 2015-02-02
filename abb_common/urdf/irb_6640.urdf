@@ -197,5 +197,11 @@
     <child link="link_piston"/>
     <limit effort="0" lower="0" upper="0.6" velocity="0"/>
   </joint>
+  <link name="base"/>
+  <joint name="base_link-base" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="base"/>
+  </joint>
 </robot>
 
