@@ -20,4 +20,25 @@
       <arg name="robot_ip" value="$(arg ip_str)" />
     </include>
   </group>
+
+  <group ns="load_irb120t__">
+    <include file="$(find abb_irb120_support)/launch/load_irb120t.launch"/>
+  </group>
+
+  <group ns="test_irb120t__">
+    <include file="$(find abb_irb120_support)/launch/test_irb120t.launch"/>
+  </group>
+
+  <group ns="robot_interface_download_irb120t__">
+    <include file="$(find abb_irb120_support)/launch/robot_interface_download_irb120t.launch">
+      <arg name="robot_ip" value="$(arg ip_str)" />
+    </include>
+  </group>
+
+  <group ns="robot_state_visualize_irb120t__">
+    <include file="$(find abb_irb120_support)/launch/robot_state_visualize_irb120t.launch">
+      <arg name="robot_ip" value="$(arg ip_str)" />
+    </include>
+  </group>
+
 </launch>
