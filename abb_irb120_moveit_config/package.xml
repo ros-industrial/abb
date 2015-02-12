@@ -7,7 +7,7 @@
     </p>
     <p>
       An automatically generated package with all the configuration and launch
-      files for using the ABB IRB 2400 with the MoveIt Motion Planning
+      files for using the ABB IRB 120 with the MoveIt Motion Planning
       Framework.
     </p>
   </description>
@@ -18,7 +18,7 @@
 
   <url type="website">http://moveit.ros.org/</url>
   <url type="bugtracker">https://github.com/ros-industrial/abb/issues</url>
-  <url type="repository">https://github.com/ros-industrial/abb</url>
+  <url type="repository">https://github.com/ros-industrial/abb_experimental</url>
 
   <buildtool_depend>catkin</buildtool_depend>
 
@@ -32,8 +32,7 @@
   <run_depend>xacro</run_depend>
 
   <run_depend>industrial_robot_simulator</run_depend>
-  <run_depend>abb_irb2400_support</run_depend>
-  <run_depend>abb_irb2400_moveit_plugins</run_depend>
+  <run_depend>abb_irb120_support</run_depend>
 
   <export>
     <architecture_independent />

@@ -8,7 +8,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://abb_irb120_support/meshes/irb120/visual/base_link.STL"/>
+        <mesh filename="package://abb_irb120_support/meshes/irb120/visual/base_link.stl"/>
       </geometry>
       <material name="abb_orange">
         <color rgba="1 0.43 0 1"/>
@@ -16,7 +16,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://abb_irb120_support/meshes/irb120/collision/base_link.STL"/>
+        <mesh filename="package://abb_irb120_support/meshes/irb120/collision/base_link.stl"/>
       </geometry>
       <material name="yellow">
         <color rgba="0 1 1 1"/>
@@ -27,14 +27,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://abb_irb120_support/meshes/irb120/visual/link_1.STL"/>
+        <mesh filename="package://abb_irb120_support/meshes/irb120/visual/link_1.stl"/>
       </geometry>
       <material name="abb_orange"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://abb_irb120_support/meshes/irb120/collision/link_1.STL"/>
+        <mesh filename="package://abb_irb120_support/meshes/irb120/collision/link_1.stl"/>
       </geometry>
       <material name="yellow"/>
     </collision>
@@ -43,14 +43,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://abb_irb120_support/meshes/irb120/visual/link_2.STL"/>
+        <mesh filename="package://abb_irb120_support/meshes/irb120/visual/link_2.stl"/>
       </geometry>
       <material name="abb_orange"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://abb_irb120_support/meshes/irb120/collision/link_2.STL"/>
+        <mesh filename="package://abb_irb120_support/meshes/irb120/collision/link_2.stl"/>
       </geometry>
       <material name="yellow"/>
     </collision>
@@ -59,14 +59,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://abb_irb120_support/meshes/irb120/visual/link_3.STL"/>
+        <mesh filename="package://abb_irb120_support/meshes/irb120/visual/link_3.stl"/>
       </geometry>
       <material name="abb_orange"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://abb_irb120_support/meshes/irb120/collision/link_3.STL"/>
+        <mesh filename="package://abb_irb120_support/meshes/irb120/collision/link_3.stl"/>
       </geometry>
       <material name="yellow"/>
     </collision>
@@ -75,14 +75,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://abb_irb120_support/meshes/irb120/visual/link_4.STL"/>
+        <mesh filename="package://abb_irb120_support/meshes/irb120/visual/link_4.stl"/>
       </geometry>
       <material name="abb_orange"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://abb_irb120_support/meshes/irb120/collision/link_4.STL"/>
+        <mesh filename="package://abb_irb120_support/meshes/irb120/collision/link_4.stl"/>
       </geometry>
       <material name="yellow"/>
     </collision>
@@ -91,14 +91,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://abb_irb120_support/meshes/irb120/visual/link_5.STL"/>
+        <mesh filename="package://abb_irb120_support/meshes/irb120/visual/link_5.stl"/>
       </geometry>
       <material name="abb_orange"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://abb_irb120_support/meshes/irb120/collision/link_5.STL"/>
+        <mesh filename="package://abb_irb120_support/meshes/irb120/collision/link_5.stl"/>
       </geometry>
       <material name="yellow"/>
     </collision>
@@ -107,7 +107,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://abb_irb120_support/meshes/irb120/visual/link_6.STL"/>
+        <mesh filename="package://abb_irb120_support/meshes/irb120/visual/link_6.stl"/>
       </geometry>
       <material name="black">
         <color rgba="0 0 0 1"/>
@@ -116,7 +116,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://abb_irb120_support/meshes/irb120/collision/link_6.STL"/>
+        <mesh filename="package://abb_irb120_support/meshes/irb120/collision/link_6.stl"/>
       </geometry>
       <material name="yellow"/>
     </collision>

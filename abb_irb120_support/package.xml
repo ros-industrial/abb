@@ -3,18 +3,18 @@
   <version>0.2.0</version>
   <description>
     <p>
-      ROS-Industrial support for the ABB IRB 120
+      ROS-Industrial support for the ABB IRB 120.
     </p>
     <p>
       This package contains configuration data, 3D models and launch files
-      for ABB IRB 120 manipulator. This currently includes the base model.
+      for ABB IRB 120 manipulator. This currently includes the base model only.
     </p>
     <p>
       Joint limits and max joint velocities are based on the information in
-      the ABB data sheets.  All URDFs / XACROs are based on the
-      default motion and joint velocity limits, unless noted otherwise (ie:
-      no support for high speed joints, extended / limited motion ranges or
-      other options).
+      the ABB data sheets (http://new.abb.com/products/robotics/industrial-robots/irb-120/irb-120-data).
+      All URDFs / XACROs are based on the default motion and joint velocity limits, unless noted otherwise 
+      (ie: no support for high speed joints, extended / limited motion ranges or other options).
+      Joint accelerations estimated using: "(1/5)*joint_vel_limit"
     </p>
     <p>
       Before using any of the configuration files and / or meshes included
@@ -26,9 +26,9 @@
   <maintainer email="culletom@tcd.ie">Mark Culleton (Trinity College Dublin)</maintainer>
   <license>Apache2</license>
 
-  <url type="website">http://moveit.ros.org/</url>
+  <url type="website">http://wiki.ros.org/abb</url>
   <url type="bugtracker">https://github.com/ros-industrial/abb/issues</url>
-  <url type="repository">https://github.com/ros-industrial/abb</url>
+  <url type="repository">https://github.com/ros-industrial/abb_experimental</url>
 
   <buildtool_depend>catkin</buildtool_depend>
 
