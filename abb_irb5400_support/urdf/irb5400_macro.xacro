@@ -120,6 +120,7 @@
             <material name="yellow"/>
         </collision>
     </link>
+    <link name="${prefix}mount_flange"/>
     <link name="${prefix}tool0"/>
     <!-- end of link list -->
 
@@ -174,10 +175,15 @@
         <axis xyz="1 0 0"/>
         <limit lower="-6.0" upper="6.0" effort="100" velocity="9.3375"/>
     </joint>
-    <joint name="${prefix}joint_6-tool0" type="fixed">
+    <joint name="${prefix}joint_6-mount_flange" type="fixed">
         <parent link="${prefix}link_6"/>
+        <child link="${prefix}mount_flange"/>
+        <origin xyz="0 0 0" rpy="0 1.57079632679 0"/>
+    </joint>
+    <joint name="${prefix}mount_flange-tool0" type="fixed">
+        <parent link="${prefix}mount_flange"/>
         <child link="${prefix}tool0"/>
-        <origin xyz="0.0672 0 -0.0470" rpy="0.0 0.6109 0.0"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
     </joint>
     <!-- end of joint list -->
 

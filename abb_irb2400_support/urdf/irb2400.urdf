@@ -119,6 +119,7 @@
       <material name="yellow"/>
     </collision>
   </link>
+  <link name="mount_flange"/>
   <link name="tool0"/>
   <joint name="joint_1" type="revolute">
     <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -174,8 +175,13 @@
     <calibration falling="0" rising="0"/>
     <dynamics damping="0" friction="0"/>
   </joint>
-  <joint name="joint_6-tool0" type="fixed">
+  <joint name="joint_6-mount_flange" type="fixed">
     <parent link="link_6"/>
+    <child link="mount_flange"/>
+    <origin rpy="0 1.57079632679 0" xyz="0 0 0"/>
+  </joint>
+  <joint name="mount_flange-tool0" type="fixed">
+    <parent link="mount_flange"/>
     <child link="tool0"/>
     <origin rpy="0 0 0" xyz="0 0 0"/>
   </joint>

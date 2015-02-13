@@ -122,6 +122,7 @@
       <material name="yellow"/>
     </collision>
   </link>
+  <link name="mount_flange"/>
   <link name="tool0"/>
   <joint name="joint1" type="revolute">
     <parent link="base_link"/>
@@ -173,10 +174,15 @@
     <axis xyz="1 0 0"/>
     <limit effort="100" lower="-6.0" upper="6.0" velocity="9.3375"/>
   </joint>
-  <joint name="joint_6-tool0" type="fixed">
+  <joint name="joint_6-mount_flange" type="fixed">
     <parent link="link_6"/>
+    <child link="mount_flange"/>
+    <origin rpy="0 1.57079632679 0" xyz="0 0 0"/>
+  </joint>
+  <joint name="mount_flange-tool0" type="fixed">
+    <parent link="mount_flange"/>
     <child link="tool0"/>
-    <origin rpy="0.0 0.6109 0.0" xyz="0.0672 0 -0.0470"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
   </joint>
   <link name="base"/>
   <joint name="base_link-base" type="fixed">
@@ -185,3 +191,4 @@
     <child link="base"/>
   </joint>
 </robot>
+

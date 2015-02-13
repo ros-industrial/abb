@@ -104,6 +104,7 @@
             <material name="orange"/>
         </visual>
     </link>
+    <link name="${prefix}mount_flange"/>
     <link name="${prefix}tool0"/>
 
     <!--Cylinder and piston -->
@@ -180,11 +181,15 @@
         <child link="${prefix}link_6"/>
         <limit effort="0" lower="-6.283" upper="6.283" velocity="3.3161"/>
     </joint>
-    <joint type="fixed" name="joint_6-tool0">
-        <origin xyz=".055 0 0 " rpy="0 0 0"/>
-        <axis xyz="1 0 0"/>
+    <joint type="fixed" name="${prefix}joint_6-mount_flange">
         <parent link="${prefix}link_6"/>
+        <child link="${prefix}mount_flange"/>
+        <origin xyz=".055 0 0" rpy="0 1.57079632679 0"/>
+    </joint>
+    <joint type="fixed" name="${prefix}mount_flange-tool0">
+        <parent link="${prefix}mount_flange"/>
         <child link="${prefix}tool0"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
     </joint>
     <joint type="fixed" name="${prefix}joint_cylinder">
         <origin xyz="-0.365 -0.1895 0.405" rpy="0 -0.170 0"/>
