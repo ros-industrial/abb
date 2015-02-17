@@ -117,7 +117,6 @@
             <material name="yellow"/>
         </collision>
     </link>
-    <link name="${prefix}mount_flange"/>
     <link name="${prefix}tool0"/>
     <!-- end of link list -->
 
@@ -128,8 +127,6 @@
         <child link="${prefix}link_1"/>
         <axis xyz="0 0 1"/>
         <limit lower="-3.1416" upper="3.1416" effort="0" velocity="2.618"/>
-        <calibration rising="0" falling="0"/>
-        <dynamics damping="0" friction="0"/>
     </joint>
     <joint name="${prefix}joint_2" type="revolute">
         <origin xyz="0.1 0 0.615" rpy="0 0 0"/>
@@ -137,8 +134,6 @@
         <child link="${prefix}link_2"/>
         <axis xyz="0 1 0"/>
         <limit lower="-1.7453" upper="1.9199" effort="0" velocity="2.618"/>
-        <calibration rising="0" falling="0"/>
-        <dynamics damping="0" friction="0"/>
     </joint>
     <joint name="${prefix}joint_3" type="revolute">
         <origin xyz="0 0 0.705" rpy="0 0 0"/>
@@ -146,8 +141,6 @@
         <child link="${prefix}link_3"/>
         <axis xyz="0 1 0"/>
         <limit lower="-1.0472" upper="1.1345" effort="0" velocity="2.618"/>
-        <calibration rising="0" falling="0"/>
-        <dynamics damping="0" friction="0"/>
     </joint>
     <joint name="${prefix}joint_4" type="revolute">
         <origin xyz="0.258 0 0.135" rpy="0 0 0"/>
@@ -155,8 +148,6 @@
         <child link="${prefix}link_4"/>
         <axis xyz="1 0 0"/>
         <limit lower="-3.49" upper="3.49" effort="0" velocity="6.2832"/>
-        <calibration rising="0" falling="0"/>
-        <dynamics damping="0" friction="0"/>
     </joint>
     <joint name="${prefix}joint_5" type="revolute">
         <origin xyz="0.497 0 0" rpy="0 0 0"/>
@@ -164,8 +155,6 @@
         <child link="${prefix}link_5"/>
         <axis xyz="0 1 0"/>
         <limit lower="-2.0944" upper="2.0944" effort="0" velocity="6.2832"/>
-        <calibration rising="0" falling="0"/>
-        <dynamics damping="0" friction="0"/>
     </joint>
     <joint name="${prefix}joint_6" type="revolute">
         <origin xyz="0.085 0 0" rpy="0 0 0"/>
@@ -173,18 +162,11 @@
         <child link="${prefix}link_6"/>
         <axis xyz="1 0 0"/>
         <limit lower="-6.9813" upper="6.9813" effort="0" velocity="7.854"/>
-        <calibration rising="0" falling="0"/>
-        <dynamics damping="0" friction="0"/>
     </joint>
-    <joint name="${prefix}joint_6-mount_flange" type="fixed">
+    <joint name="${prefix}joint_6-tool0" type="fixed">
         <parent link="${prefix}link_6"/>
-        <child link="${prefix}mount_flange"/>
-        <origin xyz="0 0 0" rpy="0 1.57079632679 0"/>
-    </joint>
-    <joint name="${prefix}mount_flange-tool0" type="fixed">
-        <parent link="${prefix}mount_flange"/>
         <child link="${prefix}tool0"/>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <origin xyz="0 0 0" rpy="0 1.57079632679 0"/>
     </joint>
     <!-- end of joint list -->
 
