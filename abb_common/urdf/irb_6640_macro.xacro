@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
-	<xacro:macro name="irb_6640" params="prefix" >
+        <xacro:macro name="irb_6640" params="prefix" >
 		<!-- link list -->
 
 
@@ -199,7 +199,7 @@
   </joint>
 
   <joint type="fixed" name="joint_6-tool0">
-    <origin xyz=".055 0 0 " rpy="0 1.57079632679 0"/>
+    <origin xyz=".055 0 0" rpy="0 0 0"/>
     <axis xyz="1 0 0"/>
     <parent link="${prefix}link_6"/>
     <child link="${prefix}tool0"/>

@@ -178,7 +178,7 @@
     <limit effort="0" lower="-6.283" upper="6.283" velocity="3.3161"/>
   </joint>
   <joint name="joint_6-tool0" type="fixed">
-    <origin rpy="0 1.57079632679 0" xyz=".055 0 0 "/>
+    <origin rpy="0 0 0" xyz=".055 0 0"/>
     <axis xyz="1 0 0"/>
     <parent link="link_6"/>
     <child link="tool0"/>
