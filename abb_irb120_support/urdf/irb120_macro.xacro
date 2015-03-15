@@ -1,184 +1,180 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
-<xacro:macro name="abb_irb120" params="prefix">
-  <!-- link list -->
-  <link name="${prefix}base_link">
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <mesh filename="package://abb_irb120_support/meshes/irb120/visual/base_link.stl"/>
-      </geometry>
-      <material name="abb_orange">
-        <color rgba="1 0.43 0 1"/>
-      </material>      
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <mesh filename="package://abb_irb120_support/meshes/irb120/collision/base_link.stl"/>
-      </geometry>
-      <material name="yellow">
-        <color rgba="0 1 1 1"/>
-      </material>      
-    </collision>
-  </link>
-  <link name="${prefix}link_1">
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <mesh filename="package://abb_irb120_support/meshes/irb120/visual/link_1.stl"/>
-      </geometry>
-      <material name="abb_orange"/>      
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <mesh filename="package://abb_irb120_support/meshes/irb120/collision/link_1.stl"/>
-      </geometry>
-      <material name="yellow"/>
-    </collision>
-  </link>
-  <link name="${prefix}link_2">
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <mesh filename="package://abb_irb120_support/meshes/irb120/visual/link_2.stl"/>
-      </geometry>
-      <material name="abb_orange"/>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <mesh filename="package://abb_irb120_support/meshes/irb120/collision/link_2.stl"/>
-      </geometry>
-      <material name="yellow"/>
-    </collision>
-  </link>
-  <link name="${prefix}link_3">
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <mesh filename="package://abb_irb120_support/meshes/irb120/visual/link_3.stl"/>
-      </geometry>
-      <material name="abb_orange"/>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <mesh filename="package://abb_irb120_support/meshes/irb120/collision/link_3.stl"/>
-      </geometry>
-      <material name="yellow"/>
-    </collision>
-  </link>
-  <link name="${prefix}link_4">
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <mesh filename="package://abb_irb120_support/meshes/irb120/visual/link_4.stl"/>
-      </geometry>
-      <material name="abb_orange"/>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <mesh filename="package://abb_irb120_support/meshes/irb120/collision/link_4.stl"/>
-      </geometry>
-      <material name="yellow"/>
-    </collision>
-  </link>
-  <link name="${prefix}link_5">
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <mesh filename="package://abb_irb120_support/meshes/irb120/visual/link_5.stl"/>
-      </geometry>
-      <material name="abb_orange"/>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <mesh filename="package://abb_irb120_support/meshes/irb120/collision/link_5.stl"/>
-      </geometry>
-      <material name="yellow"/>
-    </collision>
-  </link>
-  <link name="${prefix}link_6">
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <mesh filename="package://abb_irb120_support/meshes/irb120/visual/link_6.stl"/>
-      </geometry>
-      <material name="black">
-        <color rgba="0 0 0 1"/>
-      </material>  
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <mesh filename="package://abb_irb120_support/meshes/irb120/collision/link_6.stl"/>
-      </geometry>
-      <material name="yellow"/>
-    </collision>
-  </link>
-  <link name="${prefix}tool0"/>
-  <!-- end of link list -->
+  <xacro:include filename="$(find abb_resources)/urdf/common_materials.xacro"/>
 
-  <!-- joint list -->
-  <joint name="${prefix}joint_1" type="revolute">
-    <origin rpy="0 0 0" xyz="0 0 0"/>
-    <parent link="${prefix}base_link"/>
-    <child link="${prefix}link_1"/>
-    <limit effort="0" lower="-2.87979" upper="2.87979" velocity="4.36332"/>
-    <axis xyz="0 0 1"/>
-  </joint>
-  <joint name="${prefix}joint_2" type="revolute">
-    <origin rpy="0 0 0" xyz="0 0 0.29"/>
-    <parent link="${prefix}link_1"/>
-    <child link="${prefix}link_2"/>
-    <limit effort="0" lower="-1.91986" upper="1.91986" velocity="4.36332"/>
-    <axis xyz="0 1 0"/>
-  </joint>
-  <joint name="${prefix}joint_3" type="revolute">
-    <origin rpy="0 0 0" xyz="0 0 0.27"/>
-    <parent link="${prefix}link_2"/>
-    <child link="${prefix}link_3"/>
-    <limit effort="0" lower="-1.91986" upper="1.22173" velocity="4.36332"/>
-    <axis xyz="0 1 0"/>
-  </joint>
-  <joint name="${prefix}joint_4" type="revolute">
-    <origin rpy="0 0 0" xyz="0 0 0.07"/>
-    <parent link="${prefix}link_3"/>
-    <child link="${prefix}link_4"/>
-    <limit effort="0" lower="-2.79253" upper="2.79253" velocity="5.58505"/>
-    <axis xyz="1 0 0"/>
-  </joint>
-  <joint name="${prefix}joint_5" type="revolute">
-    <origin rpy="0 0 0" xyz="0.302 0 0"/>
-    <parent link="${prefix}link_4"/>
-    <child link="${prefix}link_5"/>
-    <limit effort="0" lower="-2.094395" upper="2.094395" velocity="5.58505"/>
-    <axis xyz="0 1 0"/>
-  </joint>
-  <joint name="${prefix}joint_6" type="revolute">
-    <origin rpy="0 0 0" xyz="0.072 0 0"/>
-    <parent link="${prefix}link_5"/>
-    <child link="${prefix}link_6"/>
-    <limit effort="0" lower="-6.98132" upper="6.98132" velocity="7.33038"/>
-    <axis xyz="1 0 0"/>
-  </joint>
-  <joint name="${prefix}joint6-tool0" type="fixed">
-    <parent link="${prefix}link_6"/>
-    <child link="${prefix}tool0"/>
-    <origin rpy="0 1.57079632679 0" xyz="0 0 0"/>
-  </joint>
-  <!-- end of joint list -->
+  <xacro:macro name="abb_irb120" params="prefix">
+    <!-- link list -->
+    <link name="${prefix}base_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://abb_irb120_support/meshes/irb120/visual/base_link.stl"/>
+        </geometry>
+        <xacro:material_abb_orange />
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://abb_irb120_support/meshes/irb120/collision/base_link.stl"/>
+        </geometry>
+        <xacro:material_abb_yellow />
+      </collision>
+    </link>
+    <link name="${prefix}link_1">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://abb_irb120_support/meshes/irb120/visual/link_1.stl"/>
+        </geometry>
+        <xacro:material_abb_orange />
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://abb_irb120_support/meshes/irb120/collision/link_1.stl"/>
+        </geometry>
+        <xacro:material_abb_yellow />
+      </collision>
+    </link>
+    <link name="${prefix}link_2">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://abb_irb120_support/meshes/irb120/visual/link_2.stl"/>
+        </geometry>
+        <xacro:material_abb_orange />
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://abb_irb120_support/meshes/irb120/collision/link_2.stl"/>
+        </geometry>
+        <xacro:material_abb_yellow />
+      </collision>
+    </link>
+    <link name="${prefix}link_3">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://abb_irb120_support/meshes/irb120/visual/link_3.stl"/>
+        </geometry>
+        <xacro:material_abb_orange />
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://abb_irb120_support/meshes/irb120/collision/link_3.stl"/>
+        </geometry>
+        <xacro:material_abb_yellow />
+      </collision>
+    </link>
+    <link name="${prefix}link_4">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://abb_irb120_support/meshes/irb120/visual/link_4.stl"/>
+        </geometry>
+        <xacro:material_abb_orange />
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://abb_irb120_support/meshes/irb120/collision/link_4.stl"/>
+        </geometry>
+        <xacro:material_abb_yellow />
+      </collision>
+    </link>
+    <link name="${prefix}link_5">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://abb_irb120_support/meshes/irb120/visual/link_5.stl"/>
+        </geometry>
+        <xacro:material_abb_orange />
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://abb_irb120_support/meshes/irb120/collision/link_5.stl"/>
+        </geometry>
+        <xacro:material_abb_yellow />
+      </collision>
+    </link>
+    <link name="${prefix}link_6">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://abb_irb120_support/meshes/irb120/visual/link_6.stl"/>
+        </geometry>
+        <xacro:material_abb_black />
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://abb_irb120_support/meshes/irb120/collision/link_6.stl"/>
+        </geometry>
+        <xacro:material_abb_yellow />
+      </collision>
+    </link>
+    <link name="${prefix}tool0"/>
+    <!-- end of link list -->
 
-  <!-- ROS base_link to ABB World Coordinates transform -->
-  <link name="${prefix}base" />
-  <joint name="${prefix}base_link-base" type="fixed">
-    <origin xyz="0 0 0" rpy="0 0 0"/>
-    <parent link="${prefix}base_link"/>
-    <child link="${prefix}base"/>
-  </joint>
+    <!-- joint list -->
+    <joint name="${prefix}joint_1" type="revolute">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <parent link="${prefix}base_link"/>
+      <child link="${prefix}link_1"/>
+      <limit effort="0" lower="-2.87979" upper="2.87979" velocity="4.36332"/>
+      <axis xyz="0 0 1"/>
+    </joint>
+    <joint name="${prefix}joint_2" type="revolute">
+      <origin rpy="0 0 0" xyz="0 0 0.29"/>
+      <parent link="${prefix}link_1"/>
+      <child link="${prefix}link_2"/>
+      <limit effort="0" lower="-1.91986" upper="1.91986" velocity="4.36332"/>
+      <axis xyz="0 1 0"/>
+    </joint>
+    <joint name="${prefix}joint_3" type="revolute">
+      <origin rpy="0 0 0" xyz="0 0 0.27"/>
+      <parent link="${prefix}link_2"/>
+      <child link="${prefix}link_3"/>
+      <limit effort="0" lower="-1.91986" upper="1.22173" velocity="4.36332"/>
+      <axis xyz="0 1 0"/>
+    </joint>
+    <joint name="${prefix}joint_4" type="revolute">
+      <origin rpy="0 0 0" xyz="0 0 0.07"/>
+      <parent link="${prefix}link_3"/>
+      <child link="${prefix}link_4"/>
+      <limit effort="0" lower="-2.79253" upper="2.79253" velocity="5.58505"/>
+      <axis xyz="1 0 0"/>
+    </joint>
+    <joint name="${prefix}joint_5" type="revolute">
+      <origin rpy="0 0 0" xyz="0.302 0 0"/>
+      <parent link="${prefix}link_4"/>
+      <child link="${prefix}link_5"/>
+      <limit effort="0" lower="-2.094395" upper="2.094395" velocity="5.58505"/>
+      <axis xyz="0 1 0"/>
+    </joint>
+    <joint name="${prefix}joint_6" type="revolute">
+      <origin rpy="0 0 0" xyz="0.072 0 0"/>
+      <parent link="${prefix}link_5"/>
+      <child link="${prefix}link_6"/>
+      <limit effort="0" lower="-6.98132" upper="6.98132" velocity="7.33038"/>
+      <axis xyz="1 0 0"/>
+    </joint>
+    <joint name="${prefix}joint6-tool0" type="fixed">
+      <parent link="${prefix}link_6"/>
+      <child link="${prefix}tool0"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </joint>
+    <!-- end of joint list -->
+
+    <!-- ROS base_link to ABB World Coordinates transform -->
+    <link name="${prefix}base" />
+    <joint name="${prefix}base_link-base" type="fixed">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="${prefix}base_link"/>
+      <child link="${prefix}base"/>
+    </joint>
   </xacro:macro>
 </robot>
