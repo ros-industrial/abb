@@ -5,7 +5,7 @@ Changelog for package irb_6640_moveit_config
 1.1.5 (2015-03-17)
 ------------------
 * moveit_cfg: make warehouse db location user configurable.
-  Fix `#58 <https://github.com/Aequitas82/abb/issues/58>`_.
+  Fix `#58 <https://github.com/ros-industrial/abb/issues/58>`_.
   Released MoveIt configuration packages are installed in non-writable
   locations most of the time. Starting `demo.launch` or any other launch
   file that starts the mongodb wrapper script results in a 'Permission
