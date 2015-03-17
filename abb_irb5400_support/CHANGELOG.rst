@@ -2,6 +2,10 @@
 Changelog for package abb_irb5400_support
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* No changes
+
 1.1.4 (2014-12-14)
 ------------------
 * Corrected 5400 wrist by adding axis 5 mimic joint

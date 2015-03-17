@@ -2,6 +2,10 @@
 Changelog for package abb_irb2400_moveit_plugins
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* No changes
+
 1.1.4 (2014-12-14)
 ------------------
 * Merged release artifacts from hydro branch

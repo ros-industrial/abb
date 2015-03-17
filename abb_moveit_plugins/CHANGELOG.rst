@@ -2,6 +2,10 @@
 Changelog for package abb_moveit_plugins
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* No changes
+
 1.1.4 (2014-12-14)
 ------------------
 * No changes

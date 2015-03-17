@@ -2,6 +2,10 @@
 Changelog for package abb_irb2400_support
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* No changes
+
 1.1.4 (2014-12-14)
 ------------------
 * No changes
