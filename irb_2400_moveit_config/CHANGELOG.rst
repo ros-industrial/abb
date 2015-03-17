@@ -2,6 +2,10 @@
 Changelog for package irb_2400_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* No changes
+
 1.1.5 (2015-03-17)
 ------------------
 * moveit_cfg: make warehouse db location user configurable.

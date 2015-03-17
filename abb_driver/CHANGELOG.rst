@@ -2,6 +2,11 @@
 Changelog for package abb_driver
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Fix typos and links in CHANGELOG.rst
+* Contributors: Levi Armstrong
+
 1.1.5 (2015-03-17)
 ------------------
 * driver: ROS_motionServer.mod was checking for wrong comm type to send reply

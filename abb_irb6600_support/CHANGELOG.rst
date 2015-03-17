@@ -2,6 +2,10 @@
 Changelog for package abb_irb6600_support
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* No changes
+
 1.1.5 (2015-03-17)
 ------------------
 * No changes
