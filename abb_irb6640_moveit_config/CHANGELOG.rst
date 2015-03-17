@@ -2,8 +2,8 @@
 Changelog for package abb_irb6640_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.1.6 (2015-03-17)
+------------------
 * Fix typos and links in CHANGELOG.rst
 * Contributors: Levi Armstrong
 
