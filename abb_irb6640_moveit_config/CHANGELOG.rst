@@ -2,8 +2,8 @@
 Changelog for package abb_irb6640_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.1.5 (2015-03-17)
+------------------
 * moveit_cfg: make warehouse db location user configurable.
   Fix `#58 <https://github.com/Aequitas82/abb/issues/58>`_.
   Released MoveIt configuration packages are installed in non-writable
