@@ -2,8 +2,8 @@
 Changelog for package abb_irb5400_support
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.1.7 (2015-04-01)
+------------------
 * Merged hydro branch
   - Updated CHANGELOG.rst and package.xml files
 * Fix `#48 <https://github.com/Levi-Armstrong/abb/issues/48>`_: added default true for J23_coupled for 5400

@@ -2,8 +2,8 @@
 Changelog for package abb_driver
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.1.7 (2015-04-01)
+------------------
 * Merged hydro branch
   - Updated CHANGELOG.rst and package.xml files
 * Contributors: Levi Armstrong
