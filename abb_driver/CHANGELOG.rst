@@ -2,6 +2,18 @@
 Changelog for package abb_driver
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.1.6 (2015-03-17)
+------------------
+* Fix typos and links in CHANGELOG.rst
+* Contributors: Levi Armstrong
+
+1.1.5 (2015-03-17)
+------------------
+* driver: ROS_motionServer.mod was checking for wrong comm type to send reply
+  message, causing driver to quit working after stop command.
+  Fix `#42 <https://github.com/ros-industrial/abb/issues/42>`_.
+* Contributors: Levi Armstrong
+
 1.1.4 (2014-12-14)
 ------------------
 * No changes
