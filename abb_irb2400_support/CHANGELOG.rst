@@ -2,6 +2,18 @@
 Changelog for package abb_irb2400_support
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merged hydro branch
+  - Updated CHANGELOG.rst and package.xml files
+* Fix incorrect maintainer email in manifests. Fix `#65 <https://github.com/Levi-Armstrong/abb/issues/65>`_.
+* Fix `#32 <https://github.com/Levi-Armstrong/abb/issues/32>`_: corrects tool0 to match robot controller
+* Fix for issue `#49 <https://github.com/Levi-Armstrong/abb/issues/49>`_: add 'base' link (transform to World)
+  This should not affect existing kinematic plugins or MoveIt configurations:
+  - the link is not part of the main kinematic chain
+  - the transform is implemented as a fixed joint
+* Contributors: Levi Armstrong, Shaun Edwards, gavanderhoorn
+
 1.1.6 (2015-03-17)
 ------------------
 * No changes

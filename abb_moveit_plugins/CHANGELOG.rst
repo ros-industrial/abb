@@ -2,6 +2,12 @@
 Changelog for package abb_moveit_plugins
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merged hydro branch
+  - Updated CHANGELOG.rst and package.xml files
+* Contributors: Levi Armstrong
+
 1.1.6 (2015-03-17)
 ------------------
 * No changes

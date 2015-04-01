@@ -2,6 +2,13 @@
 Changelog for package abb_irb2400_moveit_plugins
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merged hydro branch
+  - Updated CHANGELOG.rst and package.xml files
+* Fix incorrect maintainer email in manifests. Fix `#65 <https://github.com/Levi-Armstrong/abb/issues/65>`_.
+* Contributors: Levi Armstrong, Martin Günther, Scott K Logan, Shaun Edwards, gavanderhoorn
+
 1.1.6 (2015-03-17)
 ------------------
 * No changes
