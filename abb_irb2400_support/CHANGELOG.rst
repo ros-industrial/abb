@@ -2,6 +2,10 @@
 Changelog for package abb_irb2400_support
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* No changes
+
 1.1.7 (2015-04-01)
 ------------------
 * Merged hydro branch
