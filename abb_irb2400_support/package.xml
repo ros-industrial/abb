@@ -1,6 +1,6 @@
 <package>
   <name>abb_irb2400_support</name>
-  <version>1.1.8</version>
+  <version>1.1.9</version>
   <description>
     <p>
       ROS-Industrial support for the ABB IRB 2400 (and variants).

@@ -1,6 +1,6 @@
 <package>
   <name>abb_irb2400_moveit_config</name>
-  <version>1.1.8</version>
+  <version>1.1.9</version>
   <description>
     <p>
       MoveIt package for the ABB IRB 2400.
