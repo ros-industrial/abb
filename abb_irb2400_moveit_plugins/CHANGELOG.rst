@@ -2,6 +2,10 @@
 Changelog for package abb_irb2400_moveit_plugins
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* No changes
+
 1.1.8 (2015-04-06)
 ------------------
 * No changes
