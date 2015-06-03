@@ -21,7 +21,6 @@
   <run_depend>abb_irb6640_moveit_config</run_depend>
   <run_depend>irb_2400_moveit_config</run_depend>
   <run_depend>irb_6640_moveit_config</run_depend>
-  <run_depend>abb_moveit_plugins</run_depend>
 
 
   <export>
