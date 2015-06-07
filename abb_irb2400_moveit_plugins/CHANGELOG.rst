@@ -2,8 +2,8 @@
 Changelog for package abb_irb2400_moveit_plugins
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.2.0 (2015-06-06)
+------------------
 * Regenerated the ikfast moveit plugin for the irb2400 using an 
   older version of moveit-ikfast plugin. Fixes issue where the 
   ik solutions and the URDF were off by 90 degrees.

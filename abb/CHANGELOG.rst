@@ -2,8 +2,8 @@
 Changelog for package abb
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.2.0 (2015-06-06)
+------------------
 * Remove deprecated package abb_moveit_plugins
 * Contributors: Levi Armstrong
 

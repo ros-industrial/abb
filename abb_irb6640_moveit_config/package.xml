@@ -1,6 +1,6 @@
 <package>
   <name>abb_irb6640_moveit_config</name>
-  <version>1.1.9</version>
+  <version>1.2.0</version>
   <description>
     <p>
       MoveIt package for the ABB IRB 6640.
