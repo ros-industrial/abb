@@ -2,6 +2,10 @@
 Changelog for package abb_irb5400_support
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* No changes
+
 1.1.9 (2015-04-07)
 ------------------
 * No changes

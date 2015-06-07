@@ -2,6 +2,10 @@
 Changelog for package abb_irb2400_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* No changes
+
 1.1.9 (2015-04-07)
 ------------------
 * No changes
