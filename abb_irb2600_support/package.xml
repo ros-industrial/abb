@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package>
+  <name>abb_irb2600_support</name>
+  <version>0.1.0</version>
+  <description>The abb_irb_2600 package</description>
+
+  <maintainer email="jonathan.meyer@swri.org">Jonathan Meyer (SWRI)</maintainer>
+
+  <license>Apache2</license>
+
+  <author email="cody.bressler@swri.org">Cody Bressler</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>roslaunch</build_depend>
+
+  <run_depend>abb_driver</run_depend>
+  <run_depend>joint_state_publisher</run_depend>
+  <run_depend>robot_state_publisher</run_depend>
+  <run_depend>rviz</run_depend>
+
+</package>
