@@ -2,6 +2,25 @@
 Changelog for package abb_irb6640_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.2.0 (2015-06-06)
+------------------
+* No changes
+
+1.1.9 (2015-04-07)
+------------------
+* No changes
+
+1.1.8 (2015-04-06)
+------------------
+* No changes
+
+1.1.7 (2015-04-01)
+------------------
+* Merged hydro branch
+  - Updated CHANGELOG.rst and package.xml files
+* Fix incorrect maintainer email in manifests. Fix `#65 <https://github.com/Levi-Armstrong/abb/issues/65>`_.
+* Contributors: Levi Armstrong, Shaun Edwards, gavanderhoorn
+
 1.1.6 (2015-03-17)
 ------------------
 * Fix typos and links in CHANGELOG.rst

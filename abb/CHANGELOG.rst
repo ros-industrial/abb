@@ -2,6 +2,31 @@
 Changelog for package abb
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.2.0 (2015-06-06)
+------------------
+* Remove deprecated package abb_moveit_plugins
+* Contributors: Levi Armstrong
+
+1.1.9 (2015-04-07)
+------------------
+* Remove dependencies from package.xml for removed deprecated packages
+* Removed deprecated package abb_moveit_plugins
+* Contributors: Levi Armstrong
+
+1.1.8 (2015-04-06)
+------------------
+* No changes
+
+1.1.7 (2015-04-01)
+------------------
+* Merged hydro branch
+  - Updated CHANGELOG.rst and package.xml files
+* Removed deprecated packages
+  - abb_common
+  - irb_2400_moveit_config
+  - irb_6640_moveit_config
+* Contributors: Levi Armstrong
+
 1.1.6 (2015-03-17)
 ------------------
 * No changes

@@ -2,6 +2,24 @@
 Changelog for package abb_driver
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.2.0 (2015-06-06)
+------------------
+* No changes
+
+1.1.9 (2015-04-07)
+------------------
+* No changes
+
+1.1.8 (2015-04-06)
+------------------
+* No changes
+
+1.1.7 (2015-04-01)
+------------------
+* Merged hydro branch
+  - Updated CHANGELOG.rst and package.xml files
+* Contributors: Levi Armstrong
+
 1.1.6 (2015-03-17)
 ------------------
 * Fix typos and links in CHANGELOG.rst

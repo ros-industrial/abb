@@ -2,6 +2,28 @@
 Changelog for package abb_irb2400_moveit_plugins
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.2.0 (2015-06-06)
+------------------
+* Regenerated the ikfast moveit plugin for the irb2400 using an 
+  older version of moveit-ikfast plugin. Fixes issue where the 
+  ik solutions and the URDF were off by 90 degrees.
+* Contributors: Jonathan Meyer
+
+1.1.9 (2015-04-07)
+------------------
+* No changes
+
+1.1.8 (2015-04-06)
+------------------
+* No changes
+
+1.1.7 (2015-04-01)
+------------------
+* Merged hydro branch
+  - Updated CHANGELOG.rst and package.xml files
+* Fix incorrect maintainer email in manifests. Fix `#65 <https://github.com/Levi-Armstrong/abb/issues/65>`_.
+* Contributors: Levi Armstrong, Martin Günther, Scott K Logan, Shaun Edwards, gavanderhoorn
+
 1.1.6 (2015-03-17)
 ------------------
 * No changes
