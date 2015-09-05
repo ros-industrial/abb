@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+
+<robot name="abb_irb1200" xmlns:xacro="http://ros.org/wiki/xacro">
+	<xacro:include filename="$(find abb_irb1200_support)/urdf/irb1200_macro.xacro"/>
+	<!-- Links below are from axis of one link the next link (joint offsets). This is due the stl export with the base of the robot as the origin-->
+	<xacro:abb_irb1200 prefix="" link_1_X="0" link_1_Y="0" link_1_Z="0.219" link_2_X="0" link_2_Y="0" link_2_Z="0.1801" link_3_X="0" link_3_Y="0" link_3_Z="0.35" link_4_X="0.1885" link_4_Y="0" link_4_Z="0.042" link_5_X="0.1555" link_5_Y="0" link_5_Z="0" link_6_X="0.077" link_6_Y="0" link_6_Z="0"/>
+</robot>
