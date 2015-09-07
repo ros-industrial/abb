@@ -20,12 +20,18 @@
       extended / limited motion ranges or other options).
     </p>
     <p>
+      Inertial and mass properties were calculated using 3D modelling software, based on the 
+      supplied <a href="http://new.abb.com/products/robotics/industrial-robots/irb-120/irb-120-cad">
+      ABB IRB 120 CAD model</a>.
+    </p> 
+    <p>
       Before using any of the configuration files and / or meshes included
       in this package, be sure to check they are correct for the particular
       robot model and configuration you intend to use them with.
     </p>
   </description>
   <author email="culletom@tcd.ie">Mark Culleton (Trinity College Dublin)</author>
+  <author>Kevin Kelly (Trinity College Dublin)</author>
   <maintainer email="culletom@tcd.ie">Mark Culleton (Trinity College Dublin)</maintainer>
   <maintainer email="levi.armstrong@swri.org">Levi Armstrong (SwRI)</maintainer>
   <license>Apache2</license>
