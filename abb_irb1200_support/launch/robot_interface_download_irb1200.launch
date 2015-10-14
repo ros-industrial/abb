@@ -9,7 +9,7 @@
 -->
 <launch>
   <arg name="robot_ip" />
-  <arg name="J23_coupled" default="true" />
+  <arg name="J23_coupled" default="false" />
 
   <rosparam command="load" file="$(find abb_irb1200_support)/config/joint_names_irb1200.yaml" />
 
