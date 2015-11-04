@@ -1,6 +1,8 @@
 # ABB
 
-[ROS-Industrial][] ABB meta-package.  See the [ROS wiki][] page for more information.  
+[![Build Status](http://jenkins.ros.org/job/devel-indigo-abb/badge/icon)](http://jenkins.ros.org/job/devel-indigo-abb/)
+
+[ROS-Industrial][] ABB meta-package.  See the [ROS wiki][] page for more information.
 
 ## Contents
 
