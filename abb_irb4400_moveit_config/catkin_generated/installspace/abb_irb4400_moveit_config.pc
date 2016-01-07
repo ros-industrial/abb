@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: abb_irb4400_moveit_config
+Description: Description of abb_irb4400_moveit_config
+Version: 0.2.0
+Cflags: 
+Libs: -L/usr/local/lib 
+Requires: 
