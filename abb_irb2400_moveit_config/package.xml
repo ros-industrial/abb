@@ -12,7 +12,7 @@
     </p>
   </description>
   <author email="assistant@moveit.ros.org">MoveIt Setup Assistant</author>
-  <maintainer email="sedewards@swri.org">Shaun Edwards (Southwest Research Institute)</maintainer>
+  <maintainer email="sedwards@swri.org">Shaun Edwards (Southwest Research Institute)</maintainer>
 
   <license>BSD</license>
 

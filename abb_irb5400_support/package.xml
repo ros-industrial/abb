@@ -23,7 +23,7 @@
     </p>
   </description>
   <author email="ds____on@swri.org">Dan Solomon (Southwest Research Institute)</author>
-  <maintainer email="sedewards@swri.org">Shaun Edwards (Southwest Research Institute)</maintainer>
+  <maintainer email="sedwards@swri.org">Shaun Edwards (Southwest Research Institute)</maintainer>
   <license>Apache2</license>
 
   <url type="website">http://ros.org/wiki/abb_irb5400_support</url>
