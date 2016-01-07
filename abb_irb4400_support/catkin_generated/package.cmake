@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "abb_irb4400_support")
-set(abb_irb4400_support_MAINTAINER "Shaun Edwards (Southwest Research Institute) <sedewards@swri.org>")
-set(abb_irb4400_support_DEPRECATED "")
-set(abb_irb4400_support_VERSION "0.1.0")
-set(abb_irb4400_support_BUILD_DEPENDS )
-set(abb_irb4400_support_RUN_DEPENDS )
-set(abb_irb4400_support_BUILDTOOL_DEPENDS "catkin")
