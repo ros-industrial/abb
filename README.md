@@ -1,6 +1,6 @@
 # ABB
 
-[![Build Status](http://jenkins.ros.org/job/devel-indigo-abb/badge/icon)](http://jenkins.ros.org/job/devel-indigo-abb/)
+[![Build Status](http://build.ros.org/job/Idev__abb__ubuntu_trusty_amd64/badge/icon)](http://build.ros.org/job/Idev__abb__ubuntu_trusty_amd64)
 
 [ROS-Industrial][] ABB meta-package.  See the [ROS wiki][] page for more information.
 
