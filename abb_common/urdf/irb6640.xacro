@@ -1,0 +1,339 @@
+<?xml version="1.0" ?>
+<robot name="irb6640" xmlns:xacro="http://ros.org/wiki/xacro"
+       xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+       xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+       xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface">
+       		
+
+  <!-- Import all Gazebo-customization elements, including Gazebo colors -->
+  <xacro:include filename="$(find abb_common)/urdf/irb6640.gazebo"/>
+
+<xacro:property name="friction" value="0" />
+<xacro:property name="damping" value="0" />
+<xacro:property name="collision_scale" value="0.99" />
+
+<!-- START ROBOT BODY -->
+  <link name="world">
+	<origin xyz="0 0 0" rpy="0 0 0"/>   </link>
+
+
+ <!-- lower body, fixed-->
+<link name="link_base">
+<selfCollide value="true"/>
+     <inertial>
+       <origin xyz="0 0 0"/>
+       <mass value="266.552"/>
+       <inertia ixx="9.888" ixy="0.028" ixz="0.312" iyy="9.6160" iyz="0.008" izz="17.736"/>
+     </inertial> 
+   <collision name="collision">
+       <geometry>
+         <mesh filename="package://abb_common/meshes/irb6640/collision/LINK_BASE.stl" scale="${collision_scale} ${collision_scale} ${collision_scale}"/>          
+       </geometry>
+       <contact_coefficients  mu="0.2" kp="1" kd="0.5"/>
+     </collision>
+     <visual name="visual">
+       <geometry>
+         <mesh filename="package://abb_common/meshes/irb6640/visual/LINK_BASE.stl"/>
+       </geometry>
+     </visual>
+  </link>
+<!-- Fix lower body to world frame -->
+  <joint type="fixed" name="joint_world">
+    <origin xyz="0 0 00" rpy="0 0 0"/>
+    <parent link="world"/>
+    <child link="link_base"/>
+    <limit effort="50000" lower="0" upper="0" velocity="10000"/>
+  </joint>
+
+<!--Link1 -->
+<link name="link_1">
+<selfCollide value="true"/>
+     <inertial>
+       <origin xyz="0 0 0"/>
+       <!--mass value="334.292896"/>
+       <inertia ixx="19.81286" ixy="-2.608" ixz="8.294" iyy="29.8513" iyz="2.4147" izz="21.5858"/-->
+       <mass value="1"/>
+       <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+     </inertial> 
+   <collision name="collision">
+       <geometry>
+         <mesh filename="package://abb_common/meshes/irb6640/collision/LINK_1.stl" scale="${collision_scale} ${collision_scale} ${collision_scale}"/>          
+       </geometry>
+       <contact_coefficients  mu="0.2" kp="1" kd="0.5"/>
+     </collision>
+     <visual name="visual">
+       <geometry>
+         <mesh filename="package://abb_common/meshes/irb6640/visual/LINK_1.stl"/>
+       </geometry>
+     </visual>
+  </link>
+  <joint type="revolute" name="joint_link1">
+    <origin xyz="0 0 0.227" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <parent link="link_base"/>
+    <child link="link_1"/>
+    <limit effort="100" lower="-2.967" upper="2.967" velocity="10"/>
+  </joint>
+
+<!--Link2 -->
+<link name="link_2">
+<selfCollide value="true"/>
+     <inertial>
+       <origin xyz="0 -0.20 0.44"/>
+       <!--mass value="160.3932"/>
+       <inertia ixx="39.2903" ixy="0.08554" ixz="0.15598" iyy="39.1894" iyz="5.5296" izz="3.6839"/-->
+       <mass value="1"/>
+       <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+     </inertial> 
+   <collision name="collision">
+       <geometry>
+         <mesh filename="package://abb_common/meshes/irb6640/collision/LINK_2.stl" scale="${collision_scale} ${collision_scale} ${collision_scale}"/>          
+       </geometry>
+       <contact_coefficients  mu="0.2" kp="1" kd="0.5"/>
+     </collision>
+     <visual name="visual">
+       <geometry>
+         <mesh filename="package://abb_common/meshes/irb6640/visual/LINK_2.stl"/>
+       </geometry>
+     </visual>
+  </link>
+  <joint type="revolute" name="joint_link2">
+    <origin xyz="0.322 0.03 0.551" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <parent link="link_1"/>
+    <child link="link_2"/>
+    <limit effort="100" lower="-1.134" upper="1.4855" velocity="10"/>
+  </joint>
+
+<!--Cylinder -->
+<link name="link_cylinder">
+<selfCollide value="true"/>
+     <inertial>
+       <origin xyz="0 0 0"/>
+       <mass value="158.1621"/>
+       <inertia ixx="2.7645" ixy="0.001235" ixz="0.0204" iyy="5.3875" iyz="0.003192" izz="5.4350"/>
+     </inertial> 
+   <collision name="collision">
+       <geometry>
+         <mesh filename="package://abb_common/meshes/irb6640/collision/CYLINDER.stl" scale="${collision_scale} ${collision_scale} ${collision_scale}"/>          
+       </geometry>
+       <contact_coefficients  mu="0.2" kp="1" kd="0.5"/>
+     </collision>
+     <visual name="visual">
+       <geometry>
+         <mesh filename="package://abb_common/meshes/irb6640/visual/CYLINDER.stl"/>
+       </geometry>
+     </visual>
+  </link>
+  <joint type="fixed" name="joint_cylinder">
+    <origin xyz="-0.365 -0.1895 0.405" rpy="0 -0.170 0"/>
+    <axis xyz="0 1 0"/>
+    <parent link="link_1"/>
+    <child link="link_cylinder"/>
+    <limit effort="100" lower="-2.96705973" upper="2.96705973" velocity="10"/>
+  </joint>
+
+<link name="link_piston">
+<selfCollide value="true"/>
+     <inertial>
+       <origin xyz="0 0 0"/>
+       <mass value="5.4255"/>
+       <inertia ixx="0.002785" ixy="0.0006125" ixz="0.00138" iyy="0.18029" iyz="0.00004" izz="0.1813"/>
+     </inertial> 
+   <collision name="collision">
+       <geometry>
+         <mesh filename="package://abb_common/meshes/irb6640/collision/PISTON.stl" scale="${collision_scale} ${collision_scale} ${collision_scale}"/>          
+       </geometry>
+       <contact_coefficients  mu="0.2" kp="1" kd="0.5"/>
+     </collision>
+     <visual name="visual">
+       <geometry>
+         <mesh filename="package://abb_common/meshes/irb6640/visual/PISTON.stl"/>
+       </geometry>
+     </visual>
+  </link>
+  <joint type="fixed" name="joint_piston">
+    <origin xyz="0.475 0 0" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <parent link="link_cylinder"/>
+    <child link="link_piston"/>
+    <limit effort="100" lower="0" upper="0.6" velocity="10"/>
+  </joint>
+
+<!--Link3 -->
+<link name="link_3">
+<selfCollide value="true"/>
+     <inertial>
+       <origin xyz="0 0 0"/>
+       <!--mass value="222.8740"/>
+       <inertia ixx="6.8866" ixy="1.08387" ixz="0.6504" iyy="6.9937" iyz="1.0299" izz="8.0746"/-->
+       <mass value="1"/>
+       <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+     </inertial> 
+   <collision name="collision">
+       <geometry>
+         <mesh filename="package://abb_common/meshes/irb6640/collision/LINK_3.stl" scale="${collision_scale} ${collision_scale} ${collision_scale}"/>          
+       </geometry>
+       <contact_coefficients  mu="0.2" kp="1" kd="0.5"/>
+     </collision>
+     <visual name="visual">
+       <geometry>
+         <mesh filename="package://abb_common/meshes/irb6640/visual/LINK_3.stl"/>
+       </geometry>
+     </visual>
+  </link>
+  <joint type="revolute" name="joint_link3">
+    <origin xyz="0 -0.2 1.07" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <parent link="link_2"/>
+    <child link="link_3"/>
+    <limit effort="100" lower="-3.142" upper="1.222" velocity="10"/>
+  </joint>
+<!--Link4 -->
+<link name="link_4">
+<selfCollide value="true"/>
+     <inertial>
+       <origin xyz="1.03 0 0"/>
+       <!--mass value="206.7"/>
+       <inertia ixx="1.888" ixy="1.092" ixz="0.02" iyy="50.688" iyz="0.004" izz="51.356"/-->
+       <mass value="1"/>
+       <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+       </inertial> 
+   <collision name="collision">
+       <geometry>
+         <mesh filename="package://abb_common/meshes/irb6640/collision/LINK_4.stl" scale="${collision_scale} ${collision_scale} ${collision_scale}"/>          
+       </geometry>
+       <contact_coefficients  mu="0.2" kp="1" kd="0.5"/>
+     </collision>
+     <visual name="visual">
+       <geometry>
+         <mesh filename="package://abb_common/meshes/irb6640/visual/LINK_4.stl"/>
+       </geometry>
+     </visual>
+  </link>
+  <joint type="revolute" name="joint_link4">
+    <origin xyz="-0.275 0.181 0.2" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <parent link="link_3"/>
+    <child link="link_4"/>
+    <limit effort="100" lower="-5.236" upper="5.236" velocity="10"/>
+  </joint>
+<!--Link5 -->
+<link name="link_5">
+<selfCollide value="true"/>
+     <inertial>
+       <origin xyz="0 0 0"/>
+       <!--mass value="26.296"/>
+       <inertia ixx="0.108" ixy="0.004" ixz="0" iyy="0.216" iyz="0" izz="0.228"/-->
+       <mass value="1"/>
+       <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+     </inertial> 
+   <collision name="collision">
+       <geometry>
+         <mesh filename="package://abb_common/meshes/irb6640/collision/LINK_5.stl" scale="${collision_scale} ${collision_scale} ${collision_scale}"/>          
+       </geometry>
+       <contact_coefficients  mu="0.2" kp="1" kd="0.5"/>
+     </collision>
+     <visual name="visual">
+       <geometry>
+         <mesh filename="package://abb_common/meshes/irb6640/visual/LINK_5.stl"/>
+       </geometry>
+     </visual>
+  </link>
+  <joint type="revolute" name="joint_link5">
+    <origin xyz="1.67 0 0 " rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <parent link="link_4"/>
+    <child link="link_5"/>
+    <limit effort="100" lower="-2.094" upper="2.094" velocity="10"/>
+  </joint>
+<!--Link6 -->
+<link name="link_6">
+<selfCollide value="true"/>
+     <inertial>
+       <origin xyz="0 0 0"/>
+       <!--mass value="3.5427"/>
+       <inertia ixx="0.01767" ixy="0.00001" ixz="0.00001" iyy="0.00933" iyz="0.00004" izz="0.00908"/-->
+       <mass value="1"/>
+       <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+     </inertial> 
+   <collision name="collision">
+       <geometry>
+         <mesh filename="package://abb_common/meshes/irb6640/collision/LINK_6.stl" scale="${collision_scale} ${collision_scale} ${collision_scale}"/>          
+       </geometry>
+       <contact_coefficients  mu="0.2" kp="1" kd="0.5"/>
+     </collision>
+     <visual name="visual">
+       <geometry>
+         <mesh filename="package://abb_common/meshes/irb6640/visual/LINK_6.stl"/>
+       </geometry>
+     </visual>
+  </link>
+  <joint type="revolute" name="joint_link6">
+    <origin xyz="0.153 0 0 " rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <parent link="link_5"/>
+    <child link="link_6"/>
+    <limit effort="100" lower="-6.283" upper="6.283" velocity="10"/>
+  </joint>
+<!--end effector link -->
+<link name="link_eef">
+<selfCollide value="true"/>
+    <inertial>
+       <origin xyz="0 0 0"/>
+       <mass value=".001"/>
+       <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+     </inertial> 
+  </link>
+  <joint type="fixed" name="joint_eef">
+    <origin xyz=".055 0 0 " rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <parent link="link_6"/>
+    <child link="link_eef"/>
+    <limit effort="100" lower="-6.283" upper="6.283" velocity="10"/>
+  </joint>
+
+ <transmission name="trans_link1" type="pr2_mechanism_model/SimpleTransmission">
+    <joint name="joint_link1"/>
+    <actuator name="motor_link1" type="EffortJointInterface" />
+    <mechanicalReduction>1</mechanicalReduction>
+    <motorTorqueConstant>1</motorTorqueConstant>
+  </transmission>
+ <transmission name="trans_link2" type="pr2_mechanism_model/SimpleTransmission">
+    <joint name="joint_link2"/>
+    <actuator name="motor_link2" type="EffortJointInterface" />
+    <mechanicalReduction>1</mechanicalReduction>
+    <motorTorqueConstant>1</motorTorqueConstant>
+  </transmission>
+
+ <transmission name="trans_link3" type="pr2_mechanism_model/SimpleTransmission">
+    <joint name="joint_link3"/>
+    <actuator name="motor_link3" type="EffortJointInterface" />
+    <mechanicalReduction>1</mechanicalReduction>
+    <motorTorqueConstant>1</motorTorqueConstant>
+  </transmission>
+
+ <transmission name="trans_link4" type="pr2_mechanism_model/SimpleTransmission">
+    <joint name="joint_link4"/>
+    <actuator name="motor_link4" type="EffortJointInterface" />
+    <mechanicalReduction>1</mechanicalReduction>
+    <motorTorqueConstant>1</motorTorqueConstant>
+  </transmission>
+
+ <transmission name="trans_link5" type="pr2_mechanism_model/SimpleTransmission">
+    <joint name="joint_link5"/>
+    <actuator name="motor_link5" type="EffortJointInterface" />
+    <mechanicalReduction>1</mechanicalReduction>
+    <motorTorqueConstant>1</motorTorqueConstant>
+  </transmission>
+
+ <transmission name="trans_link6" type="pr2_mechanism_model/SimpleTransmission">
+    <joint name="joint_link6"/>
+    <actuator name="motor_link6" type="EffortJointInterface" />
+    <mechanicalReduction>1</mechanicalReduction>
+    <motorTorqueConstant>1</motorTorqueConstant>
+  </transmission>
+
+
+ </robot>
+

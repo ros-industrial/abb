@@ -1,0 +1,24 @@
+<launch>
+
+<rosparam param="controller_joint_names">['joint_link1', 'joint__link2', 'joint__link3',  'joint__link4', 'joint__link5', 'joint__link6']</rosparam>
+ 
+  <!-- load the robot_description parameter before launching ROS-I nodes -->
+  <include file="$(find irb6640_moveit)/launch/planning_context.launch" >
+    <arg name="load_robot_description" value="true" />
+  </include>
+  <!-- publish the robot state (tf transforms) -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+<node name="static_transform_publisher" pkg="tf" type="static_transform_publisher" args="-0.4 1.0 1.5525 -1.5707 0 -2.0707 /world /kinect_link 20" />
+
+  <include file="$(find irb6640_moveit)/launch/move_group.launch">
+    <arg name="publish_monitored_planning_scene" value="true" />
+  </include>
+
+  <include file="$(find irb6640_moveit)/launch/moveit_rviz.launch">
+    <arg name="config" value="true"/>
+  </include>
+  
+  <include file="$(find irb6640_moveit)/launch/default_warehouse_db.launch" />
+
+</launch>

@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro"
+       xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+       xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+       xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface">
+
+
+<gazebo>
+    <plugin name="gazebo_ros_controller_manager" filename="libgazebo_ros_controller_manager.so">
+      <alwaysOn>true</alwaysOn>
+      <updateRate>1000.0</updateRate>
+      <robotParam>robot_description</robotParam>
+      <interface:audio name="gazebo_ros_controller_manager_dummy_iface"/>
+    </plugin>
+</gazebo>
+<gazebo>
+     <plugin name="gazebo_ros_power_monitor_controller" filename="libgazebo_ros_power_monitor.so">
+      <alwaysOn>true</alwaysOn>
+      <updateRate>1.0</updateRate>
+      <timeout>5</timeout>
+      <interface:audio name="power_monitor_dummy_interface"/>
+      <powerStateTopic>power_state</powerStateTopic>
+      <powerStateRate>10.0</powerStateRate>
+      <fullChargeCapacity>87.78</fullChargeCapacity>
+      <dischargeRate>-474</dischargeRate>
+      <chargeRate>525</chargeRate>
+      <dischargeVoltage>15.52</dischargeVoltage>
+      <chargeVoltage>16.41</chargeVoltage>
+    </plugin>
+</gazebo>
+
+ 
+
+<!-- Gazebo Tags -->
+  <gazebo reference="link_base">
+    <selfCollide>true</selfCollide>
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+  <gazebo reference="link_1">
+    <selfCollide>true</selfCollide>
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+
+  <gazebo reference="link_2">
+    <selfCollide>false</selfCollide>
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+
+  <gazebo reference="link_3">
+    <selfCollide>true</selfCollide>
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+
+  <gazebo reference="link_4">
+    <selfCollide>true</selfCollide>
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+
+  <gazebo reference="link_5">
+    <selfCollide>true</selfCollide>
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+
+  <gazebo reference="link_6">
+    <selfCollide>true</selfCollide>
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+  <gazebo reference="link_cylinder">
+    <selfCollide>false</selfCollide>
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+  <gazebo reference="link_piston">
+    <selfCollide>false</selfCollide>
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+</robot>
