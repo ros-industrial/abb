@@ -6,11 +6,8 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/base_link.stl"/>
+                <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/base_link.dae"/>
             </geometry>
-            <material name="abb_orange">
-                <color rgba="1 0.43 0 1"/>
-            </material>
         </visual>
         <collision>
             <geometry>
@@ -25,9 +22,8 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_1.stl"/>
+                <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_1.dae"/>
             </geometry>
-            <material name="abb_orange"/>
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -41,9 +37,8 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_2.stl"/>
+                <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_2.dae"/>
             </geometry>
-            <material name="abb_orange"/>
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -57,9 +52,8 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_3.stl"/>
+                <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_3.dae"/>
             </geometry>
-            <material name="abb_orange"/>
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -73,9 +67,8 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_4.stl"/>
+                <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_4.dae"/>
             </geometry>
-            <material name="abb_orange"/>
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -89,9 +82,8 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_5.stl"/>
+                <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_5.dae"/>
             </geometry>
-            <material name="abb_orange"/>
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -105,9 +97,8 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_6.stl"/>
+                <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_6.dae"/>
             </geometry>
-            <material name="abb_orange"/>
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0"/>

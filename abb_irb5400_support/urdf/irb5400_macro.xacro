@@ -5,11 +5,8 @@
     <link name="${prefix}base_link">
         <visual>
             <geometry>
-                <mesh filename="package://abb_irb5400_support/meshes/irb5400/visual/base_link.stl"/>
+                <mesh filename="package://abb_irb5400_support/meshes/irb5400/visual/base_link.dae"/>
             </geometry>
-            <material name="orange">
-                <color rgba="1 0.43 0 1"/>
-            </material>
         </visual>
         <collision>
             <geometry>
@@ -23,9 +20,8 @@
     <link name="${prefix}link_1">
         <visual>
             <geometry>
-                <mesh filename="package://abb_irb5400_support/meshes/irb5400/visual/link_1.stl"/>
+                <mesh filename="package://abb_irb5400_support/meshes/irb5400/visual/link_1.dae"/>
             </geometry>
-            <material name="orange"/>
         </visual>
         <collision>
             <geometry>
@@ -37,11 +33,8 @@
     <link name="${prefix}link_2">
         <visual>
             <geometry>
-                <mesh filename="package://abb_irb5400_support/meshes/irb5400/visual/link_2.stl"/>
+                <mesh filename="package://abb_irb5400_support/meshes/irb5400/visual/link_2.dae"/>
             </geometry>
-            <material name="lt_black">
-                <color rgba="0.3 0.3 0.3 1"/>
-            </material>
         </visual>
         <collision>
             <geometry>
@@ -53,9 +46,8 @@
     <link name="${prefix}link_3">
         <visual>
             <geometry>
-                <mesh filename="package://abb_irb5400_support/meshes/irb5400/visual/link_3.stl"/>
+                <mesh filename="package://abb_irb5400_support/meshes/irb5400/visual/link_3.dae"/>
             </geometry>
-            <material name="orange"/>
         </visual>
         <collision>
             <geometry>
@@ -67,9 +59,8 @@
     <link name="${prefix}link_4">
         <visual>
             <geometry>
-                <mesh filename="package://abb_irb5400_support/meshes/irb5400/visual/link_4.stl"/>
+                <mesh filename="package://abb_irb5400_support/meshes/irb5400/visual/link_4.dae"/>
             </geometry>
-            <material name="lt_black"/>
         </visual>
         <collision>
             <geometry>
@@ -81,9 +72,8 @@
     <link name="${prefix}link_5">
         <visual>
             <geometry>
-                <mesh filename="package://abb_irb5400_support/meshes/irb5400/visual/link_5.stl"/>
+                <mesh filename="package://abb_irb5400_support/meshes/irb5400/visual/link_5.dae"/>
             </geometry>
-            <material name="lt_black"/>
         </visual>
         <collision>
             <geometry>
@@ -95,9 +85,8 @@
     <link name="${prefix}link_5b">
         <visual>
             <geometry>
-                <mesh filename="package://abb_irb5400_support/meshes/irb5400/visual/link_5b.stl"/>
+                <mesh filename="package://abb_irb5400_support/meshes/irb5400/visual/link_5b.dae"/>
             </geometry>
-            <material name="lt_black"/>
         </visual>
         <collision>
             <geometry>
@@ -109,9 +98,8 @@
     <link name="${prefix}link_6">
         <visual>
             <geometry>
-                <mesh filename="package://abb_irb5400_support/meshes/irb5400/visual/link_6.stl"/>
+                <mesh filename="package://abb_irb5400_support/meshes/irb5400/visual/link_6.dae"/>
             </geometry>
-            <material name="lt_black"/>
         </visual>
         <collision>
             <geometry>

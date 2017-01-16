@@ -4,15 +4,13 @@
 <!-- |    EDITING THIS FILE BY HAND IS NOT RECOMMENDED                                 | -->
 <!-- =================================================================================== -->
 <robot name="abb_irb2400" xmlns:xacro="http://ros.org/wiki/xacro">
+  <!-- link list -->
   <link name="base_link">
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/base_link.stl"/>
+        <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/base_link.dae"/>
       </geometry>
-      <material name="abb_orange">
-        <color rgba="1 0.43 0 1"/>
-      </material>
     </visual>
     <collision>
       <geometry>
@@ -27,9 +25,8 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_1.stl"/>
+        <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_1.dae"/>
       </geometry>
-      <material name="abb_orange"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -43,9 +40,8 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_2.stl"/>
+        <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_2.dae"/>
       </geometry>
-      <material name="abb_orange"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -59,9 +55,8 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_3.stl"/>
+        <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_3.dae"/>
       </geometry>
-      <material name="abb_orange"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -75,9 +70,8 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_4.stl"/>
+        <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_4.dae"/>
       </geometry>
-      <material name="abb_orange"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -91,9 +85,8 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_5.stl"/>
+        <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_5.dae"/>
       </geometry>
-      <material name="abb_orange"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -107,9 +100,8 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_6.stl"/>
+        <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_6.dae"/>
       </geometry>
-      <material name="abb_orange"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -120,6 +112,8 @@
     </collision>
   </link>
   <link name="tool0"/>
+  <!-- end of link list -->
+  <!-- joint list -->
   <joint name="joint_1" type="revolute">
     <origin rpy="0 0 0" xyz="0 0 0"/>
     <parent link="base_link"/>
@@ -167,6 +161,8 @@
     <child link="tool0"/>
     <origin rpy="0 1.57079632679 0" xyz="0 0 0"/>
   </joint>
+  <!-- end of joint list -->
+  <!-- ROS base_link to ABB World Coordinates transform -->
   <link name="base"/>
   <joint name="base_link-base" type="fixed">
     <origin rpy="0 0 0" xyz="0 0 0"/>
