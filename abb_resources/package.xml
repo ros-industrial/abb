@@ -1,0 +1,22 @@
+<package>
+  <name>abb_resources</name>
+  <version>1.2.0</version>
+  <description>
+    <p>
+      Shared configuration data for ABB manipulators.
+    </p>
+    <p>
+      This package contains common urdf / xacro resources used by
+      ABB related packages.
+    </p>
+  </description>
+  <author email="levi.armstrong@swri.org">Levi Armstrong (Southwest Research Institute)</author>
+  <maintainer email="levi.armstrong@swri.org">Levi Armstrong (Southwest Research Institute)</maintainer>
+  <license>Apache2</license>
+
+  <url type="website">http://wiki.ros.org/abb_resources</url>
+  <url type="bugtracker">https://github.com/ros-industrial/abb/issues</url>
+  <url type="repository">https://github.com/ros-industrial/abb</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+</package>
