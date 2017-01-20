@@ -1,212 +1,212 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
-<xacro:macro name="abb_irb6640" params="prefix">
+  <xacro:macro name="abb_irb6640" params="prefix">
     <!-- link list -->
     <link name="${prefix}base_link">
-        <collision name="collision">
-            <geometry>
-                <mesh filename="package://abb_irb6600_support/meshes/irb6640/collision/base_link.stl"/>
-            </geometry>
-            <material name="yellow">
-                <color rgba="0 1 1 1"/>
-            </material>
-        </collision>
-        <visual name="visual">
-            <geometry>
-                <mesh filename="package://abb_irb6600_support/meshes/irb6640/visual/base_link.stl"/>
-            </geometry>
-            <material name="orange">
-                <color rgba="1 0.43 0 1"/>
-            </material>
-        </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh filename="package://abb_irb6600_support/meshes/irb6640/collision/base_link.stl"/>
+        </geometry>
+        <material name="yellow">
+          <color rgba="0 1 1 1"/>
+        </material>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh filename="package://abb_irb6600_support/meshes/irb6640/visual/base_link.stl"/>
+        </geometry>
+        <material name="orange">
+          <color rgba="1 0.43 0 1"/>
+        </material>
+      </visual>
     </link>
     <link name="${prefix}link_1">
-        <collision name="collision">
-            <geometry>
-                <mesh filename="package://abb_irb6600_support/meshes/irb6640/collision/link_1.stl"/>
-            </geometry>
-            <material name="yellow"/>
-        </collision>
-        <visual name="visual">
-            <geometry>
-                <mesh filename="package://abb_irb6600_support/meshes/irb6640/visual/link_1.stl"/>
-            </geometry>
-            <material name="orange"/>
-        </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh filename="package://abb_irb6600_support/meshes/irb6640/collision/link_1.stl"/>
+        </geometry>
+        <material name="yellow"/>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh filename="package://abb_irb6600_support/meshes/irb6640/visual/link_1.stl"/>
+        </geometry>
+        <material name="orange"/>
+      </visual>
     </link>
     <link name="${prefix}link_2">
-        <collision name="collision">
-            <geometry>
-                <mesh filename="package://abb_irb6600_support/meshes/irb6640/collision/link_2.stl"/>
-            </geometry>
-            <material name="yellow"/>
-        </collision>
-        <visual name="visual">
-            <geometry>
-                <mesh filename="package://abb_irb6600_support/meshes/irb6640/visual/link_2.stl"/>
-            </geometry>
-            <material name="orange"/>
-        </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh filename="package://abb_irb6600_support/meshes/irb6640/collision/link_2.stl"/>
+        </geometry>
+        <material name="yellow"/>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh filename="package://abb_irb6600_support/meshes/irb6640/visual/link_2.stl"/>
+        </geometry>
+        <material name="orange"/>
+      </visual>
     </link>
     <link name="${prefix}link_3">
-        <collision name="collision">
-            <geometry>
-                <mesh filename="package://abb_irb6600_support/meshes/irb6640/collision/link_3.stl"/>
-            </geometry>
-            <material name="yellow"/>
-        </collision>
-        <visual name="visual">
-            <geometry>
-                <mesh filename="package://abb_irb6600_support/meshes/irb6640/visual/link_3.stl"/>
-            </geometry>
-            <material name="orange"/>
-        </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh filename="package://abb_irb6600_support/meshes/irb6640/collision/link_3.stl"/>
+        </geometry>
+        <material name="yellow"/>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh filename="package://abb_irb6600_support/meshes/irb6640/visual/link_3.stl"/>
+        </geometry>
+        <material name="orange"/>
+      </visual>
     </link>
     <link name="${prefix}link_4">
-        <collision name="collision">
-            <geometry>
-                <mesh filename="package://abb_irb6600_support/meshes/irb6640/collision/link_4.stl"/>
-            </geometry>
-            <material name="yellow"/>
-        </collision>
-        <visual name="visual">
-            <geometry>
-                <mesh filename="package://abb_irb6600_support/meshes/irb6640/visual/link_4.stl"/>
-            </geometry>
-            <material name="orange"/>
-        </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh filename="package://abb_irb6600_support/meshes/irb6640/collision/link_4.stl"/>
+        </geometry>
+        <material name="yellow"/>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh filename="package://abb_irb6600_support/meshes/irb6640/visual/link_4.stl"/>
+        </geometry>
+        <material name="orange"/>
+      </visual>
     </link>
     <link name="${prefix}link_5">
-        <collision name="collision">
-            <geometry>
-                <mesh filename="package://abb_irb6600_support/meshes/irb6640/collision/link_5.stl"/>
-            </geometry>
-            <material name="yellow"/>
-        </collision>
-        <visual name="visual">
-            <geometry>
-                <mesh filename="package://abb_irb6600_support/meshes/irb6640/visual/link_5.stl"/>
-            </geometry>
-            <material name="orange"/>
-        </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh filename="package://abb_irb6600_support/meshes/irb6640/collision/link_5.stl"/>
+        </geometry>
+        <material name="yellow"/>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh filename="package://abb_irb6600_support/meshes/irb6640/visual/link_5.stl"/>
+        </geometry>
+        <material name="orange"/>
+      </visual>
     </link>
     <link name="${prefix}link_6">
-        <collision name="collision">
-            <geometry>
-                <mesh filename="package://abb_irb6600_support/meshes/irb6640/collision/link_6.stl"/>
-            </geometry>
-            <material name="yellow"/>
-        </collision>
-        <visual name="visual">
-            <geometry>
-                <mesh filename="package://abb_irb6600_support/meshes/irb6640/visual/link_6.stl"/>
-            </geometry>
-            <material name="orange"/>
-        </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh filename="package://abb_irb6600_support/meshes/irb6640/collision/link_6.stl"/>
+        </geometry>
+        <material name="yellow"/>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh filename="package://abb_irb6600_support/meshes/irb6640/visual/link_6.stl"/>
+        </geometry>
+        <material name="orange"/>
+      </visual>
     </link>
     <link name="${prefix}tool0"/>
-
+    
     <!--Cylinder and piston -->
     <link name="${prefix}link_cylinder">
-        <collision name="collision">
-            <geometry>
-                <mesh filename="package://abb_irb6600_support/meshes/irb6640/collision/cylinder.stl"/>
-            </geometry>
-            <material name="yellow"/>
-        </collision>
-        <visual name="visual">
-            <geometry>
-                <mesh filename="package://abb_irb6600_support/meshes/irb6640/visual/cylinder.stl"/>
-            </geometry>
-            <material name="orange"/>
-        </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh filename="package://abb_irb6600_support/meshes/irb6640/collision/cylinder.stl"/>
+        </geometry>
+        <material name="yellow"/>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh filename="package://abb_irb6600_support/meshes/irb6640/visual/cylinder.stl"/>
+        </geometry>
+        <material name="orange"/>
+      </visual>
     </link>
     <link name="${prefix}link_piston">
-        <collision name="collision">
-            <geometry>
-                <mesh filename="package://abb_irb6600_support/meshes/irb6640/collision/piston.stl"/>
-            </geometry>
-            <material name="yellow"/>
-        </collision>
-        <visual name="visual">
-            <geometry>
-                <mesh filename="package://abb_irb6600_support/meshes/irb6640/visual/piston.stl"/>
-            </geometry>
-            <material name="orange"/>
-        </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh filename="package://abb_irb6600_support/meshes/irb6640/collision/piston.stl"/>
+        </geometry>
+        <material name="yellow"/>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh filename="package://abb_irb6600_support/meshes/irb6640/visual/piston.stl"/>
+        </geometry>
+        <material name="orange"/>
+      </visual>
     </link>
     <!-- end of link list -->
-
+    
     <!-- joint list -->
     <joint type="revolute" name="${prefix}joint_1">
-        <origin xyz="0 0 0.227" rpy="0 0 0"/>
-        <axis xyz="0 0 1"/>
-        <parent link="${prefix}base_link"/>
-        <child link="${prefix}link_1"/>
-        <limit effort="0" lower="-2.967" upper="2.967" velocity="1.7453"/>
+      <origin xyz="0 0 0.227" rpy="0 0 0"/>
+      <axis xyz="0 0 1"/>
+      <parent link="${prefix}base_link"/>
+      <child link="${prefix}link_1"/>
+      <limit effort="0" lower="-2.967" upper="2.967" velocity="1.7453"/>
     </joint>
     <joint type="revolute" name="${prefix}joint_2">
-        <origin xyz="0.322 0.03 0.551" rpy="0 0 0"/>
-        <axis xyz="0 1 0"/>
-        <parent link="${prefix}link_1"/>
-        <child link="${prefix}link_2"/>
-        <limit effort="0" lower="-1.134" upper="1.4855" velocity="1.5707"/>
+      <origin xyz="0.322 0.03 0.551" rpy="0 0 0"/>
+      <axis xyz="0 1 0"/>
+      <parent link="${prefix}link_1"/>
+      <child link="${prefix}link_2"/>
+      <limit effort="0" lower="-1.134" upper="1.4855" velocity="1.5707"/>
     </joint>
     <joint type="revolute" name="${prefix}joint_3">
-        <origin xyz="0 -0.2 1.07" rpy="0 0 0"/>
-        <axis xyz="0 1 0"/>
-        <parent link="${prefix}link_2"/>
-        <child link="${prefix}link_3"/>
-        <limit effort="0" lower="-3.142" upper="1.222" velocity="1.5707"/>
+      <origin xyz="0 -0.2 1.07" rpy="0 0 0"/>
+      <axis xyz="0 1 0"/>
+      <parent link="${prefix}link_2"/>
+      <child link="${prefix}link_3"/>
+      <limit effort="0" lower="-3.142" upper="1.222" velocity="1.5707"/>
     </joint>
     <joint type="revolute" name="${prefix}joint_4">
-        <origin xyz="-0.275 0.181 0.2" rpy="0 0 0"/>
-        <axis xyz="1 0 0"/>
-        <parent link="${prefix}link_3"/>
-        <child link="${prefix}link_4"/>
-        <limit effort="0" lower="-5.236" upper="5.236" velocity="2.9671"/>
+      <origin xyz="-0.275 0.181 0.2" rpy="0 0 0"/>
+      <axis xyz="1 0 0"/>
+      <parent link="${prefix}link_3"/>
+      <child link="${prefix}link_4"/>
+      <limit effort="0" lower="-5.236" upper="5.236" velocity="2.9671"/>
     </joint>
     <joint type="revolute" name="${prefix}joint_5">
-        <origin xyz="1.67 0 0 " rpy="0 0 0"/>
-        <axis xyz="0 1 0"/>
-        <parent link="${prefix}link_4"/>
-        <child link="${prefix}link_5"/>
-        <limit effort="0" lower="-2.094" upper="2.094" velocity="2.4435"/>
+      <origin xyz="1.67 0 0 " rpy="0 0 0"/>
+      <axis xyz="0 1 0"/>
+      <parent link="${prefix}link_4"/>
+      <child link="${prefix}link_5"/>
+      <limit effort="0" lower="-2.094" upper="2.094" velocity="2.4435"/>
     </joint>
     <joint type="revolute" name="${prefix}joint_6">
-        <origin xyz="0.153 0 0 " rpy="0 0 0"/>
-        <axis xyz="1 0 0"/>
-        <parent link="${prefix}link_5"/>
-        <child link="${prefix}link_6"/>
-        <limit effort="0" lower="-6.283" upper="6.283" velocity="3.3161"/>
+      <origin xyz="0.153 0 0 " rpy="0 0 0"/>
+      <axis xyz="1 0 0"/>
+      <parent link="${prefix}link_5"/>
+      <child link="${prefix}link_6"/>
+      <limit effort="0" lower="-6.283" upper="6.283" velocity="3.3161"/>
     </joint>
     <joint type="fixed" name="${prefix}joint_6-tool0">
-        <parent link="${prefix}link_6"/>
-        <child link="${prefix}tool0"/>
-        <origin xyz=".055 0 0" rpy="0 1.57079632679 0"/>
+      <parent link="${prefix}link_6"/>
+      <child link="${prefix}tool0"/>
+      <origin xyz=".055 0 0" rpy="0 1.57079632679 0"/>
     </joint>
     <joint type="fixed" name="${prefix}joint_cylinder">
-        <origin xyz="-0.365 -0.1895 0.405" rpy="0 -0.170 0"/>
-        <axis xyz="0 1 0"/>
-        <parent link="${prefix}link_1"/>
-        <child link="${prefix}link_cylinder"/>
-        <limit effort="0" lower="-2.96705973" upper="2.96705973" velocity="0"/>
+      <origin xyz="-0.365 -0.1895 0.405" rpy="0 -0.170 0"/>
+      <axis xyz="0 1 0"/>
+      <parent link="${prefix}link_1"/>
+      <child link="${prefix}link_cylinder"/>
+      <limit effort="0" lower="-2.96705973" upper="2.96705973" velocity="0"/>
     </joint>
     <joint type="fixed" name="${prefix}joint_piston">
-        <origin xyz="0.475 0 0" rpy="0 0 0"/>
-        <axis xyz="1 0 0"/>
-        <parent link="${prefix}link_cylinder"/>
-        <child link="${prefix}link_piston"/>
-        <limit effort="0" lower="0" upper="0.6" velocity="0"/>
+      <origin xyz="0.475 0 0" rpy="0 0 0"/>
+      <axis xyz="1 0 0"/>
+      <parent link="${prefix}link_cylinder"/>
+      <child link="${prefix}link_piston"/>
+      <limit effort="0" lower="0" upper="0.6" velocity="0"/>
     </joint>
     <!-- end of joint list -->
-
+    
     <!-- ROS base_link to ABB World Coordinates transform -->
     <link name="${prefix}base" />
     <joint name="${prefix}base_link-base" type="fixed">
-        <origin xyz="0 0 0" rpy="0 0 0"/>
-        <parent link="${prefix}base_link"/>
-        <child link="${prefix}base"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="${prefix}base_link"/>
+      <child link="${prefix}base"/>
     </joint>
-</xacro:macro>
+  </xacro:macro>
 </robot>

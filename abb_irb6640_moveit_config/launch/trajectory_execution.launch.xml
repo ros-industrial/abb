@@ -12,7 +12,7 @@
   <param name="trajectory_execution/allowed_goal_duration_margin" value="0.5"/> <!-- default 0.5 -->
   
   <!-- Load the robot specific controller manager; this sets the moveit_controller_manager ROS parameter -->
-  <arg name="moveit_controller_manager" default="abb_irb6640" />
+  <arg name="moveit_controller_manager" default="abb_irb6640_185_280" />
   <include file="$(find abb_irb6640_moveit_config)/launch/$(arg moveit_controller_manager)_moveit_controller_manager.launch.xml" />
   
 </launch>

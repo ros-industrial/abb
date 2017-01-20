@@ -1,8 +1,8 @@
 moveit_setup_assistant_config:
   URDF:
-    package: abb_irb6600_support
-    relative_path: urdf/irb6640.urdf
+    package: abb_irb6640_support
+    relative_path: urdf/irb6640_185_280.urdf
   SRDF:
-    relative_path: config/abb_irb6640.srdf
+    relative_path: config/abb_irb6640_185_280.srdf
   CONFIG:
-    generated_timestamp: 1402076423
+    generated_timestamp: 1441684989

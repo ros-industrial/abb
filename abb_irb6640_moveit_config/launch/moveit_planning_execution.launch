@@ -1,14 +1,14 @@
 <launch>
   <!-- The planning and execution components of MoveIt! configured to run -->
   <!-- using the ROS-Industrial interface. -->
- 
+
   <!-- Non-standard joint names:
        - Create a file [robot_moveit_config]/config/joint_names.yaml
-           controller_joint_names: [joint_1, joint_2, ... joint_N] 
+           controller_joint_names: [joint_1, joint_2, ... joint_N]
        - Update with joint names for your robot (in order expected by rbt controller)
        - and uncomment the following line: -->
-  <rosparam command="load" file="$(find abb_irb6600_support)/config/joint_names_irb6640.yaml" />
- 
+  <rosparam command="load" file="$(find abb_irb6640_support)/config/joint_names_irb6640.yaml" />
+
   <!-- the "sim" argument controls whether we connect to a Simulated or Real robot -->
   <!--  - if sim=false, a robot_ip argument is required -->
   <arg name="sim" default="true" />
@@ -33,7 +33,7 @@
   <!--   - this typically includes: robot_state, motion_interface, and joint_trajectory_action nodes -->
   <!--   - replace these calls with appropriate robot-specific calls or launch files -->
   <group unless="$(arg sim)">
-    <include file="$(find abb_irb6600_support)/launch/robot_interface_download_irb6640.launch" >
+    <include file="$(find abb_irb6640_support)/launch/robot_interface_download_irb6640.launch" >
       <arg name="robot_ip" value="$(arg robot_ip)"/>
     </include>
   </group>

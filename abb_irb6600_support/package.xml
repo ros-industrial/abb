@@ -22,8 +22,8 @@
       robot model and configuration you intend to use them with.
     </p>
   </description>
-  <author email="ds____on@swri.org">Dan Solomon (Southwest Research Institute)</author>
-  <maintainer email="sedwards@swri.org">Shaun Edwards (Southwest Research Institute)</maintainer>
+  <author>Dan Solomon (Southwest Research Institute)</author>
+  <maintainer email="levi.armstrong@swri.org">Levi Armstrong (Southwest Research Institute)</maintainer>
   <license>Apache2</license>
 
   <url type="website">http://ros.org/wiki/abb_irb6600_support</url>
@@ -38,4 +38,11 @@
   <run_depend>joint_state_publisher</run_depend>
   <run_depend>robot_state_publisher</run_depend>
   <run_depend>rviz</run_depend>
+
+  <export>
+    <deprecated>
+      All files related to the irb6640 will be removed in Jade, please use the
+      abb_irb6640_support package going forward.
+    </deprecated>
+  </export>
 </package>
