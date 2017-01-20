@@ -1,120 +1,118 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
+<xacro:include filename="$(find abb_resources)/urdf/common_materials.xacro"/>
+
 <xacro:macro name="abb_irb2400" params="prefix">
     <!-- link list -->
     <link name="${prefix}base_link">
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/base_link.stl"/>
+                <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/base_link.dae"/>
             </geometry>
-            <material name="abb_orange">
-                <color rgba="1 0.43 0 1"/>
-            </material>
+            <xacro:material_abb_orange />
         </visual>
         <collision>
             <geometry>
                 <mesh filename="package://abb_irb2400_support/meshes/irb2400/collision/base_link.stl"/>
             </geometry>
-            <material name="yellow">
-                <color rgba="0 1 1 1"/>
-            </material>
+            <xacro:material_abb_yellow />
         </collision>
     </link>
     <link name="${prefix}link_1">
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_1.stl"/>
+                <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_1.dae"/>
             </geometry>
-            <material name="abb_orange"/>
+            <xacro:material_abb_orange />
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
                 <mesh filename="package://abb_irb2400_support/meshes/irb2400/collision/link_1.stl"/>
             </geometry>
-            <material name="yellow"/>
+            <xacro:material_abb_yellow />
         </collision>
     </link>
     <link name="${prefix}link_2">
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_2.stl"/>
+                <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_2.dae"/>
             </geometry>
-            <material name="abb_orange"/>
+            <xacro:material_abb_orange />
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
                 <mesh filename="package://abb_irb2400_support/meshes/irb2400/collision/link_2_whole.stl"/>
             </geometry>
-            <material name="yellow"/>
+            <xacro:material_abb_yellow />
         </collision>
     </link>
     <link name="${prefix}link_3">
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_3.stl"/>
+                <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_3.dae"/>
             </geometry>
-            <material name="abb_orange"/>
+            <xacro:material_abb_orange />
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
                 <mesh filename="package://abb_irb2400_support/meshes/irb2400/collision/link_3.stl"/>
             </geometry>
-            <material name="yellow"/>
+            <xacro:material_abb_yellow />
         </collision>
     </link>
     <link name="${prefix}link_4">
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_4.stl"/>
+                <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_4.dae"/>
             </geometry>
-            <material name="abb_orange"/>
+            <xacro:material_abb_orange />
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
                 <mesh filename="package://abb_irb2400_support/meshes/irb2400/collision/link_4.stl"/>
             </geometry>
-            <material name="yellow"/>
+            <xacro:material_abb_yellow />
         </collision>
     </link>
     <link name="${prefix}link_5">
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_5.stl"/>
+                <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_5.dae"/>
             </geometry>
-            <material name="abb_orange"/>
+            <xacro:material_abb_orange />
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
                 <mesh filename="package://abb_irb2400_support/meshes/irb2400/collision/link_5.stl"/>
             </geometry>
-            <material name="yellow"/>
+            <xacro:material_abb_yellow />
         </collision>
     </link>
     <link name="${prefix}link_6">
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_6.stl"/>
+                <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_6.dae"/>
             </geometry>
-            <material name="abb_orange"/>
+            <xacro:material_abb_black />
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
                 <mesh filename="package://abb_irb2400_support/meshes/irb2400/collision/link_6.stl"/>
             </geometry>
-            <material name="yellow"/>
+            <xacro:material_abb_yellow />
         </collision>
     </link>
     <link name="${prefix}tool0"/>

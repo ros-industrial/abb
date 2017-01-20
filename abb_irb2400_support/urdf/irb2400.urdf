@@ -4,22 +4,42 @@
 <!-- |    EDITING THIS FILE BY HAND IS NOT RECOMMENDED                                 | -->
 <!-- =================================================================================== -->
 <robot name="abb_irb2400" xmlns:xacro="http://ros.org/wiki/xacro">
+  <!-- Conversion were obtained from http://www.e-paint.co.uk/Lab_values.asp
+       unless otherwise stated. -->
+  <!-- Actual colors -->
+  <!-- NCS 2070-Y60R orange, standard robot color 1974 - May 2014 -->
+  <!-- RAL 7035 light grey (abb graphite white), standard robot color May 2014 - current -->
+  <!-- RAL 9003 signal white (abb white), cleanroom robot color -->
+  <!-- RAL 7032 pebble gray, controller -->
+  <!-- RAL 7012 basalt gray (abb dark gray) , robot primer -->
+  <!-- RAL 7021 black gray (abb black) , robot with dark link color -->
+  <!-- Other robot colours availble, but not limited too. -->
+  <!-- RAL 3001 signal red -->
+  <!-- RAL 3002 carmine red -->
+  <!-- RAL 5002 ultramarine blue -->
+  <!-- RAL 5015 sky blue -->
+  <!-- RAL 6002 leaf green -->
+  <!-- RAL 9002 gray white -->
+  <!-- RAL 9010 pure white -->
+  <!-- approximations -->
+  <!-- yellow, collision model -->
+  <!-- link list -->
   <link name="base_link">
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/base_link.stl"/>
+        <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/base_link.dae"/>
       </geometry>
-      <material name="abb_orange">
-        <color rgba="1 0.43 0 1"/>
+      <material name="">
+        <color rgba="0.7372549 0.3490196 0.1607843 1"/>
       </material>
     </visual>
     <collision>
       <geometry>
         <mesh filename="package://abb_irb2400_support/meshes/irb2400/collision/base_link.stl"/>
       </geometry>
-      <material name="yellow">
-        <color rgba="0 1 1 1"/>
+      <material name="">
+        <color rgba="1 1 0 1"/>
       </material>
     </collision>
   </link>
@@ -27,99 +47,125 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_1.stl"/>
+        <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_1.dae"/>
       </geometry>
-      <material name="abb_orange"/>
+      <material name="">
+        <color rgba="0.7372549 0.3490196 0.1607843 1"/>
+      </material>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
         <mesh filename="package://abb_irb2400_support/meshes/irb2400/collision/link_1.stl"/>
       </geometry>
-      <material name="yellow"/>
+      <material name="">
+        <color rgba="1 1 0 1"/>
+      </material>
     </collision>
   </link>
   <link name="link_2">
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_2.stl"/>
+        <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_2.dae"/>
       </geometry>
-      <material name="abb_orange"/>
+      <material name="">
+        <color rgba="0.7372549 0.3490196 0.1607843 1"/>
+      </material>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
         <mesh filename="package://abb_irb2400_support/meshes/irb2400/collision/link_2_whole.stl"/>
       </geometry>
-      <material name="yellow"/>
+      <material name="">
+        <color rgba="1 1 0 1"/>
+      </material>
     </collision>
   </link>
   <link name="link_3">
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_3.stl"/>
+        <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_3.dae"/>
       </geometry>
-      <material name="abb_orange"/>
+      <material name="">
+        <color rgba="0.7372549 0.3490196 0.1607843 1"/>
+      </material>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
         <mesh filename="package://abb_irb2400_support/meshes/irb2400/collision/link_3.stl"/>
       </geometry>
-      <material name="yellow"/>
+      <material name="">
+        <color rgba="1 1 0 1"/>
+      </material>
     </collision>
   </link>
   <link name="link_4">
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_4.stl"/>
+        <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_4.dae"/>
       </geometry>
-      <material name="abb_orange"/>
+      <material name="">
+        <color rgba="0.7372549 0.3490196 0.1607843 1"/>
+      </material>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
         <mesh filename="package://abb_irb2400_support/meshes/irb2400/collision/link_4.stl"/>
       </geometry>
-      <material name="yellow"/>
+      <material name="">
+        <color rgba="1 1 0 1"/>
+      </material>
     </collision>
   </link>
   <link name="link_5">
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_5.stl"/>
+        <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_5.dae"/>
       </geometry>
-      <material name="abb_orange"/>
+      <material name="">
+        <color rgba="0.7372549 0.3490196 0.1607843 1"/>
+      </material>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
         <mesh filename="package://abb_irb2400_support/meshes/irb2400/collision/link_5.stl"/>
       </geometry>
-      <material name="yellow"/>
+      <material name="">
+        <color rgba="1 1 0 1"/>
+      </material>
     </collision>
   </link>
   <link name="link_6">
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_6.stl"/>
+        <mesh filename="package://abb_irb2400_support/meshes/irb2400/visual/link_6.dae"/>
       </geometry>
-      <material name="abb_orange"/>
+      <material name="">
+        <color rgba="0.1882353 0.1960784 0.2039216 1"/>
+      </material>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
         <mesh filename="package://abb_irb2400_support/meshes/irb2400/collision/link_6.stl"/>
       </geometry>
-      <material name="yellow"/>
+      <material name="">
+        <color rgba="1 1 0 1"/>
+      </material>
     </collision>
   </link>
   <link name="tool0"/>
+  <!-- end of link list -->
+  <!-- joint list -->
   <joint name="joint_1" type="revolute">
     <origin rpy="0 0 0" xyz="0 0 0"/>
     <parent link="base_link"/>
@@ -167,6 +213,8 @@
     <child link="tool0"/>
     <origin rpy="0 1.57079632679 0" xyz="0 0 0"/>
   </joint>
+  <!-- end of joint list -->
+  <!-- ROS base_link to ABB World Coordinates transform -->
   <link name="base"/>
   <joint name="base_link-base" type="fixed">
     <origin rpy="0 0 0" xyz="0 0 0"/>
