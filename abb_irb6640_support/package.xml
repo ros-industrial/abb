@@ -1,4 +1,5 @@
-<package>
+<?xml version="1.0"?>
+<package format="2">
   <name>abb_irb6640_support</name>
   <version>1.2.1</version>
   <description>
@@ -36,11 +37,11 @@
 
   <build_depend version_gte="1.9.55">roslaunch</build_depend>
 
-  <run_depend>abb_driver</run_depend>
-  <run_depend>joint_state_publisher</run_depend>
-  <run_depend>robot_state_publisher</run_depend>
-  <run_depend>rviz</run_depend>
-  <run_depend>xacro</run_depend>
+  <exec_depend>abb_driver</exec_depend>
+  <exec_depend>joint_state_publisher</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>rviz</exec_depend>
+  <exec_depend>xacro</exec_depend>
 
   <export>
     <architecture_independent/>

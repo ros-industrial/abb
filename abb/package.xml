@@ -1,4 +1,5 @@
-<package>
+<?xml version="1.0"?>
+<package format="2">
   <name>abb</name>
   <version>1.2.1</version>
   <description>ROS-Industrial support for ABB manipulators (metapackage).</description>
@@ -11,15 +12,16 @@
   <author email="shaun.edwards@gmail.com">Shaun Edwards</author>
 
   <buildtool_depend>catkin</buildtool_depend>
-  <run_depend>abb_driver</run_depend>
-  <run_depend>abb_irb2400_moveit_config</run_depend>
-  <run_depend>abb_irb2400_moveit_plugins</run_depend>
-  <run_depend>abb_irb2400_support</run_depend>
-  <run_depend>abb_irb5400_support</run_depend>
-  <run_depend>abb_irb6600_support</run_depend>
-  <run_depend>abb_irb6640_support</run_depend>
-  <run_depend>abb_irb6640_moveit_config</run_depend>
-  <run_depend>abb_resources</run_depend>
+
+  <exec_depend>abb_driver</exec_depend>
+  <exec_depend>abb_irb2400_moveit_config</exec_depend>
+  <exec_depend>abb_irb2400_moveit_plugins</exec_depend>
+  <exec_depend>abb_irb2400_support</exec_depend>
+  <exec_depend>abb_irb5400_support</exec_depend>
+  <exec_depend>abb_irb6600_support</exec_depend>
+  <exec_depend>abb_irb6640_support</exec_depend>
+  <exec_depend>abb_irb6640_moveit_config</exec_depend>
+  <exec_depend>abb_resources</exec_depend>
 
 
   <export>
