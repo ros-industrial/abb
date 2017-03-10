@@ -19,3 +19,6 @@ Older releases may be found in the old ROS-Industrial [subversion repository][].
 [ROS wiki]: http://ros.org/wiki/abb
 [abb_experimental]: https://github.com/ros-industrial/abb_experimental
 [subversion repository]: https://code.google.com/p/swri-ros-pkg/source/browse
+
+## Naming Convention
+Please refer to [REP-I0007](https://github.com/ros-industrial/rep/blob/master/rep-I0007.rst)
