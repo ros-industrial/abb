@@ -15,8 +15,13 @@ branches may be unstable. Releases are made from the distribution branches
 
 Older releases may be found in the old ROS-Industrial [subversion repository][].
 
+
 ## Naming Convention
-Please refer to [REP-I0007][]
+
+All robot support packages and MoveIt configurations follow the naming conventions as described in [REP-I0007][].
+
+
+
 
 [ROS-Industrial]: http://www.ros.org/wiki/Industrial
 [ROS wiki]: http://ros.org/wiki/abb
