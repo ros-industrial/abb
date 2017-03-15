@@ -17,7 +17,9 @@
   <run_depend>abb_irb2400_support</run_depend>
   <run_depend>abb_irb5400_support</run_depend>
   <run_depend>abb_irb6600_support</run_depend>
+  <run_depend>abb_irb6640_support</run_depend>
   <run_depend>abb_irb6640_moveit_config</run_depend>
+  <run_depend>abb_resources</run_depend>
 
 
   <export>

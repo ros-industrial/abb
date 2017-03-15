@@ -21,6 +21,10 @@
       in this package, be sure to check they are correct for the particular
       robot model and configuration you intend to use them with.
     </p>
+    <p>
+      The unqualified IRB 2400 model will be removed in ROS-Lunar, please
+      use the IRB 2400-12/1.55 as a replacement.
+    </p>
   </description>
   <author email="ds____on@swri.org">Dan Solomon (Southwest Research Institute)</author>
   <maintainer email="sedwards@swri.org">Shaun Edwards (Southwest Research Institute)</maintainer>
@@ -35,6 +39,7 @@
   <build_depend>roslaunch</build_depend>
 
   <run_depend>abb_driver</run_depend>
+  <run_depend>abb_resources</run_depend>
   <run_depend>joint_state_publisher</run_depend>
   <run_depend>robot_state_publisher</run_depend>
   <run_depend>rviz</run_depend>

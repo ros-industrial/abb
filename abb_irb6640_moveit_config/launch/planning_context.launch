@@ -6,10 +6,10 @@
   <arg name="robot_description" default="robot_description"/>
 
   <!-- Load universal robot description format (URDF) -->
-  <param if="$(arg load_robot_description)" name="$(arg robot_description)" textfile="$(find abb_irb6600_support)/urdf/irb6640.urdf"/>
+  <param if="$(arg load_robot_description)" name="$(arg robot_description)" textfile="$(find abb_irb6640_support)/urdf/irb6640_185_280.urdf"/>
 
   <!-- The semantic description that corresponds to the URDF -->
-  <param name="$(arg robot_description)_semantic" textfile="$(find abb_irb6640_moveit_config)/config/abb_irb6640.srdf" />
+  <param name="$(arg robot_description)_semantic" textfile="$(find abb_irb6640_moveit_config)/config/abb_irb6640_185_280.srdf" />
   
   <!-- Load updated joint limits (override information from URDF) -->
   <group ns="$(arg robot_description)_planning">

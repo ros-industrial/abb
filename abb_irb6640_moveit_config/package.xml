@@ -32,7 +32,7 @@
   <run_depend>xacro</run_depend>
 
   <run_depend>industrial_robot_simulator</run_depend>
-  <run_depend>abb_irb6600_support</run_depend>
+  <run_depend>abb_irb6640_support</run_depend>
 
   <export>
     <architecture_independent />
