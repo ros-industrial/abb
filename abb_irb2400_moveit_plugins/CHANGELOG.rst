@@ -2,6 +2,10 @@
 Changelog for package abb_irb2400_moveit_plugins
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.2.1 (2017-03-27)
+------------------
+* No changes
+
 1.2.0 (2015-06-06)
 ------------------
 * Regenerated the ikfast moveit plugin for the irb2400 using an 
