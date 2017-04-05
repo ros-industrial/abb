@@ -1,0 +1,8 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: abb_irb4400_support
+    relative_path: urdf/irb4400.xacro
+  SRDF:
+    relative_path: config/abb_irb4400.srdf
+  CONFIG:
+    generated_timestamp: 1414574122
