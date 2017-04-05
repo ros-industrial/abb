@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='ASCII'?>
 <package>
   <name>abb_irb2400_moveit_plugins</name>
-  <version>1.2.0</version>
+  <version>1.2.1</version>
   <description>
     <p>
       MoveIt plugins for the ABB 2400 (and variants).

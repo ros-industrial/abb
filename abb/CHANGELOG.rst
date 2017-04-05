@@ -2,6 +2,10 @@
 Changelog for package abb
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.2.1 (2017-03-27)
+------------------
+* No changes
+
 1.2.0 (2015-06-06)
 ------------------
 * Remove deprecated package abb_moveit_plugins
