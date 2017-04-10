@@ -1,5 +1,6 @@
 # Temp files
 *~
+*.autosave
 
 # Compiled Object files
 *.slo
@@ -30,3 +31,4 @@ CATKIN_IGNORE*
 
 # ROS MoveIt
 default_warehouse_mongo_db/
+
