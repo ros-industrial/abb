@@ -1,0 +1,26 @@
+<!--
+  Manipulator specific version of the state visualizer.
+
+  Defaults provided for IRB 1200 5/0.90:
+   - J23_coupled = false
+
+  Usage:
+    robot_state_visualize_irb1200_5_90.launch robot_ip:=<value>
+-->
+<launch>
+  <arg name="robot_ip" />
+  <arg name="J23_coupled" default="false" />
+  
+  <rosparam command="load" file="$(find abb_irb1200_support)/config/joint_names_irb1200_5_90.yaml" />
+  
+  <include file="$(find abb_driver)/launch/robot_interface.launch">
+    <arg name="robot_ip"    value="$(arg robot_ip)" />
+    <arg name="J23_coupled" value="$(arg J23_coupled)" />
+  </include>
+  
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+  
+  <include file="$(find abb_irb1200_support)/launch/load_irb1200_5_90.launch" />
+  
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find industrial_robot_client)/config/robot_state_visualize.rviz" required="true" />
+</launch>
