@@ -1,0 +1,27 @@
+<package>
+  <name>abb_irb1200_support</name>
+  <version>1.0.0</version>
+  <description>
+    <p>
+      This is support for the abb_irb1200 using the abb_driver found 
+      "https://github.com/ros-industrial/abb"
+      It is based upon other versions of ABB irb robotic arms
+      Values used for building the models included are based upon 
+      datasheets provided by ABB. User should beware and double check model and values match.
+
+      NOTE: THIS VERSION IS BASED ON THE ABB IRB 1200-7/0.7 VERSION!
+    </p>
+  </description>
+  <author email="odek@vt.edu">Oliver Ebeling-Koning (Virginia Tech)</author>
+  <maintainer email="odek@vt.edu">Oliver Ebeling-Koning (Virginia Tech)</maintainer>
+  <license>Apache2</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>roslaunch</build_depend>
+
+  <run_depend>abb_driver</run_depend>
+  <run_depend>joint_state_publisher</run_depend>
+  <run_depend>robot_state_publisher</run_depend>
+  <run_depend>rviz</run_depend>
+</package>
