@@ -4,6 +4,8 @@ add_definitions(-std=c++11)
 
 add_definitions(-std=c++11)
 
+add_definitions(-std=c++11)
+
 find_package(catkin REQUIRED COMPONENTS
   moveit_core
   pluginlib
