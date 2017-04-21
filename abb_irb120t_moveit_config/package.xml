@@ -1,4 +1,5 @@
-<package>
+<?xml version="1.0"?>
+<package format="2">
   <name>abb_irb120t_moveit_config</name>
   <version>0.2.0</version>
   <description>
@@ -22,17 +23,15 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <run_depend>moveit_simple_controller_manager</run_depend>
-  <run_depend>moveit_planners_ompl</run_depend>
-  <run_depend>moveit_ros_visualization</run_depend>
-  <run_depend>joint_state_publisher</run_depend>
-  <run_depend>robot_state_publisher</run_depend>
-  <run_depend>moveit_ros_move_group</run_depend>
-
-  <run_depend>xacro</run_depend>
-
-  <run_depend>industrial_robot_simulator</run_depend>
-  <run_depend>abb_irb120_support</run_depend>
+  <exec_depend>moveit_simple_controller_manager</exec_depend>
+  <exec_depend>moveit_planners_ompl</exec_depend>
+  <exec_depend>moveit_ros_visualization</exec_depend>
+  <exec_depend>joint_state_publisher</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>moveit_ros_move_group</exec_depend>
+  <exec_depend>xacro</exec_depend>
+  <exec_depend>industrial_robot_simulator</exec_depend>
+  <exec_depend>abb_irb120_support</exec_depend>
 
   <export>
     <architecture_independent />

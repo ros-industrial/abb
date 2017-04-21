@@ -14,11 +14,3 @@ Current version supports ROS Indigo, but can be modified for ROS Hydro as noted 
 
 2. Launch moveit! and ensure that it is configured to run alongside Gazebo:
 ```roslaunch abb_irb120_moveit_config moveit_planning_execution_gazebo.launch``` 
-
-
-
-**Notes:**
-
-1. If running with ROS Hydro, transmission elements will need to be modified as discussed in [ros-industrial/universal_robot#179][].
-
-[ros-industrial/universal_robot#179]: https://github.com/ros-industrial/universal_robot/pull/179

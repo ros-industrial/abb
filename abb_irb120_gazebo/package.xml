@@ -1,4 +1,5 @@
-<package>
+<?xml version="1.0"?>
+<package format="2">
   <name>abb_irb120_gazebo</name>
   <version>0.0.1</version>
   <description>
@@ -27,14 +28,15 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <run_depend>abb_irb120_support</run_depend>
-  <run_depend>gazebo</run_depend>
-  <run_depend>gazebo_ros</run_depend>
-  <run_depend>gazebo_ros_control</run_depend>
-  <run_depend>gazebo_ros_pkgs</run_depend>
-  <run_depend>joint_state_controller</run_depend>
-  <run_depend>position_controllers</run_depend>
-  <run_depend>joint_trajectory_controller</run_depend>
-  <run_depend>robot_state_publisher</run_depend>
-  <run_depend>ros_controllers</run_depend>
+  <exec_depend>abb_irb120_support</exec_depend>
+  <exec_depend>gazebo</exec_depend>
+  <exec_depend>gazebo_ros</exec_depend>
+  <exec_depend>gazebo_ros_control</exec_depend>
+  <exec_depend>gazebo_ros_pkgs</exec_depend>
+  <exec_depend>joint_state_controller</exec_depend>
+  <exec_depend>position_controllers</exec_depend>
+  <exec_depend>joint_trajectory_controller</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>ros_controllers</exec_depend>
+
 </package>
