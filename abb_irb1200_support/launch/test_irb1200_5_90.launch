@@ -1,3 +1,4 @@
+<?xml version="1.0" ?>
 <launch>
   <include file="$(find abb_irb1200_support)/launch/load_irb1200_5_90.launch"/>
   <param name="use_gui" value="true" />
