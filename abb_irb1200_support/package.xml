@@ -1,3 +1,4 @@
+<?xml version="1.0" ?>
 <package>
   <name>abb_irb1200_support</name>
   <version>1.2.0</version>
@@ -24,17 +25,17 @@
       robot model and configuration you intend to use them with.
     </p>
   </description>
-  <author>(Southwest Research Institute)</author>
+  <author>Geoffrey Chiou (Southwest Research Institute)</author>
   <maintainer email="levi.armstrong@swri.org">Levi Armstrong (Southwest Research Institute)</maintainer>
   <license>Apache2</license>
 
-  <url type="website">http://wiki.ros.org/abb_irb6640_support</url>
-  <url type="bugtracker">https://github.com/ros-industrial/abb/issues</url>
-  <url type="repository">https://github.com/ros-industrial/abb</url>
+  <url type="website">http://wiki.ros.org/abb_irb1200_support</url>
+  <url type="bugtracker">https://github.com/ros-industrial/abb_experimental/issues</url>
+  <url type="repository">https://github.com/ros-industrial/abb_experimental</url>
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <build_depend version_gte="1.9.55">roslaunch</build_depend>
+  <build_depend>roslaunch</build_depend>
 
   <run_depend>abb_driver</run_depend>
   <run_depend>joint_state_publisher</run_depend>
