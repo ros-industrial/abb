@@ -1,8 +1,10 @@
 moveit_setup_assistant_config:
   URDF:
     package: abb_irb120_support
-    relative_path: urdf/irb120t.urdf
+    relative_path: urdf/irb120t_3_58.urdf
   SRDF:
-    relative_path: config/abb_irb120t.srdf
+    relative_path: config/abb_irb120t_3_58.srdf
   CONFIG:
-    generated_timestamp: 1423754556
+    author_name: Mark Culleton (Trinity College Dublin)
+    author_email: culletom@tcd.ie
+    generated_timestamp: 1493595711

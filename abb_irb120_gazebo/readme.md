@@ -10,7 +10,7 @@ Current version supports ROS Indigo, but can be modified for ROS Hydro as noted 
 ## Using Moveit! with Gazebo Simulator
 
 1. Bring the robot model into gazebo and load the ros_control controllers:
-   ```roslaunch abb_irb120_gazebo irb120_gazebo.launch``` 
+   ```roslaunch abb_irb120_gazebo irb120_3_58_gazebo.launch``` 
 
 2. Launch moveit! and ensure that it is configured to run alongside Gazebo:
 ```roslaunch abb_irb120_moveit_config moveit_planning_execution_gazebo.launch``` 

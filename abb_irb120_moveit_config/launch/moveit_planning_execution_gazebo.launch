@@ -17,7 +17,7 @@
        roslaunch abb_irb120_gazebo irb120_gazebo.launch
 
   -->
-  <rosparam command="load" file="$(find abb_irb120_support)/config/joint_names_irb120.yaml" />
+  <rosparam command="load" file="$(find abb_irb120_support)/config/joint_names_irb120_3_58.yaml" />
 
   <!-- By default, we do not start a database (it can be large) -->
   <arg name="db" default="false" />
