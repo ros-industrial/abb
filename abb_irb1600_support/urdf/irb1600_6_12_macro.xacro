@@ -6,7 +6,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://abb_irb1600_support/meshes/irb1600_6_12/visual/base_link.stl"/>
+        <mesh filename="package://abb_irb1600_support/meshes/irb1600/visual/base_link.stl"/>
       </geometry>
       <material name="abb_orange">
         <color rgba="1 0.43 0 1"/>
@@ -14,7 +14,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://abb_irb1600_support/meshes/irb1600_6_12/collision/base_link.stl"/>
+        <mesh filename="package://abb_irb1600_support/meshes/irb1600/collision/base_link.stl"/>
       </geometry>
       <material name="yellow">
         <color rgba="0 1 1 1"/>
@@ -25,14 +25,14 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://abb_irb1600_support/meshes/irb1600_6_12/visual/link_1.stl"/>
+        <mesh filename="package://abb_irb1600_support/meshes/irb1600/visual/link_1.stl"/>
       </geometry>
       <material name="abb_orange"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://abb_irb1600_support/meshes/irb1600_6_12/collision/link_1.stl"/>
+        <mesh filename="package://abb_irb1600_support/meshes/irb1600/collision/link_1.stl"/>
       </geometry>
       <material name="yellow"/>
     </collision>
@@ -57,14 +57,14 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://abb_irb1600_support/meshes/irb1600_6_12/visual/link_3.stl"/>
+        <mesh filename="package://abb_irb1600_support/meshes/irb1600/visual/link_3.stl"/>
       </geometry>
       <material name="abb_orange"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://abb_irb1600_support/meshes/irb1600_6_12/collision/link_3.stl"/>
+        <mesh filename="package://abb_irb1600_support/meshes/irb1600/collision/link_3.stl"/>
       </geometry>
       <material name="yellow"/>
     </collision>
@@ -73,14 +73,14 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://abb_irb1600_support/meshes/irb1600_6_12/visual/link_4.stl"/>
+        <mesh filename="package://abb_irb1600_support/meshes/irb1600/visual/link_4.stl"/>
       </geometry>
       <material name="abb_orange"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://abb_irb1600_support/meshes/irb1600_6_12/collision/link_4.stl"/>
+        <mesh filename="package://abb_irb1600_support/meshes/irb1600/collision/link_4.stl"/>
       </geometry>
       <material name="yellow"/>
     </collision>
@@ -89,14 +89,14 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://abb_irb1600_support/meshes/irb1600_6_12/visual/link_5.stl"/>
+        <mesh filename="package://abb_irb1600_support/meshes/irb1600/visual/link_5.stl"/>
       </geometry>
       <material name="abb_orange"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://abb_irb1600_support/meshes/irb1600_6_12/collision/link_5.stl"/>
+        <mesh filename="package://abb_irb1600_support/meshes/irb1600/collision/link_5.stl"/>
       </geometry>
       <material name="yellow"/>
     </collision>
@@ -105,14 +105,14 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://abb_irb1600_support/meshes/irb1600_6_12/visual/link_6.stl"/>
+        <mesh filename="package://abb_irb1600_support/meshes/irb1600/visual/link_6.stl"/>
       </geometry>
       <material name="abb_orange"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://abb_irb1600_support/meshes/irb1600_6_12/collision/link_6.stl"/>
+        <mesh filename="package://abb_irb1600_support/meshes/irb1600/collision/link_6.stl"/>
       </geometry>
       <material name="yellow"/>
     </collision>
