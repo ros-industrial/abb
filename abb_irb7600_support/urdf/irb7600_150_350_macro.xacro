@@ -1,0 +1,207 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find abb_resources)/urdf/common_materials.xacro"/>
+
+  <xacro:macro name="abb_irb7600_150_350" params="prefix">
+    <!-- link list -->
+    <link name="${prefix}base_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://abb_irb7600_support/meshes/irb7600/visual/base_link.stl"/>
+        </geometry>
+        <xacro:material_abb_orange />
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://abb_irb7600_support/meshes/irb7600/collision/base_link.stl"/>
+        </geometry>
+        <xacro:material_abb_orange />
+      </collision>
+    </link>
+    <link name="${prefix}link_1">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://abb_irb7600_support/meshes/irb7600/visual/link_1.stl"/>
+        </geometry>
+        <xacro:material_abb_orange />
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://abb_irb7600_support/meshes/irb7600/collision/link_1.stl"/>
+        </geometry>
+        <xacro:material_abb_yellow />
+      </collision>
+    </link>
+    <link name="${prefix}link_2">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://abb_irb7600_support/meshes/irb7600/visual/link_2.stl"/>
+        </geometry>
+        <xacro:material_abb_orange />
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://abb_irb7600_support/meshes/irb7600/collision/link_2.stl"/>
+        </geometry>
+        <xacro:material_abb_yellow />
+      </collision>
+    </link>
+    <link name="${prefix}link_3">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://abb_irb7600_support/meshes/irb7600/visual/link_3.stl"/>
+        </geometry>
+        <xacro:material_abb_orange />
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://abb_irb7600_support/meshes/irb7600/collision/link_3.stl"/>
+        </geometry>
+        <xacro:material_abb_yellow />
+      </collision>
+    </link>
+    <link name="${prefix}link_4">
+      <visual>
+        <origin xyz="2.012 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://abb_irb7600_support/meshes/irb7600_150_350/visual/link_4.stl"/>
+        </geometry>
+        <xacro:material_abb_orange />
+      </visual>
+      <visual>
+        <origin xyz="2.012 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://abb_irb7600_support/meshes/irb7600_150_350/visual/abb_logos.stl"/>
+        </geometry>
+        <xacro:material_abb_black />
+      </visual>
+    <collision>
+        <origin xyz="2.012 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://abb_irb7600_support/meshes/irb7600_150_350/collision/link_4.stl"/>
+        </geometry>
+        <xacro:material_abb_yellow />
+      </collision>
+    </link>
+    <link name="${prefix}link_5">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://abb_irb7600_support/meshes/irb7600/visual/link_5.stl"/>
+        </geometry>
+        <xacro:material_abb_orange />
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://abb_irb7600_support/meshes/irb7600/collision/link_5.stl"/>
+        </geometry>
+        <xacro:material_abb_yellow />
+      </collision>
+    </link>
+    <link name="${prefix}link_6">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://abb_irb7600_support/meshes/irb7600/visual/link_6.stl"/>
+        </geometry>
+        <xacro:material_abb_black />
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://abb_irb7600_support/meshes/irb7600/collision/link_6.stl"/>
+        </geometry>
+        <xacro:material_abb_black />
+      </collision>
+    </link>
+    <link name="${prefix}tool0"/>
+    <link name="${prefix}balancer_piston">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://abb_irb7600_support/meshes/irb7600/visual/balancer_piston.stl"/>
+        </geometry>
+        <xacro:material_abb_orange />
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://abb_irb7600_support/meshes/irb7600/collision/balancer_piston.stl"/>
+        </geometry>
+        <xacro:material_abb_yellow />
+      </collision>
+    </link>
+    <!-- end of link list -->
+
+    <!-- joint list -->
+    <joint name="${prefix}joint_1" type="revolute">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="${prefix}base_link"/>
+      <child link="${prefix}link_1"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="-${radians(180)}" upper="${radians(180)}" effort="0" velocity="${radians(100)}"/>
+    </joint>
+    <joint name="${prefix}joint_2" type="revolute">
+      <origin xyz="0.410 0 0.780" rpy="0 0 0"/>
+      <parent link="${prefix}link_1"/>
+      <child link="${prefix}link_2"/>
+      <axis xyz="0 1 0"/>
+      <limit lower="-${radians(60)}" upper="${radians(85)}" effort="0" velocity="${radians(60)}"/>
+    </joint>
+    <joint name="${prefix}joint_3" type="revolute">
+      <origin xyz="0 0 1.075" rpy="0 0 0"/>
+      <parent link="${prefix}link_2"/>
+      <child link="${prefix}link_3"/>
+      <axis xyz="0 1 0"/>
+      <limit lower="-${radians(180)}" upper="${radians(60)}" effort="0" velocity="${radians(60)}"/>
+    </joint>
+    <joint name="${prefix}joint_4" type="revolute">
+      <origin xyz="0 0 0.165" rpy="0 0 0"/>
+      <parent link="${prefix}link_3"/>
+      <child link="${prefix}link_4"/>
+      <axis xyz="1 0 0"/>
+      <limit lower="-${radians(300)}" upper="${radians(300)}" effort="0" velocity="${radians(100)}"/>
+    </joint>
+    <joint name="${prefix}joint_5" type="revolute">
+      <origin xyz="2.012 0 0" rpy="0 0 0"/>
+      <parent link="${prefix}link_4"/>
+      <child link="${prefix}link_5"/>
+      <axis xyz="0 1 0"/>
+      <limit lower="-${radians(100)}" upper="${radians(100)}" effort="0" velocity="${radians(100)}"/>
+    </joint>
+    <joint name="${prefix}joint_6" type="revolute">
+      <origin xyz="0.250 0 0" rpy="0 0 0"/>
+      <parent link="${prefix}link_5"/>
+      <child link="${prefix}link_6"/>
+      <axis xyz="1 0 0"/>
+      <limit lower="-${radians(360)}" upper="${radians(360)}" effort="0" velocity="${radians(190)}"/>
+    </joint>
+    <joint name="${prefix}joint_6-tool0" type="fixed">
+      <origin xyz="0 0 0" rpy="0 ${radians(90)} 0"/>
+      <parent link="${prefix}link_6"/>
+      <child link="${prefix}tool0"/>
+    </joint>
+    <joint name="${prefix}joint_balancer_piston" type="fixed">
+      <origin xyz="-0.380 0 0.6545" rpy="0 0 0"/>
+      <parent link="${prefix}link_1"/>
+      <child link="${prefix}balancer_piston"/>
+    </joint>
+    <!-- end of joint list -->
+
+    <!-- ROS base_link to ABB World Coordinates transform -->
+    <link name="${prefix}base" />
+    <joint name="${prefix}base_link-base" type="fixed">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="${prefix}base_link"/>
+      <child link="${prefix}base"/>
+    </joint>
+  </xacro:macro>
+</robot>
