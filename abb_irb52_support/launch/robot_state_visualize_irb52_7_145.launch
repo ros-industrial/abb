@@ -1,11 +1,12 @@
+<?xml version="1.0" ?>
 <!--
   Manipulator specific version of the state visualizer.
 
-  Defaults provided for irb52:
+  Defaults provided for IRB 52-7/1.45:
    - J23_coupled = true
 
   Usage:
-    robot_state_visualize_irb52.launch robot_ip:=<value>
+    robot_state_visualize_irb52_7_145.launch robot_ip:=<value>
 -->
 <launch>
   <arg name="robot_ip" />

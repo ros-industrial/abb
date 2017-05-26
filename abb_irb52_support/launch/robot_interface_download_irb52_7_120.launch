@@ -1,11 +1,12 @@
+<?xml version="1.0" ?>
 <!--
   Manipulator specific version of abb driver's 'robot_interface.launch'.
 
-  Defaults provided for irb52:
+  Defaults provided for IRB 52-7/1.20:
    - J23_coupled = true
 
   Usage:
-    robot_interface_download_irb52.launch robot_ip:=<value>
+    robot_interface_download_irb52_7_120.launch robot_ip:=<value>
 -->
 <launch>
   <arg name="robot_ip" />
