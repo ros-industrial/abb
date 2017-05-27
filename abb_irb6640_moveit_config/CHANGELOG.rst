@@ -2,6 +2,11 @@
 Changelog for package abb_irb6640_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* kinetic-devel release of ros-industrial/abb
+* Contributors: AustinDeric
+
 1.2.1 (2017-03-27)
 ------------------
 * No changes

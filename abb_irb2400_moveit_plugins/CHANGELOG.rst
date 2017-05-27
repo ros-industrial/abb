@@ -2,6 +2,11 @@
 Changelog for package abb_irb2400_moveit_plugins
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* kinetic-devel release of ros-industrial/abb
+* Contributors: AustinDeric
+
 1.2.1 (2017-03-27)
 ------------------
 * No changes

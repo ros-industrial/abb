@@ -2,6 +2,12 @@
 Changelog for package abb_irb6600_support
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* remove reference to source build and rebase to indigo devel.
+* kinetic-devel release of ros-industrial/abb
+* Contributors: Austin Deric
+
 1.2.1 (2017-03-27)
 ------------------
 * No changes
