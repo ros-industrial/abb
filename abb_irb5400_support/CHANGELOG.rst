@@ -2,8 +2,8 @@
 Changelog for package abb_irb5400_support
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.3.0 (2017-05-27)
+------------------
 * remove reference to source build and rebase to indigo devel.
 * kinetic-devel release of ros-industrial/abb
 * Contributors: Austin Deric

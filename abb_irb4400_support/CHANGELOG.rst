@@ -2,8 +2,8 @@
 Changelog for package abb_irb4400_support
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.3.0 (2017-05-27)
+------------------
 * Removed urdf file from 4400 support package.
 * Copied the irb4400 support package from the experimental repo.
 * Contributors: Jonathan Meyer

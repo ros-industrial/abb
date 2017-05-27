@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="2">
   <name>abb_driver</name>
-  <version>1.2.1</version>
+  <version>1.3.0</version>
   <description>
    <p>
      ROS-Industrial nodes for interfacing with ABB robot controllers.

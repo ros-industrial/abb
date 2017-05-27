@@ -2,8 +2,8 @@
 Changelog for package abb
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.3.0 (2017-05-27)
+------------------
 * Added 4400 support package to meta-package manifest of abb.
 * fix comments from PR `#126 <https://github.com/ros-industrial/abb/issues/126>`_.
 * kinetic-devel release of ros-industrial/abb
