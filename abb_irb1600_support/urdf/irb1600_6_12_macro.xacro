@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="irb1600_6_12">
-<xacro:macro name="irb1600_6_12" params="prefix">
+<xacro:macro name="abb_irb1600_6_12" params="prefix">
   <!-- link list -->
   <link name="${prefix}base_link">
     <visual>
