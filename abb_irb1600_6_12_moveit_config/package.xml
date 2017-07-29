@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>abb_irb1600_6_12_moveit_config</name>
+  <version>0.2.0</version>
+  <description>
+    <p>
+      MoveIt package for the ABB IRB 1600-6/1.2.
+    </p>
+    <p>
+      An automatically generated package with all the configuration and launch
+      files for using the ABB IRB 1600-6/1.2 with the MoveIt Motion Planning
+      Framework.
+    </p>
+  </description>
+  <author email="assistant@moveit.ros.org">MoveIt Setup Assistant</author>
+  <maintainer email="keerthana.manivannan@gmail.com">Keerthana Manivannan</maintainer>
+
+  <license>BSD</license>
+
+  <url type="website">http://wiki.ros.org/abb_irb1600_6_12_moveit_config</url>
+  <url type="bugtracker">https://github.com/ros-industrial/abb_experimental/issues</url>
+  <url type="repository">https://github.com/ros-industrial/abb_experimental</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>abb_irb1600_support</exec_depend>
+  <exec_depend>industrial_robot_simulator</exec_depend>
+  <exec_depend>joint_state_publisher</exec_depend>
+  <exec_depend>moveit_fake_controller_manager</exec_depend>
+  <exec_depend>moveit_planners_ompl</exec_depend>
+  <exec_depend>moveit_ros_move_group</exec_depend>
+  <exec_depend>moveit_ros_visualization</exec_depend>
+  <exec_depend>moveit_simple_controller_manager</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>rviz</exec_depend>
+  <exec_depend>trac_ik_kinematics_plugin</exec_depend>
+  <exec_depend>xacro</exec_depend>
+
+  <export>
+    <architecture_independent />
+  </export>
+</package>
