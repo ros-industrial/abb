@@ -23,8 +23,8 @@ All robot support packages and MoveIt configurations follow the naming conventio
 
 
 
-[ROS-Industrial]: http://www.ros.org/wiki/Industrial
-[ROS wiki]: http://ros.org/wiki/abb
+[ROS-Industrial]: http://wiki.ros.org/Industrial
+[ROS wiki]: http://wiki.ros.org/abb
 [abb_experimental]: https://github.com/ros-industrial/abb_experimental
 [subversion repository]: https://code.google.com/p/swri-ros-pkg/source/browse
 [REP-I0007]: https://github.com/ros-industrial/rep/blob/master/rep-I0007.rst
