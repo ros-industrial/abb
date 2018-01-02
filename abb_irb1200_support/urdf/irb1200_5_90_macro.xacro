@@ -100,14 +100,14 @@
 
     <!-- joint list -->
     <joint type="revolute" name="${prefix}joint_1">
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <origin xyz="0 0 0.3991" rpy="0 0 0"/>
       <axis xyz="0 0 1"/>
       <parent link="${prefix}base_link"/>
       <child link="${prefix}link_1"/>
       <limit effort="0" lower="-2.967" upper="2.967" velocity="5.027"/>
     </joint>
     <joint type="revolute" name="${prefix}joint_2">
-      <origin xyz="0 0 0.399" rpy="0 0 0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <axis xyz="0 1 0"/>
       <parent link="${prefix}link_1"/>
       <child link="${prefix}link_2"/>
