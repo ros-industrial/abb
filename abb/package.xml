@@ -3,13 +3,13 @@
   <name>abb</name>
   <version>1.2.1</version>
   <description>ROS-Industrial support for ABB manipulators (metapackage).</description>
-  <maintainer email="shaun.edwards@gmail.com">Shaun Edwards</maintainer>
+  <maintainer email="levi.armstrong@swri.org">Levi Armstrong (Southwest Research Institute)</maintainer>
   <license>BSD</license>
   <license>Apache 2.0</license>
   <url type="website">http://ros.org/wiki/abb</url>
   <url type="repository">https://github.com/ros-industrial/abb</url>
   <url type="bugtracker">https://github.com/ros-industrial/abb/issues</url>
-  <author email="shaun.edwards@gmail.com">Shaun Edwards</author>
+  <author>Shaun Edwards</author>
 
   <buildtool_depend>catkin</buildtool_depend>
 
