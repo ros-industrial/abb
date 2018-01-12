@@ -26,7 +26,7 @@
     </p>
   </description>
   <author email="michael.riperger@swri.org">Michael Ripperger</author>
-  <maintainer email="levi.armstrong@swri.org">Levi Armstrong</maintainer>
+  <maintainer email="levi.armstrong@swri.org">Levi Armstrong (Southwest Research Institute)</maintainer>
   <license>Apache 2.0</license>
 
   <url type="website">http://wiki.ros.org/abb_irb7600_support</url>
