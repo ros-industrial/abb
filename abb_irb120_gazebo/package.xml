@@ -17,9 +17,10 @@
       configuration you intend to use them with.
     </p>
   </description>
-  <author email="culletom@tcd.ie">Mark Culleton (Trinity College Dublin)</author>
+  <author>Mark Culleton (Trinity College Dublin)</author>
   <author>Kevin Kelly (Trinity College Dublin)</author>
   <maintainer email="culletom@tcd.ie">Mark Culleton (Trinity College Dublin)</maintainer>
+  <maintainer email="levi.armstrong@swri.org">Levi Armstrong (Southwest Research Institute)</maintainer>
   <license>Apache2</license>
 
   <url type="website">http://wiki.ros.org/abb</url>
