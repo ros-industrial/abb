@@ -25,6 +25,7 @@
   </description>
   <author email="aabdelmawgoud@swri.org">Ahmed Abdelmawgoud (Southwest Research Institute)</author>
   <maintainer email="aderic@swri.org">Austin Deric (Southwest Research Institute)</maintainer>
+  <maintainer email="levi.armstrong@swri.org">Levi Armstrong (Southwest Research Institute)</maintainer>
   <license>Apache2</license>
 
   <url type="website">http://wiki.ros.org/abb_irb1600_support</url>
