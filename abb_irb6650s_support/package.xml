@@ -24,7 +24,7 @@
     </p>
   </description>
   <author email="michael.ripperger@swri.org">Michael Ripperger</author>
-  <maintainer email="levi.armstrong@swri.org">Levi Armstrong</maintainer>
+  <maintainer email="levi.armstrong@swri.org">Levi Armstrong (Southwest Research Institute)</maintainer>
   <license>Apache 2.0</license>
 
   <url type="website">http://ros.org/wiki/abb_irb_6650s_support</url>
