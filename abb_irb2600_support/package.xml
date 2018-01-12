@@ -29,6 +29,7 @@
   <author email="cody.bressler@swri.org">Cody Bressler (SwRI)</author>
   <author email="jonathan.meyer@swri.org">Jonathan Meyer (SwRI)</author>
   <maintainer email="jonathan.meyer@swri.org">Jonathan Meyer (SwRI)</maintainer>
+  <maintainer email="levi.armstrong@swri.org">Levi Armstrong (Southwest Research Institute)</maintainer>
   <license>Apache2</license>
 
   <url type="website">http://wiki.ros.org/abb_irb2600_support</url>
