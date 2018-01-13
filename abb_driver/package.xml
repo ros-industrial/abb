@@ -13,8 +13,8 @@
   </description>
   <author>Edward Venator</author>
   <author>Jeremy Zoss</author>
-  <author email="sedwards@swri.org">Shaun Edwards</author>
-  <maintainer email="sedwards@swri.org">Shaun Edwards</maintainer>
+  <author>Shaun Edwards</author>
+  <maintainer email="levi.armstrong@swri.org">Levi Armstrong (Southwest Research Institute)</maintainer>
   <license>BSD</license>
 
   <url type="website">http://ros.org/wiki/abb_driver</url>

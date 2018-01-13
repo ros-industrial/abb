@@ -25,7 +25,7 @@
     </p>
   </description>
   <author>Dan Solomon</author>
-  <maintainer email="sedewards@swri.org">Shaun Edwards (SwRI)</maintainer>
+  <maintainer email="levi.armstrong@swri.org">Levi Armstrong (Southwest Research Institute)</maintainer>
   <license>Apache2</license>
 
   <url type="website">http://wiki.ros.org/abb_irb4400_support</url>
