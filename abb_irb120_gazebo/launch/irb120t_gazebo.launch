@@ -1,5 +1,5 @@
 <launch>
-	<arg name="paused" default="false"/>
+	<arg name="paused" default="false" doc="Start gazebo in paused mode" />
 
   <!-- remap topics to conform to ROS-I specifications -->
   <remap from="/arm_controller/follow_joint_trajectory" to="/joint_trajectory_action" />
