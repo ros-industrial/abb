@@ -9,8 +9,8 @@
     robot_interface_download_irb_7600_150_350.launch robot_ip:=<value>
 -->
 <launch>
-  <arg name="robot_ip" />
-  <arg name="J23_coupled" default="true" />
+  <arg name="robot_ip" doc="IP of the controller" />
+  <arg name="J23_coupled" default="true" doc="If true, compensate for J2-J3 parallel linkage" />
 
   <rosparam command="load" file="$(find abb_irb7600_support)/config/joint_names_irb7600_150_350.yaml" />
 
