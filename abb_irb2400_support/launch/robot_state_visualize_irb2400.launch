@@ -8,8 +8,8 @@
     robot_state_visualize_irb2400.launch robot_ip:=<value>
 -->
 <launch>
-  <arg name="robot_ip" />
-  <arg name="J23_coupled" default="true" />
+  <arg name="robot_ip" doc="IP of the controller" />
+  <arg name="J23_coupled" default="true" doc="If true, compensate for J2-J3 parallel linkage" />
 
   <rosparam command="load" file="$(find abb_irb2400_support)/config/joint_names_irb2400.yaml" />
 
