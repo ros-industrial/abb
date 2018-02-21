@@ -51,10 +51,23 @@ RECORD ROS_msg_joint_data
     robjoint joints;  ! in DEGREES
 ENDRECORD
 
+RECORD ROS_msg_robot_status
+    ROS_msg_header header;
+    num sequence_id;
+    num drives_powered;
+    num e_stopped;
+    num error_code;
+    num in_error;
+    num in_motion;
+    num mode;
+    num motion_possible;
+ENDRECORD
+
 ! Message Type Codes (from simple_message/simple_message.h)
 CONST num ROS_MSG_TYPE_INVALID       := 0;
 CONST num ROS_MSG_TYPE_JOINT         := 10;  ! joint-position feedback
 CONST num ROS_MSG_TYPE_JOINT_TRAJ_PT := 11;  ! joint-trajectory-point (for path downloading)
+CONST num ROS_MSG_TYPE_STATUS        := 13;  ! robot status message (for reporting the robot state)
 CONST num ROS_COM_TYPE_TOPIC         := 1;
 CONST num ROS_COM_TYPE_SRV_REQ       := 2;
 CONST num ROS_COM_TYPE_SRV_REPLY     := 3;
@@ -67,27 +80,39 @@ CONST num ROS_TRAJECTORY_START_DOWNLOAD := -1;
 CONST num ROS_TRAJECTORY_END := -3;
 CONST num ROS_TRAJECTORY_STOP := -4;
 
+! Robot mode codes (from industrial_msgs/RobotMode.msg)
+CONST num ROS_ROBOT_MODE_UNKNOWN     := -1   ! Unknown or unavailable
+CONST num ROS_ROBOT_MODE_MANUAL      := 1    ! Teach OR manual mode
+CONST num ROS_ROBOT_MODE_AUTO        := 2    ! Automatic mode
+
+! Tri-state values (from inudstrial/TriState.msg)
+CONST num ROS_TRISTATE_UNKNOWN       := -1
+CONST num ROS_TRISTATE_TRUE          := 1
+CONST num ROS_TRISTATE_ON            := 1
+CONST num ROS_TRISTATE_FALSE         := 0
+CONST num ROS_TRISTATE_OFF           := 0
+
 ! Other message constants
 CONST num ROS_MSG_MAX_JOINTS := 10;  ! from joint_data.h
 
 PROC ROS_receive_msg_joint_traj_pt(VAR socketdev client_socket, VAR ROS_msg_joint_traj_pt message, \num wait_time)
     VAR ROS_msg raw_message;
-    
+
     ! Read raw message data
     IF Present(wait_time) THEN
         ROS_receive_msg client_socket, raw_message, \wait_time:=wait_time;
     ELSE
         ROS_receive_msg client_socket, raw_message;
     ENDIF
-    
+
     ! Integrity Check: Message Type
     IF (raw_message.header.msg_type <> ROS_MSG_TYPE_JOINT_TRAJ_PT) THEN
         ErrWrite \W, "ROS Socket Type Mismatch", "Unexpected message type",
-                \RL2:="expected: " + ValToStr(ROS_MSG_TYPE_JOINT_TRAJ_PT),
-                \RL3:="received: " + ValToStr(raw_message.header.msg_type);
+                 \RL2:="expected: " + ValToStr(ROS_MSG_TYPE_JOINT_TRAJ_PT),
+                 \RL3:="received: " + ValToStr(raw_message.header.msg_type);
         RAISE ERR_ARGVALERR;  ! TBD: define specific error code
     ENDIF
-    
+
     ! Integrity Check: Data Size
     IF (RawBytesLen(raw_message.data) < 52) THEN
         ErrWrite \W, "ROS Socket Missing Data", "Insufficient data for joint_trajectory_pt",
@@ -95,10 +120,10 @@ PROC ROS_receive_msg_joint_traj_pt(VAR socketdev client_socket, VAR ROS_msg_join
                 \RL3:="received: " + ValToStr(RawBytesLen(raw_message.data));
         RAISE ERR_OUTOFBND;  ! TBD: define specific error code
     ENDIF
-    
+
     ! Copy Header data
     message.header := raw_message.header;
-    
+
     ! Unpack data fields
     UnpackRawBytes raw_message.data, 1, message.sequence_id, \IntX:=DINT;
     UnpackRawBytes raw_message.data, 5, message.joints.rax_1, \Float4;
@@ -110,11 +135,11 @@ PROC ROS_receive_msg_joint_traj_pt(VAR socketdev client_socket, VAR ROS_msg_join
     ! Skip bytes 29-44.  UNUSED.  Reserved for Joints 7-10.  TBD: copy to extAx?
     UnpackRawBytes raw_message.data, 29+(ROS_MSG_MAX_JOINTS-6)*4, message.velocity, \Float4;
     UnpackRawBytes raw_message.data, 33+(ROS_MSG_MAX_JOINTS-6)*4, message.duration, \Float4;
-    
+
     ! Convert data from ROS units to ABB units
     message.joints := rad2deg_robjoint(message.joints);
     ! TBD: convert velocity
-    
+
 ERROR
     RAISE;  ! raise errors to calling code
 ENDPROC
@@ -123,12 +148,12 @@ PROC ROS_send_msg_joint_data(VAR socketdev client_socket, ROS_msg_joint_data mes
     VAR ROS_msg raw_message;
     VAR robjoint ROS_joints;
     VAR num i;
-    
+
     ! Force message header to the correct values
     raw_message.header.msg_type := ROS_MSG_TYPE_JOINT;
     raw_message.header.comm_type := ROS_COM_TYPE_TOPIC;
     raw_message.header.reply_code := ROS_REPLY_TYPE_INVALID;
-    
+
     ! Convert data from ABB units to ROS units
     ROS_joints := deg2rad_robjoint(message.joints);
 
@@ -178,7 +203,7 @@ LOCAL FUNC robjoint rad2deg_robjoint(robjoint rad)
     deg.rax_4 := rad2deg(rad.rax_4);
     deg.rax_5 := rad2deg(rad.rax_5);
     deg.rax_6 := rad2deg(rad.rax_6);
-    
+
     RETURN deg;
 ENDFUNC
 
