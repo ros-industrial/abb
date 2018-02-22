@@ -35,41 +35,117 @@ LOCAL VAR socketdev server_socket;
 LOCAL VAR socketdev client_socket;
 
 PROC main()
-
     TPWrite "StateServer: Waiting for connection.";
-	ROS_init_socket server_socket, server_port;
+    ROS_init_socket server_socket, server_port;
     ROS_wait_for_client server_socket, client_socket;
-    
-	WHILE (TRUE) DO
-		send_joints;
-		WaitTime update_rate;
+
+    WHILE (TRUE) DO
+        send_joints;
+        send_status;
+        WaitTime update_rate;
     ENDWHILE
 
 ERROR (ERR_SOCK_TIMEOUT, ERR_SOCK_CLOSED)
-	IF (ERRNO=ERR_SOCK_TIMEOUT) OR (ERRNO=ERR_SOCK_CLOSED) THEN
+    IF (ERRNO=ERR_SOCK_TIMEOUT) OR (ERRNO=ERR_SOCK_CLOSED) THEN
         SkipWarn;  ! TBD: include this error data in the message logged below?
         ErrWrite \W, "ROS StateServer disconnect", "Connection lost.  Waiting for new connection.";
         ExitCycle;  ! restart program
-	ELSE
-		TRYNEXT;
-	ENDIF
+    ELSE
+        TRYNEXT;
+    ENDIF
 UNDO
 ENDPROC
 
 LOCAL PROC send_joints()
-	VAR ROS_msg_joint_data message;
-	VAR jointtarget joints;
-	
+    VAR ROS_msg_joint_data message;
+    VAR jointtarget joints;
+
     ! get current joint position (degrees)
-	joints := CJointT();
-    
+    joints := CJointT();
+
     ! create message
     message.header := [ROS_MSG_TYPE_JOINT, ROS_COM_TYPE_TOPIC, ROS_REPLY_TYPE_INVALID];
     message.sequence_id := 0;
     message.joints := joints.robax;
-    
+
     ! send message to client
     ROS_send_msg_joint_data client_socket, message;
+
+ERROR
+    RAISE;  ! raise errors to calling code
+ENDPROC
+
+! signalRobotEStop : System Output
+! signalMotorOn : System Output
+! signalMotionPossible : System Output
+LOCAL PROC send_status()
+    VAR ROS_msg_robot_status message;
+
+    ! get current joint position (degrees)
+    ! joints := CJointT();
+
+    ! create message
+    message.header := [ROS_MSG_TYPE_STATUS, ROS_COM_TYPE_TOPIC, ROS_REPLY_TYPE_INVALID];
+    message.sequence_id := 0;
+
+    ! default values
+    message.mode            := ROS_ROBOT_MODE_UNKNOWN;
+    message.e_stopped       := ROS_TRISTATE_UNKNOWN;
+    message.drives_powered  := ROS_TRISTATE_UNKNOWN;
+    message.error_code      := ROS_TRISTATE_UNKNOWN;
+    message.in_error        := ROS_TRISTATE_UNKNOWN;
+    message.in_motion       := ROS_TRISTATE_UNKNOWN;
+    message.motion_possible := ROS_TRISTATE_UNKNOWN;
+
+    ! Get operating mode
+    TEST OpMode()
+        CASE OP_AUTO:
+            message.mode := ROS_ROBOT_MODE_AUTO;
+        CASE OP_MAN_PROG:
+        CASE OP_MAN_TEST:
+            message.mode := ROS_ROBOT_MODE_MANUAL;
+    ENDTEST
+
+    ! Get E-stop status
+    IF DOutput(signalRobotEStop) = 1 THEN
+        message.e_stopped := ROS_TRISTATE_ON;
+    ELSE
+        message.e_stopped := ROS_TRISTATE_OFF;
+    ENDIF
+
+    ! Get whether motors have power
+    IF DOutput(signalMotorOn)=1 THEN
+        message.drives_powered := ROS_TRISTATE_TRUE;
+    ELSE
+        message.drives_powered := ROS_TRISTATE_FALSE;
+    ENDIF
+
+    ! Get error code
+    message.error_code := ERRNO;
+
+    ! Determine in_error
+    if (message.error_code >= 1) AND (message.error_code <= 90) THEN
+        message.in_error := ROS_TRISTATE_TRUE;
+    ELSE
+        message.in_error := ROS_TRISTATE_FALSE;
+    ENDIF
+
+    ! TODO: in_motion
+    !IF (ROS_new_trajectory) THEN
+    !    message.in_motion := ROS_TRISTATE_TRUE;
+    !ELSE
+        message.in_motion := ROS_TRISTATE_FALSE;
+    !ENDIF
+    
+    ! Get whether motion is possible
+    if DOutput(signalMotionPossible) = 1 THEN
+        message.motion_possible := ROS_TRISTATE_TRUE;
+    ELSE
+        message.motion_possible := ROS_TRISTATE_FALSE;
+    ENDIF
+
+    ! send message to client
+    ROS_send_msg_robot_status client_socket, message;
 
 ERROR
     RAISE;  ! raise errors to calling code

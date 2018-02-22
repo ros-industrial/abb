@@ -29,7 +29,7 @@ MODULE ROS_socket(SYSMODULE)
 
 PROC ROS_init_socket(VAR socketdev server_socket, num port)
     IF (SocketGetStatus(server_socket) = SOCKET_CLOSED) SocketCreate server_socket;
-    IF (SocketGetStatus(server_socket) = SOCKET_CREATED) SocketBind server_socket, GetSysInfo(\LanIp), port;
+    IF (SocketGetStatus(server_socket) = SOCKET_CREATED) SocketBind server_socket, "192.168.1.42", port;
     IF (SocketGetStatus(server_socket) = SOCKET_BOUND) SocketListen server_socket;
 
 ERROR

@@ -36,9 +36,9 @@ ENDRECORD
 CONST num MAX_TRAJ_LENGTH := 100;
 
 ! These variables should use TestAndSet read/write protection to prevent conflicts
-PERS bool ROS_trajectory_lock := false;
+PERS bool ROS_trajectory_lock := FALSE;
 PERS ROS_joint_trajectory_pt ROS_trajectory{MAX_TRAJ_LENGTH};
 PERS num ROS_trajectory_size := 0;
-PERS bool ROS_new_trajectory := false;       ! can safely READ, but should use lock to WRITE
+PERS bool ROS_new_trajectory := FALSE;       ! can safely READ, but should use lock to WRITE
 
 ENDMODULE
