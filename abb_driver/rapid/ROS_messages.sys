@@ -81,16 +81,16 @@ CONST num ROS_TRAJECTORY_END := -3;
 CONST num ROS_TRAJECTORY_STOP := -4;
 
 ! Robot mode codes (from industrial_msgs/RobotMode.msg)
-CONST num ROS_ROBOT_MODE_UNKNOWN     := -1   ! Unknown or unavailable
-CONST num ROS_ROBOT_MODE_MANUAL      := 1    ! Teach OR manual mode
-CONST num ROS_ROBOT_MODE_AUTO        := 2    ! Automatic mode
+CONST num ROS_ROBOT_MODE_UNKNOWN     := -1; ! Unknown or unavailable
+CONST num ROS_ROBOT_MODE_MANUAL      := 1;  ! Teach OR manual mode
+CONST num ROS_ROBOT_MODE_AUTO        := 2;  ! Automatic mode
 
 ! Tri-state values (from inudstrial/TriState.msg)
-CONST num ROS_TRISTATE_UNKNOWN       := -1
-CONST num ROS_TRISTATE_TRUE          := 1
-CONST num ROS_TRISTATE_ON            := 1
-CONST num ROS_TRISTATE_FALSE         := 0
-CONST num ROS_TRISTATE_OFF           := 0
+CONST num ROS_TRISTATE_UNKNOWN       := -1;
+CONST num ROS_TRISTATE_TRUE          := 1;
+CONST num ROS_TRISTATE_ON            := 1;
+CONST num ROS_TRISTATE_FALSE         := 0;
+CONST num ROS_TRISTATE_OFF           := 0;
 
 ! Other message constants
 CONST num ROS_MSG_MAX_JOINTS := 10;  ! from joint_data.h
@@ -174,6 +174,30 @@ PROC ROS_send_msg_joint_data(VAR socketdev client_socket, ROS_msg_joint_data mes
 ERROR
     RAISE;  ! raise errors to calling code
 ENDPROC
+
+PROC ROS_send_msg_robot_status(VAR socketdev client_socket, ROS_msg_robot_status message)
+    VAR ROS_msg raw_message;
+
+    ! Force message header to the correct values
+    raw_message.header.msg_type := message.header.msg_type;
+    raw_message.header.comm_type := message.header.comm_type;
+    raw_message.header.reply_code := message.header.reply_code;
+
+    ! Pack data into message
+    PackRawBytes message.drives_powered,     raw_message.data,  1, \IntX:=DINT;
+    PackRawBytes message.e_stopped,          raw_message.data,  5, \IntX:=DINT;
+    PackRawBytes message.error_code,         raw_message.data,  9, \IntX:=DINT;
+    PackRawBytes message.in_error,           raw_message.data, 13, \IntX:=DINT;
+    PackRawBytes message.in_motion,          raw_message.data, 17, \IntX:=DINT;
+    PackRawBytes message.mode,               raw_message.data, 21, \IntX:=DINT;
+    PackRawBytes message.motion_possible,    raw_message.data, 25, \IntX:=DINT;
+    
+    ROS_send_msg client_socket, raw_message;
+
+ERROR
+    RAISE;  ! raise errors to calling code
+ENDPROC
+
 
 LOCAL FUNC num deg2rad(num deg)
     RETURN deg * pi / 180;

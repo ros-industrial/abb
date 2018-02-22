@@ -41,6 +41,7 @@ PROC main()
 
     WHILE (TRUE) DO
         send_joints;
+        send_status;
         WaitTime update_rate;
     ENDWHILE
 
@@ -74,6 +75,9 @@ ERROR
     RAISE;  ! raise errors to calling code
 ENDPROC
 
+! signalRobotEStop : System Output
+! signalMotorOn : System Output
+! signalMotionPossible : System Output
 LOCAL PROC send_status()
     VAR ROS_msg_robot_status message;
 
@@ -103,35 +107,45 @@ LOCAL PROC send_status()
     ENDTEST
 
     ! Get E-stop status
-    !  OR DOutput(doError)=1 OR DOutput(doMotorOffState)=1 THEN
-    IF DOutput(doRobEmgStop)=1 THEN
+    IF DOutput(signalRobotEStop) = 1 THEN
         message.e_stopped := ROS_TRISTATE_ON;
     ELSE
         message.e_stopped := ROS_TRISTATE_OFF;
     ENDIF
 
     ! Get whether motors have power
-    IF DOutput(doMotorOnState)=1 THEN
+    IF DOutput(signalMotorOn)=1 THEN
         message.drives_powered := ROS_TRISTATE_TRUE;
     ELSE
         message.drives_powered := ROS_TRISTATE_FALSE;
     ENDIF
 
-    ! TODO: Get error code
+    ! Get error code
+    message.error_code := ERRNO;
 
-    ! TODO: in_error
+    ! Determine in_error
+    if (message.error_code >= 1) AND (message.error_code <= 90) THEN
+        message.in_error := ROS_TRISTATE_TRUE;
+    ELSE
+        message.in_error := ROS_TRISTATE_FALSE;
+    ENDIF
 
     ! TODO: in_motion
-
+    !IF (ROS_new_trajectory) THEN
+    !    message.in_motion := ROS_TRISTATE_TRUE;
+    !ELSE
+        message.in_motion := ROS_TRISTATE_FALSE;
+    !ENDIF
+    
     ! Get whether motion is possible
-    if DOutput(Run Chain OK) := 1 THEN
+    if DOutput(signalMotionPossible) = 1 THEN
         message.motion_possible := ROS_TRISTATE_TRUE;
     ELSE
         message.motion_possible := ROS_TRISTATE_FALSE;
     ENDIF
 
     ! send message to client
-    ROS_send_msg_joint_data client_socket, message;
+    ROS_send_msg_robot_status client_socket, message;
 
 ERROR
     RAISE;  ! raise errors to calling code
