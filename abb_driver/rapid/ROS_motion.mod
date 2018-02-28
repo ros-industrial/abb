@@ -39,7 +39,7 @@ PROC main()
     VAR speeddata move_speed := v10;  ! default speed
     VAR zonedata stop_mode;
     VAR bool skip_move;
-    
+
     ! Set up interrupt to watch for new trajectory
     IDelete intr_new_trajectory;    ! clear interrupt handler, in case restarted with ExitCycle
     CONNECT intr_new_trajectory WITH new_trajectory_handler;
@@ -68,7 +68,7 @@ PROC main()
 
             trajectory_size := 0;  ! trajectory done
         ENDIF
-        
+
         WaitTime 0.05;  ! Throttle loop while waiting for new command
     ENDWHILE
 ERROR
@@ -80,17 +80,17 @@ LOCAL PROC init_trajectory()
     clear_path;                    ! cancel any active motions
 
     WaitTestAndSet ROS_trajectory_lock;  ! acquire data-lock
-      trajectory := ROS_trajectory;            ! copy to local var
-      trajectory_size := ROS_trajectory_size;  ! copy to local var
-      ROS_new_trajectory := FALSE;
+    trajectory := ROS_trajectory;            ! copy to local var
+    trajectory_size := ROS_trajectory_size;  ! copy to local var
+    ROS_new_trajectory := FALSE;
     ROS_trajectory_lock := FALSE;         ! release data-lock
 ENDPROC
 
 LOCAL FUNC bool is_near(jointtarget target, num deg_tol, num mm_tol)
     VAR jointtarget curr_jnt;
-    
+
     curr_jnt := CJointT();
-    
+
     ! either an external axis is unconfigured/not present OR if it is, then it must be close enough
     RETURN ( ABS(curr_jnt.robax.rax_1 - target.robax.rax_1) < deg_tol )
        AND ( ABS(curr_jnt.robax.rax_2 - target.robax.rax_2) < deg_tol )
@@ -119,7 +119,7 @@ ENDPROC
 
 LOCAL TRAP new_trajectory_handler
     IF (NOT ROS_new_trajectory) RETURN;
-    
+
     abort_trajectory;
 ENDTRAP
 
