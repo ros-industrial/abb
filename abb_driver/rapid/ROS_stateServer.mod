@@ -42,6 +42,7 @@ PROC main()
 
     WHILE (TRUE) DO
         send_joints;
+        send_status;
         WaitTime update_rate;
     ENDWHILE
 
@@ -71,6 +72,83 @@ LOCAL PROC send_joints()
 
     ! send message to client
     ROS_send_msg_joint_data client_socket, message;
+
+ERROR
+    RAISE;  ! raise errors to calling code
+ENDPROC
+
+! signalRobotEStop : System Output
+! signalMotorOn : System Output
+! signalMotionPossible : System Output
+! signalRobotNotMoving : System Output
+LOCAL PROC send_status()
+    VAR ROS_msg_robot_status message;
+
+    ! get current joint position (degrees)
+    ! joints := CJointT();
+
+    ! create message
+    message.header := [ROS_MSG_TYPE_STATUS, ROS_COM_TYPE_TOPIC, ROS_REPLY_TYPE_INVALID];
+    message.sequence_id := 0;
+
+    ! default values
+    message.mode            := ROS_ROBOT_MODE_UNKNOWN;
+    message.e_stopped       := ROS_TRISTATE_UNKNOWN;
+    message.drives_powered  := ROS_TRISTATE_UNKNOWN;
+    message.error_code      := ROS_TRISTATE_UNKNOWN;
+    message.in_error        := ROS_TRISTATE_UNKNOWN;
+    message.in_motion       := ROS_TRISTATE_UNKNOWN;
+    message.motion_possible := ROS_TRISTATE_UNKNOWN;
+
+    ! Get operating mode
+    TEST OpMode()
+        CASE OP_AUTO:
+            message.mode := ROS_ROBOT_MODE_AUTO;
+        CASE OP_MAN_PROG:
+        CASE OP_MAN_TEST:
+            message.mode := ROS_ROBOT_MODE_MANUAL;
+    ENDTEST
+
+    ! Get E-stop status
+    IF DOutput(signalRobotEStop) = 1 THEN
+        message.e_stopped := ROS_TRISTATE_ON;
+    ELSE
+        message.e_stopped := ROS_TRISTATE_OFF;
+    ENDIF
+
+    ! Get whether motors have power
+    IF DOutput(signalMotorOn)=1 THEN
+        message.drives_powered := ROS_TRISTATE_TRUE;
+    ELSE
+        message.drives_powered := ROS_TRISTATE_FALSE;
+    ENDIF
+
+    ! Get error code
+    message.error_code := ERRNO;
+
+    ! Determine in_error
+    if (message.error_code >= 1) AND (message.error_code <= 90) THEN
+        message.in_error := ROS_TRISTATE_TRUE;
+    ELSE
+        message.in_error := ROS_TRISTATE_FALSE;
+    ENDIF
+
+    ! Get in_motion
+    IF DOutput(signalRobotNotMoving)=1 THEN
+        message.in_motion := ROS_TRISTATE_FALSE;
+    ELSE
+        message.in_motion := ROS_TRISTATE_TRUE;
+    ENDIF
+
+    ! Get whether motion is possible
+    if DOutput(signalMotionPossible) = 1 THEN
+        message.motion_possible := ROS_TRISTATE_TRUE;
+    ELSE
+        message.motion_possible := ROS_TRISTATE_FALSE;
+    ENDIF
+
+    ! send message to client
+    ROS_send_msg_robot_status client_socket, message;
 
 ERROR
     RAISE;  ! raise errors to calling code
