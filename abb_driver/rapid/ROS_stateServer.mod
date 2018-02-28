@@ -37,38 +37,38 @@ LOCAL VAR socketdev client_socket;
 PROC main()
 
     TPWrite "StateServer: Waiting for connection.";
-	ROS_init_socket server_socket, server_port;
+    ROS_init_socket server_socket, server_port;
     ROS_wait_for_client server_socket, client_socket;
-    
-	WHILE (TRUE) DO
-		send_joints;
-		WaitTime update_rate;
+
+    WHILE (TRUE) DO
+        send_joints;
+        WaitTime update_rate;
     ENDWHILE
 
 ERROR (ERR_SOCK_TIMEOUT, ERR_SOCK_CLOSED)
-	IF (ERRNO=ERR_SOCK_TIMEOUT) OR (ERRNO=ERR_SOCK_CLOSED) THEN
+    IF (ERRNO=ERR_SOCK_TIMEOUT) OR (ERRNO=ERR_SOCK_CLOSED) THEN
         SkipWarn;  ! TBD: include this error data in the message logged below?
         ErrWrite \W, "ROS StateServer disconnect", "Connection lost.  Waiting for new connection.";
         ExitCycle;  ! restart program
-	ELSE
-		TRYNEXT;
-	ENDIF
+    ELSE
+        TRYNEXT;
+    ENDIF
 UNDO
 ENDPROC
 
 LOCAL PROC send_joints()
-	VAR ROS_msg_joint_data message;
-	VAR jointtarget joints;
-	
+    VAR ROS_msg_joint_data message;
+    VAR jointtarget joints;
+
     ! get current joint position (degrees)
-	joints := CJointT();
-    
+    joints := CJointT();
+
     ! create message
     message.header := [ROS_MSG_TYPE_JOINT, ROS_COM_TYPE_TOPIC, ROS_REPLY_TYPE_INVALID];
     message.sequence_id := 0;
     message.joints := joints.robax;
     message.ext_axes := joints.extax;
-    
+
     ! send message to client
     ROS_send_msg_joint_data client_socket, message;
 
