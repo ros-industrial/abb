@@ -74,33 +74,33 @@ CONST num ROS_MSG_MAX_JOINTS := 10;  ! from joint_data.h
 
 PROC ROS_receive_msg_joint_traj_pt(VAR socketdev client_socket, VAR ROS_msg_joint_traj_pt message, \num wait_time)
     VAR ROS_msg raw_message;
-    
+
     ! Read raw message data
     IF Present(wait_time) THEN
         ROS_receive_msg client_socket, raw_message, \wait_time:=wait_time;
     ELSE
         ROS_receive_msg client_socket, raw_message;
     ENDIF
-    
+
     ! Integrity Check: Message Type
     IF (raw_message.header.msg_type <> ROS_MSG_TYPE_JOINT_TRAJ_PT) THEN
         ErrWrite \W, "ROS Socket Type Mismatch", "Unexpected message type",
-                \RL2:="expected: " + ValToStr(ROS_MSG_TYPE_JOINT_TRAJ_PT),
-                \RL3:="received: " + ValToStr(raw_message.header.msg_type);
+                 \RL2:="expected: " + ValToStr(ROS_MSG_TYPE_JOINT_TRAJ_PT),
+                 \RL3:="received: " + ValToStr(raw_message.header.msg_type);
         RAISE ERR_ARGVALERR;  ! TBD: define specific error code
     ENDIF
-    
+
     ! Integrity Check: Data Size
     IF (RawBytesLen(raw_message.data) < 52) THEN
         ErrWrite \W, "ROS Socket Missing Data", "Insufficient data for joint_trajectory_pt",
-                \RL2:="expected: 52",
-                \RL3:="received: " + ValToStr(RawBytesLen(raw_message.data));
+                 \RL2:="expected: 52",
+                 \RL3:="received: " + ValToStr(RawBytesLen(raw_message.data));
         RAISE ERR_OUTOFBND;  ! TBD: define specific error code
     ENDIF
-    
+
     ! Copy Header data
     message.header := raw_message.header;
-    
+
     ! Unpack data fields
     UnpackRawBytes raw_message.data, 1, message.sequence_id, \IntX:=DINT;
     UnpackRawBytes raw_message.data, 5, message.joints.rax_1, \Float4;
@@ -120,7 +120,7 @@ PROC ROS_receive_msg_joint_traj_pt(VAR socketdev client_socket, VAR ROS_msg_join
     message.joints := rad2deg_robjoint(message.joints);
     message.ext_axes := m2mm_extjoint(message.ext_axes);
     ! TBD: convert velocity
-    
+
 ERROR
     RAISE;  ! raise errors to calling code
 ENDPROC
@@ -130,12 +130,12 @@ PROC ROS_send_msg_joint_data(VAR socketdev client_socket, ROS_msg_joint_data mes
     VAR robjoint ROS_joints;
     VAR extjoint ROS_ext_axes;
     VAR num i;
-    
+
     ! Force message header to the correct values
     raw_message.header.msg_type := ROS_MSG_TYPE_JOINT;
     raw_message.header.comm_type := ROS_COM_TYPE_TOPIC;
     raw_message.header.reply_code := ROS_REPLY_TYPE_INVALID;
-    
+
     ! Convert data from ABB units to ROS units
     ROS_joints := deg2rad_robjoint(message.joints);
     ROS_ext_axes := mm2m_extjoint(message.ext_axes);
@@ -188,7 +188,7 @@ LOCAL FUNC extjoint m2mm_extjoint(extjoint eax_in_m)
     eax_in_mm.eax_b := eax_in_m.eax_b * 1000;
     eax_in_mm.eax_c := eax_in_m.eax_c * 1000;
     eax_in_mm.eax_d := eax_in_m.eax_d * 1000;
-    
+
     RETURN eax_in_mm;
 ENDFUNC
 
@@ -216,7 +216,7 @@ LOCAL FUNC robjoint rad2deg_robjoint(robjoint rad)
     deg.rax_4 := rad2deg(rad.rax_4);
     deg.rax_5 := rad2deg(rad.rax_5);
     deg.rax_6 := rad2deg(rad.rax_6);
-    
+
     RETURN deg;
 ENDFUNC
 
