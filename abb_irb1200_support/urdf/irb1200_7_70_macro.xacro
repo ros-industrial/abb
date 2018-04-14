@@ -2,17 +2,17 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
   <xacro:include filename="$(find abb_resources)/urdf/common_materials.xacro"/>
 
-  <xacro:macro name="abb_irb1200_5_90" params="prefix">
+  <xacro:macro name="abb_irb1200_7_70" params="prefix">
     <!-- link list -->
     <link name="${prefix}base_link">
       <collision name="collision">
         <geometry>
-          <mesh filename="package://abb_irb1200_support/meshes/irb1200_5_90/collision/base_link.stl"/>
+          <mesh filename="package://abb_irb1200_support/meshes/irb1200_5_90/collision/base_link.stl" />
         </geometry>
       </collision>
       <visual name="visual">
         <geometry>
-          <mesh filename="package://abb_irb1200_support/meshes/irb1200_5_90/visual/base_link.dae"/>
+          <mesh filename="package://abb_irb1200_support/meshes/irb1200_5_90/visual/base_link.dae"  />
         </geometry>
         <xacro:material_abb_yellow />
       </visual>
@@ -20,12 +20,12 @@
     <link name="${prefix}link_1">
       <collision name="collision">
         <geometry>
-          <mesh filename="package://abb_irb1200_support/meshes/irb1200_5_90/collision/link_1.stl"/>
+          <mesh filename="package://abb_irb1200_support/meshes/irb1200_5_90/collision/link_1.stl" />
         </geometry>
       </collision>
       <visual name="visual">
         <geometry>
-          <mesh filename="package://abb_irb1200_support/meshes/irb1200_5_90/visual/link_1.dae"/>
+          <mesh filename="package://abb_irb1200_support/meshes/irb1200_5_90/visual/link_1.dae" />
         </geometry>
         <xacro:material_abb_yellow />
       </visual>
@@ -33,38 +33,42 @@
     <link name="${prefix}link_2">
       <collision name="collision">
         <geometry>
-          <mesh filename="package://abb_irb1200_support/meshes/irb1200_5_90/collision/link_2.stl"/>
+          <mesh filename="package://abb_irb1200_support/meshes/irb1200_7_70/collision/link_2.stl" />
         </geometry>
       </collision>
       <visual name="visual">
         <geometry>
-          <mesh filename="package://abb_irb1200_support/meshes/irb1200_5_90/visual/link_2.dae"/>
+          <mesh filename="package://abb_irb1200_support/meshes/irb1200_7_70/visual/link_2.dae" />
         </geometry>
         <xacro:material_abb_yellow />
       </visual>
     </link>
     <link name="${prefix}link_3">
-      <collision name="collision">
+      <collision name="graphite_white">
         <geometry>
-          <mesh filename="package://abb_irb1200_support/meshes/irb1200_5_90/collision/link_3.stl"/>
+          <mesh filename="package://abb_irb1200_support/meshes/irb1200_7_70/collision/link_3.stl" />
         </geometry>
       </collision>
       <visual name="visual">
         <geometry>
-          <mesh filename="package://abb_irb1200_support/meshes/irb1200_5_90/visual/link_3.dae"/>
+          <mesh filename="package://abb_irb1200_support/meshes/irb1200_7_70/visual/link_3.dae" />
         </geometry>
         <xacro:material_abb_yellow />
       </visual>
     </link>
     <link name="${prefix}link_4">
       <collision name="collision">
+        <!-- offset purely to allow reuse of meshes -->
+        <origin xyz="-0.1 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://abb_irb1200_support/meshes/irb1200_5_90/collision/link_4.stl"/>
+          <mesh filename="package://abb_irb1200_support/meshes/irb1200_5_90/collision/link_4.stl" />
         </geometry>
       </collision>
       <visual name="visual">
+        <!-- offset purely to allow reuse of meshes -->
+        <origin xyz="-0.1 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://abb_irb1200_support/meshes/irb1200_5_90/visual/link_4.dae"/>
+          <mesh filename="package://abb_irb1200_support/meshes/irb1200_5_90/visual/link_4.dae" />
         </geometry>
         <xacro:material_abb_yellow />
       </visual>
@@ -72,12 +76,12 @@
     <link name="${prefix}link_5">
       <collision name="collision">
         <geometry>
-          <mesh filename="package://abb_irb1200_support/meshes/irb1200_5_90/collision/link_5.stl"/>
+          <mesh filename="package://abb_irb1200_support/meshes/irb1200_5_90/collision/link_5.stl" />
         </geometry>
       </collision>
       <visual name="visual">
         <geometry>
-          <mesh filename="package://abb_irb1200_support/meshes/irb1200_5_90/visual/link_5.dae"/>
+          <mesh filename="package://abb_irb1200_support/meshes/irb1200_5_90/visual/link_5.dae" />
         </geometry>
         <xacro:material_abb_yellow />
       </visual>
@@ -85,12 +89,12 @@
     <link name="${prefix}link_6">
       <collision name="collision">
         <geometry>
-          <mesh filename="package://abb_irb1200_support/meshes/irb1200_5_90/collision/link_6.stl"/>
+          <mesh filename="package://abb_irb1200_support/meshes/irb1200_5_90/collision/link_6.stl" />
         </geometry>
       </collision>
       <visual name="visual">
         <geometry>
-          <mesh filename="package://abb_irb1200_support/meshes/irb1200_5_90/visual/link_6.dae"/>
+          <mesh filename="package://abb_irb1200_support/meshes/irb1200_5_90/visual/link_6.dae" />
         </geometry>
         <xacro:material_abb_yellow />
       </visual>
@@ -111,10 +115,10 @@
       <axis xyz="0 1 0"/>
       <parent link="${prefix}link_1"/>
       <child link="${prefix}link_2"/>
-      <limit effort="0" lower="-1.745" upper="2.269" velocity="4.189"/>
+      <limit effort="0" lower="-1.745" upper="2.356" velocity="4.189"/>
     </joint>
     <joint type="revolute" name="${prefix}joint_3">
-      <origin xyz="0 0 0.448" rpy="0 0 0"/>
+      <origin xyz="0 0 0.350" rpy="0 0 0"/>
       <axis xyz="0 1 0"/>
       <parent link="${prefix}link_2"/>
       <child link="${prefix}link_3"/>
@@ -128,14 +132,14 @@
       <limit effort="0" lower="-4.712" upper="4.712" velocity="6.981"/>
     </joint>
     <joint type="revolute" name="${prefix}joint_5">
-      <origin xyz="0.451 0 0" rpy="0 0 0"/>
+      <origin xyz="0.351 0 0 " rpy="0 0 0"/>
       <axis xyz="0 1 0"/>
       <parent link="${prefix}link_4"/>
       <child link="${prefix}link_5"/>
       <limit effort="0" lower="-2.269" upper="2.269" velocity="7.069"/>
     </joint>
     <joint type="revolute" name="${prefix}joint_6">
-      <origin xyz="0.082 0 0" rpy="0 0 0"/>
+      <origin xyz="0.082 0 0 " rpy="0 0 0"/>
       <axis xyz="1 0 0"/>
       <parent link="${prefix}link_5"/>
       <child link="${prefix}link_6"/>
