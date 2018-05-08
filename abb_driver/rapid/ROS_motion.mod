@@ -54,6 +54,7 @@ PROC main()
         IF (trajectory_size > 0) THEN
             FOR current_index FROM 1 TO trajectory_size DO
                 target.robax := trajectory{current_index}.joint_pos;
+                target.extax := trajectory{current_index}.extax_pos;
 
                 skip_move := (current_index = 1) AND is_near(target.robax, 0.1);
 

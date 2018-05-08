@@ -67,6 +67,7 @@ LOCAL PROC send_joints()
     message.header := [ROS_MSG_TYPE_JOINT, ROS_COM_TYPE_TOPIC, ROS_REPLY_TYPE_INVALID];
     message.sequence_id := 0;
     message.joints := joints.robax;
+    message.ext_axes := joints.extax;
     
     ! send message to client
     ROS_send_msg_joint_data client_socket, message;

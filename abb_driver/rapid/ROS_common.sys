@@ -30,6 +30,7 @@ MODULE ROS_common(SYSMODULE)
 
 RECORD ROS_joint_trajectory_pt
 	robjoint joint_pos;
+    extjoint extax_pos;
 	num duration;
 ENDRECORD
 
