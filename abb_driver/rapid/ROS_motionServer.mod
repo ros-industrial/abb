@@ -66,7 +66,7 @@ LOCAL PROC trajectory_pt_callback(ROS_msg_joint_traj_pt message)
 	VAR jointtarget current_pos;
     VAR ROS_msg reply_msg;
 
-    point := [message.joints, message.duration];
+    point := [message.joints, message.ext_axes, message.duration];
     
     ! use sequence_id to signal start/end of trajectory download
 	TEST message.sequence_id
