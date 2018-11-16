@@ -91,16 +91,17 @@ LOCAL FUNC bool is_near(jointtarget target, num deg_tol, num mm_tol)
     
     curr_jnt := CJointT();
     
+    ! either an external axis is unconfigured/not present OR if it is, then it must be close enough
     RETURN ( ABS(curr_jnt.robax.rax_1 - target.robax.rax_1) < deg_tol )
        AND ( ABS(curr_jnt.robax.rax_2 - target.robax.rax_2) < deg_tol )
        AND ( ABS(curr_jnt.robax.rax_3 - target.robax.rax_3) < deg_tol )
        AND ( ABS(curr_jnt.robax.rax_4 - target.robax.rax_4) < deg_tol )
        AND ( ABS(curr_jnt.robax.rax_5 - target.robax.rax_5) < deg_tol )
        AND ( ABS(curr_jnt.robax.rax_6 - target.robax.rax_6) < deg_tol )
-       AND ( ABS(curr_jnt.extax.eax_a - target.extax.eax_a) < mm_tol )
-       AND ( ABS(curr_jnt.extax.eax_b - target.extax.eax_b) < mm_tol )
-       AND ( ABS(curr_jnt.extax.eax_c - target.extax.eax_c) < mm_tol )
-       AND ( ABS(curr_jnt.extax.eax_d - target.extax.eax_d) < mm_tol );
+       AND ( (curr_jnt.extax.eax_a = 9E9) OR (ABS(curr_jnt.extax.eax_a - target.extax.eax_a) < mm_tol) )
+       AND ( (curr_jnt.extax.eax_b = 9E9) OR (ABS(curr_jnt.extax.eax_b - target.extax.eax_b) < mm_tol) )
+       AND ( (curr_jnt.extax.eax_c = 9E9) OR (ABS(curr_jnt.extax.eax_c - target.extax.eax_c) < mm_tol) )
+       AND ( (curr_jnt.extax.eax_d = 9E9) OR (ABS(curr_jnt.extax.eax_d - target.extax.eax_d) < mm_tol) );
 ENDFUNC
 
 LOCAL PROC abort_trajectory()
