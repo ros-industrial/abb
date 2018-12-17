@@ -68,6 +68,12 @@
     </material>
   </xacro:macro>
 
+  <xacro:macro name="material_abb_olive_green">
+    <material name="">
+      <color rgba="${colour_abb_olive_green}"/>
+    </material>
+  </xacro:macro>
+
   <xacro:macro name="material_abb_gray_white">
     <material name="">
       <color rgba="${colour_abb_gray_white}"/>
