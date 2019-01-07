@@ -80,6 +80,7 @@ ENDPROC
 ! signalRobotEStop : System Output
 ! signalMotorOn : System Output
 ! signalMotionPossible : System Output
+! signalRobotActive : System Output
 ! signalRobotNotMoving : System Output
 LOCAL PROC send_status()
     VAR ROS_msg_robot_status message;
@@ -118,7 +119,7 @@ LOCAL PROC send_status()
     ENDIF
 
     ! Get whether motors have power
-    IF DOutput(signalMotorOn)=1 THEN
+    IF DOutput(signalMotorOn) = 1 THEN
         message.drives_powered := ROS_TRISTATE_TRUE;
     ELSE
         message.drives_powered := ROS_TRISTATE_FALSE;
@@ -135,14 +136,16 @@ LOCAL PROC send_status()
     ENDIF
 
     ! Get in_motion
-    IF DOutput(signalRobotNotMoving)=1 THEN
+    IF DOutput(signalRobotNotMoving) = 1 THEN
         message.in_motion := ROS_TRISTATE_FALSE;
     ELSE
         message.in_motion := ROS_TRISTATE_TRUE;
     ENDIF
 
     ! Get whether motion is possible
-    if DOutput(signalMotionPossible) = 1 THEN
+    if (DOutput(signalMotionPossible) = 1) AND
+       (DOutput(signalRobotActive) = 1) AND
+       (DOutput(signalMotorOn) = 1) THEN
         message.motion_possible := ROS_TRISTATE_TRUE;
     ELSE
         message.motion_possible := ROS_TRISTATE_FALSE;
