@@ -104,9 +104,10 @@ LOCAL PROC send_status()
     TEST OpMode()
         CASE OP_AUTO:
             message.mode := ROS_ROBOT_MODE_AUTO;
-        CASE OP_MAN_PROG:
-        CASE OP_MAN_TEST:
+        CASE OP_MAN_PROG, OP_MAN_TEST:
             message.mode := ROS_ROBOT_MODE_MANUAL;
+        CASE OP_UNDEF:
+            message.mode := ROS_ROBOT_MODE_UNKNOWN;
     ENDTEST
 
     ! Get E-stop status
