@@ -82,6 +82,7 @@ ENDPROC
 ! signalMotionPossible : System Output
 ! signalRobotActive : System Output
 ! signalRobotNotMoving : System Output
+! signalExecutionError : System Output
 LOCAL PROC send_status()
     VAR ROS_msg_robot_status message;
 
@@ -125,11 +126,8 @@ LOCAL PROC send_status()
         message.drives_powered := ROS_TRISTATE_FALSE;
     ENDIF
 
-    ! Get error code
-    message.error_code := ERRNO;
-
     ! Determine in_error
-    if (message.error_code >= 1) AND (message.error_code <= 90) THEN
+    if DOutput(signalExecutionError) = 1 THEN
         message.in_error := ROS_TRISTATE_TRUE;
     ELSE
         message.in_error := ROS_TRISTATE_FALSE;
