@@ -126,12 +126,10 @@ LOCAL PROC send_status()
         message.drives_powered := ROS_TRISTATE_FALSE;
     ENDIF
 
-    ! Get error code	
-    message.error_code := ERRNO;
-
-    ! Determine in_error
+    ! Determine in_error and set error_code if in_error is true
     if DOutput(signalExecutionError) = 1 THEN
         message.in_error := ROS_TRISTATE_TRUE;
+        message.error_code := ERRNO;
     ELSE
         message.in_error := ROS_TRISTATE_FALSE;
     ENDIF
