@@ -38,6 +38,9 @@
   <!-- RAL 6002 leaf green -->
   <xacro:property name="colour_abb_leaf_green" value="0.1764706 0.3529412 0.1529412 1" />
 
+  <!-- RAL 6003 olive green -->
+  <xacro:property name="colour_abb_olive_green" value="${ 80/255} ${ 83/255} ${ 60/255} 1" />
+
   <!-- RAL 9002 gray white -->
   <xacro:property name="colour_abb_gray_white" value="0.8392157 0.8352941 0.7921569 1" />
 
