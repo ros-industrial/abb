@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<package format="2">
+  <name>abb_irb6700_support</name>
+  <version>0.1.0</version>
+  <description>
+    <p>
+      ROS-Industrial support for the ABB IRB 6700 (and variants).
+    </p>
+    <p>
+      This package contains configuration data, 3D models and launch files
+      for ABB IRB 6700 manipulators. This currently includes the variant 235/2.65.
+    </p>
+    <p>
+      Joint limits and max joint velocities are based on the information in the
+      <a href="https://library.e.abb.com/public/f69fdf358ddc4264b2d86c02b019ec0e/3HAC044265%20PS%20IRB%206700-en.pdf">
+      ABB IRB 6700 product specification document</a> All URDFs / XACROs are based on the
+      default motion and joint velocity limits, unless noted otherwise (ie:
+      no support for high speed joints, extended / limited motion ranges or
+      other options).
+    </p>
+    <p>
+      Before using any of the configuration files and / or meshes included
+      in this package, be sure to check they are correct for the particular
+      robot model and configuration you intend to use them with.
+    </p>
+  </description>
+  <author email="michael.ripperger@swri.org">Michael Ripperger</author>
+  <maintainer email="levi.armstrong@swri.org">Levi Armstrong (Southwest Research Institute)</maintainer>
+  <license>Apache 2.0</license>
+
+  <url type="website">http://wiki.ros.org/abb_irb6700_support</url>
+  <url type="bugtracker">https://github.com/ros-industrial/abb_experimental/issues</url>
+  <url type="repository">https://github.com/ros-industrial/abb_experimental</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <test_depend>roslaunch</test_depend>
+
+  <exec_depend>abb_driver</exec_depend>
+  <exec_depend>abb_resources</exec_depend>
+  <exec_depend>joint_state_publisher</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>rviz</exec_depend>
+  <exec_depend>xacro</exec_depend>
+
+  <export>
+    <architecture_independent/>
+  </export>
+</package>
