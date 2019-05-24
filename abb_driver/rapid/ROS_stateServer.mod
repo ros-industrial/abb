@@ -132,6 +132,7 @@ LOCAL PROC send_status()
         message.error_code := ERRNO;
     ELSE
         message.in_error := ROS_TRISTATE_FALSE;
+        message.error_code := 0;
     ENDIF
 
     ! Get in_motion
