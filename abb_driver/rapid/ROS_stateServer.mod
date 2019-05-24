@@ -83,6 +83,7 @@ ENDPROC
 ! signalRobotActive : System Output
 ! signalRobotNotMoving : System Output
 ! signalExecutionError : System Output
+! signalRosMotionTaskExecuting : System Output
 LOCAL PROC send_status()
     VAR ROS_msg_robot_status message;
 
@@ -145,7 +146,8 @@ LOCAL PROC send_status()
     ! Get whether motion is possible
     if (DOutput(signalMotionPossible) = 1) AND
        (DOutput(signalRobotActive) = 1) AND
-       (DOutput(signalMotorOn) = 1) THEN
+       (DOutput(signalMotorOn) = 1) AND
+       (DOutput(signalRosMotionTaskExecuting) = 1) THEN
         message.motion_possible := ROS_TRISTATE_TRUE;
     ELSE
         message.motion_possible := ROS_TRISTATE_FALSE;
