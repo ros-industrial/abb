@@ -77,13 +77,13 @@ ERROR
     RAISE;  ! raise errors to calling code
 ENDPROC
 
-! signalRobotEStop : System Output
-! signalMotorOn : System Output
+! signalExecutionError : System Output
 ! signalMotionPossible : System Output
+! signalMotorOn : System Output
 ! signalRobotActive : System Output
+! signalRobotEStop : System Output
 ! signalRobotNotMoving : System Output
 ! signalRosMotionTaskExecuting : System Output
-! signalExecutionError : System Output
 LOCAL PROC send_status()
     VAR ROS_msg_robot_status message;
 
