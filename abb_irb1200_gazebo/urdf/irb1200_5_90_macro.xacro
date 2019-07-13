@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find abb_irb1200_support)/urdf/irb1200_5_90_macro.xacro" />
+  <xacro:macro name="abb_irb1200_5_90_gazebo" params="prefix">
+
+    <!-- get base ABB IRB1200 model -->
+    <xacro:abb_irb1200_5_90 prefix="${prefix}" />
+
+    <!-- transmission list -->
+    <transmission name="${prefix}tran1">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${prefix}joint_1">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="${prefix}motor1">
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+    <transmission name="${prefix}tran2">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${prefix}joint_2">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="${prefix}motor2">
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+    <transmission name="${prefix}tran3">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${prefix}joint_3">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="${prefix}motor3">
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+    <transmission name="${prefix}tran4">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${prefix}joint_4">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="${prefix}motor4">
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+    <transmission name="${prefix}tran5">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${prefix}joint_5">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="${prefix}motor5">
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+    <transmission name="${prefix}tran6">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${prefix}joint_6">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="${prefix}motor6">
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+    <!-- end of transmission list -->
+
+    <!-- Gazebo-specific link properties -->
+    <gazebo reference="${prefix}base_link">
+      <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+    <gazebo reference="${prefix}link_1">
+      <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+    <gazebo reference="${prefix}link_2">
+      <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+    <gazebo reference="${prefix}link_3">
+      <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+    <gazebo reference="${prefix}link_4">
+      <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+    <gazebo reference="${prefix}link_5">
+      <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+    <gazebo reference="${prefix}link_6">
+      <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+
+  </xacro:macro>
+</robot>

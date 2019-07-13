@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>abb_irb1200_gazebo</name>
+  <version>0.0.1</version>
+  <description>
+    <p>
+      ROS-Industrial Gazebo support package for the ABB IRB 1200 (and variants).
+    </p>
+    <p>
+      This package contains the configuration data and launch files required
+      to simulate the ABB IRB 1200 manipulator in Gazebo. This currently only
+      includes the 5/0.9 variant.
+    </p>
+    <p>
+      `ros_control` `effort_controllers` are used to move the robot joints.
+      The controller parameters (PID, constrains) are guesstimates, and were
+      obtained testing different values until the joint movement was good enough
+      for the intended application. You may need to change them for your simulation.
+    </p>
+    <p>
+      Before using any of the configuration files included in this package, be
+      sure to check they are correct for the particular robot model and
+      configuration you intend to use them with.
+    </p>
+  </description>
+  <author email="stephan@ironox.com">Stephan Wirth</author>
+  <maintainer email="lucas@ironox.com">Lucas Chiesa</maintainer>
+  <maintainer email="levi.armstrong@swri.org">Levi Armstrong (Southwest Research Institute)</maintainer>
+  <maintainer email="g.a.vanderhoorn@tudelft.nl">G.A. vd. Hoorn (TU Delft Robotics Institute)</maintainer>
+  <license>Apache 2.0</license>
+
+  <url type="website">http://wiki.ros.org/abb</url>
+  <url type="bugtracker">https://github.com/ros-industrial/abb_experimental/issues</url>
+  <url type="repository">https://github.com/ros-industrial/abb_experimental</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>abb_irb1200_support</exec_depend>
+  <exec_depend>gazebo</exec_depend>
+  <exec_depend>gazebo_ros</exec_depend>
+  <exec_depend>gazebo_ros_control</exec_depend>
+  <exec_depend>gazebo_ros_pkgs</exec_depend>
+  <exec_depend>joint_state_controller</exec_depend>
+  <exec_depend>joint_trajectory_controller</exec_depend>
+  <exec_depend>position_controllers</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+
+  <export>
+    <architecture_independent/>
+  </export>
+</package>

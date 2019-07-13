@@ -19,6 +19,19 @@
       extended / limited motion ranges or other options).
     </p>
     <p>
+      Note 1: inertial and dynamics values for the 5/0.9 variant were calculated
+      from the meshes using <em>Meshlab</em>, assuming constant density.
+      As the datasheet only provides the mass of the entire robot,
+      the mass of each link was estimated based on its volume, assuming
+      constant density for the entire robot.
+    </p>
+    <p>
+      Note 2: maximum joint effort values for the 5/0.9 variant do not
+      correspond to real world limits of the robot. The current values were
+      chosen to accomodate Gazebo simulations of this specific variant but
+      are fictional values.
+    </p>
+    <p>
       Before using any of the configuration files and / or meshes included
       in this package, be sure to check they are correct for the particular
       robot model and configuration you intend to use them with.
