@@ -2,6 +2,12 @@
 Changelog for package abb_irb6640_support
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* replace xacro.py to xacro --inorder (`#154 <https://github.com/ros-industrial/abb/issues/154>`_)
+* Use the 'doc' attribute on 'arg' elements. (`#143 <https://github.com/ros-industrial/abb/issues/143>`_)
+* Contributors: Harsh Deshpande, Yutaka Kondo, gavanderhoorn
+
 1.3.0 (2017-05-27)
 ------------------
 * remove reference to source build and rebase to indigo devel.
