@@ -1,17 +1,15 @@
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Changelog for package abb_irb6640_support
+Changelog for package abb_irb4400_support
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1.3.0 (2017-05-27)
 ------------------
-* remove reference to source build and rebase to indigo devel.
-* kinetic-devel release of ros-industrial/abb
-* Contributors: Austin Deric
+* Removed urdf file from 4400 support package.
+* Copied the irb4400 support package from the experimental repo.
+* Contributors: Jonathan Meyer
 
 1.2.1 (2017-03-27)
 ------------------
-* Create a copy of abb_irb6600_support and rename to abb_irb6640_support
-* Contributors: Levi Armstrong
 
 1.2.0 (2015-06-06)
 ------------------
@@ -23,15 +21,6 @@ Changelog for package abb_irb6640_support
 ------------------
 
 1.1.7 (2015-04-01)
-------------------
-
-1.1.6 (2015-03-17 14:18)
-------------------------
-
-1.1.5 (2015-03-17 08:29)
-------------------------
-
-1.1.4 (2014-12-14)
 ------------------
 
 1.1.3 (2014-09-05)
