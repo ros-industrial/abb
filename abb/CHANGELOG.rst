@@ -2,6 +2,18 @@
 Changelog for package abb
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Update maintainers (`#139 <https://github.com/ros-industrial/abb/issues/139>`_)
+* Contributors: gavanderhoorn
+
+1.3.0 (2017-05-27)
+------------------
+* Added 4400 support package to meta-package manifest of abb.
+* fix comments from PR `#126 <https://github.com/ros-industrial/abb/issues/126>`_.
+* kinetic-devel release of ros-industrial/abb
+* Contributors: AustinDeric, Jonathan Meyer
+
 1.2.1 (2017-03-27)
 ------------------
 * No changes

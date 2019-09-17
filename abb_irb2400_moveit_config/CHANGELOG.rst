@@ -2,6 +2,17 @@
 Changelog for package abb_irb2400_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Update maintainers (`#139 <https://github.com/ros-industrial/abb/issues/139>`_)
+* Contributors: gavanderhoorn
+
+1.3.0 (2017-05-27)
+------------------
+* remove reference to source build and rebase to indigo devel.
+* kinetic-devel release of ros-industrial/abb
+* Contributors: Austin Deric
+
 1.2.1 (2017-03-27)
 ------------------
 * No changes
