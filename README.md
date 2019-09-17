@@ -1,6 +1,6 @@
 # ABB
 
-[![Build Status](http://build.ros.org/job/Idev__abb__ubuntu_trusty_amd64/badge/icon)](http://build.ros.org/job/Idev__abb__ubuntu_trusty_amd64)
+[![Build Status](http://build.ros.org/job/Kdev__abb__ubuntu_xenial_amd64/badge/icon)](http://build.ros.org/job/Kdev__abb__ubuntu_xenial_amd64)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
