@@ -2,8 +2,8 @@
 Changelog for package abb_irb5400_support
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.3.1 (2019-09-17)
+------------------
 * Use the 'doc' attribute on 'arg' elements. (`#143 <https://github.com/ros-industrial/abb/issues/143>`_)
 * Update maintainers (`#139 <https://github.com/ros-industrial/abb/issues/139>`_)
 * Contributors: Harsh Deshpande, gavanderhoorn

@@ -2,8 +2,8 @@
 Changelog for package abb
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.3.1 (2019-09-17)
+------------------
 * Update maintainers (`#139 <https://github.com/ros-industrial/abb/issues/139>`_)
 * Contributors: gavanderhoorn
 

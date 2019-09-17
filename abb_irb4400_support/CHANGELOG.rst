@@ -2,8 +2,8 @@
 Changelog for package abb_irb4400_support
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.3.1 (2019-09-17)
+------------------
 * remove roslaunch test deps (`#167 <https://github.com/ros-industrial/abb/issues/167>`_)
 * Use the 'doc' attribute on 'arg' elements. (`#143 <https://github.com/ros-industrial/abb/issues/143>`_)
 * Update maintainers (`#139 <https://github.com/ros-industrial/abb/issues/139>`_)
