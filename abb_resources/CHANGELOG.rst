@@ -2,8 +2,8 @@
 Changelog for package abb_resources
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.3.1 (2019-09-17)
+------------------
 * Add Olive Green as a color (`#160 <https://github.com/ros-industrial/abb/issues/160>`_)
 * Contributors: Ryan DelGizzi, gavanderhoorn
 
