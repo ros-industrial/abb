@@ -2,6 +2,11 @@
 Changelog for package abb_irb6640_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.3.1 (2019-09-17)
+------------------
+* Update maintainers (`#139 <https://github.com/ros-industrial/abb/issues/139>`_)
+* Contributors: gavanderhoorn
+
 1.3.0 (2017-05-27)
 ------------------
 * kinetic-devel release of ros-industrial/abb

@@ -39,7 +39,7 @@ PROC main()
     VAR speeddata move_speed := v10;  ! default speed
     VAR zonedata stop_mode;
     VAR bool skip_move;
-    
+
     ! Set up interrupt to watch for new trajectory
     IDelete intr_new_trajectory;    ! clear interrupt handler, in case restarted with ExitCycle
     CONNECT intr_new_trajectory WITH new_trajectory_handler;
@@ -54,8 +54,9 @@ PROC main()
         IF (trajectory_size > 0) THEN
             FOR current_index FROM 1 TO trajectory_size DO
                 target.robax := trajectory{current_index}.joint_pos;
+                target.extax := trajectory{current_index}.extax_pos;
 
-                skip_move := (current_index = 1) AND is_near(target.robax, 0.1);
+                skip_move := (current_index = 1) AND is_near(target, 0.1, 0.1);
 
                 stop_mode := DEFAULT_CORNER_DIST;  ! assume we're smoothing between points
                 IF (current_index = trajectory_size) stop_mode := fine;  ! stop at path end
@@ -67,7 +68,7 @@ PROC main()
 
             trajectory_size := 0;  ! trajectory done
         ENDIF
-        
+
         WaitTime 0.05;  ! Throttle loop while waiting for new command
     ENDWHILE
 ERROR
@@ -79,23 +80,28 @@ LOCAL PROC init_trajectory()
     clear_path;                    ! cancel any active motions
 
     WaitTestAndSet ROS_trajectory_lock;  ! acquire data-lock
-      trajectory := ROS_trajectory;            ! copy to local var
-      trajectory_size := ROS_trajectory_size;  ! copy to local var
-      ROS_new_trajectory := FALSE;
+    trajectory := ROS_trajectory;            ! copy to local var
+    trajectory_size := ROS_trajectory_size;  ! copy to local var
+    ROS_new_trajectory := FALSE;
     ROS_trajectory_lock := FALSE;         ! release data-lock
 ENDPROC
 
-LOCAL FUNC bool is_near(robjoint target, num tol)
+LOCAL FUNC bool is_near(jointtarget target, num deg_tol, num mm_tol)
     VAR jointtarget curr_jnt;
-    
+
     curr_jnt := CJointT();
-    
-    RETURN ( ABS(curr_jnt.robax.rax_1 - target.rax_1) < tol )
-       AND ( ABS(curr_jnt.robax.rax_2 - target.rax_2) < tol )
-       AND ( ABS(curr_jnt.robax.rax_3 - target.rax_3) < tol )
-       AND ( ABS(curr_jnt.robax.rax_4 - target.rax_4) < tol )
-       AND ( ABS(curr_jnt.robax.rax_5 - target.rax_5) < tol )
-       AND ( ABS(curr_jnt.robax.rax_6 - target.rax_6) < tol );
+
+    ! either an external axis is unconfigured/not present OR if it is, then it must be close enough
+    RETURN ( ABS(curr_jnt.robax.rax_1 - target.robax.rax_1) < deg_tol )
+       AND ( ABS(curr_jnt.robax.rax_2 - target.robax.rax_2) < deg_tol )
+       AND ( ABS(curr_jnt.robax.rax_3 - target.robax.rax_3) < deg_tol )
+       AND ( ABS(curr_jnt.robax.rax_4 - target.robax.rax_4) < deg_tol )
+       AND ( ABS(curr_jnt.robax.rax_5 - target.robax.rax_5) < deg_tol )
+       AND ( ABS(curr_jnt.robax.rax_6 - target.robax.rax_6) < deg_tol )
+       AND ( (curr_jnt.extax.eax_a = 9E9) OR (ABS(curr_jnt.extax.eax_a - target.extax.eax_a) < mm_tol) )
+       AND ( (curr_jnt.extax.eax_b = 9E9) OR (ABS(curr_jnt.extax.eax_b - target.extax.eax_b) < mm_tol) )
+       AND ( (curr_jnt.extax.eax_c = 9E9) OR (ABS(curr_jnt.extax.eax_c - target.extax.eax_c) < mm_tol) )
+       AND ( (curr_jnt.extax.eax_d = 9E9) OR (ABS(curr_jnt.extax.eax_d - target.extax.eax_d) < mm_tol) );
 ENDFUNC
 
 LOCAL PROC abort_trajectory()
@@ -113,7 +119,7 @@ ENDPROC
 
 LOCAL TRAP new_trajectory_handler
     IF (NOT ROS_new_trajectory) RETURN;
-    
+
     abort_trajectory;
 ENDTRAP
 

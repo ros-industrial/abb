@@ -2,6 +2,15 @@
 Changelog for package abb_driver
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.3.1 (2019-09-17)
+------------------
+* Add robot status publishing to Rapid driver (`#168 <https://github.com/ros-industrial/abb/pull/168>`_)
+* Fix is_near check (`#155 <https://github.com/ros-industrial/abb/issues/155>`_)
+* Add support for external linear axes to abb_driver (`#150 <https://github.com/ros-industrial/abb/issues/150>`_)
+* Use the 'doc' attribute on 'arg' elements. (`#143 <https://github.com/ros-industrial/abb/issues/143>`_)
+* Update maintainers (`#139 <https://github.com/ros-industrial/abb/issues/139>`_)
+* Contributors: Gonzalo Casas, Harsh Deshpande, JD Yamokoski, Keerthana Manivannan, gavanderhoorn
+
 1.3.0 (2017-05-27)
 ------------------
 * kinetic-devel release of ros-industrial/abb

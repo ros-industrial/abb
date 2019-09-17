@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="2">
   <name>abb_irb6640_moveit_config</name>
-  <version>1.3.0</version>
+  <version>1.3.1</version>
   <description>
     <p>
       MoveIt package for the ABB IRB 6640.
@@ -13,7 +13,7 @@
     </p>
   </description>
   <author email="assistant@moveit.ros.org">MoveIt Setup Assistant</author>
-  <maintainer email="sedwards@swri.org">Shaun Edwards (Southwest Research Institute)</maintainer>
+  <maintainer email="levi.armstrong@swri.org">Levi Armstrong (Southwest Research Institute)</maintainer>
 
   <license>BSD</license>
 

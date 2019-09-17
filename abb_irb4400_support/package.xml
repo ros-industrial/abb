@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="2">
   <name>abb_irb4400_support</name>
-  <version>1.3.0</version>
+  <version>1.3.1</version>
   <description>
     <p>
       ROS-Industrial support for the ABB IRB 4400 (and variants).
@@ -25,7 +25,7 @@
     </p>
   </description>
   <author>Dan Solomon</author>
-  <maintainer email="sedewards@swri.org">Shaun Edwards (SwRI)</maintainer>
+  <maintainer email="levi.armstrong@swri.org">Levi Armstrong (Southwest Research Institute)</maintainer>
   <license>Apache2</license>
 
   <url type="website">http://wiki.ros.org/abb_irb4400_support</url>

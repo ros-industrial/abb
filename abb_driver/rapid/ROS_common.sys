@@ -29,8 +29,9 @@ MODULE ROS_common(SYSMODULE)
 ! WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 RECORD ROS_joint_trajectory_pt
-	robjoint joint_pos;
-	num duration;
+    robjoint joint_pos;
+    extjoint extax_pos;
+    num duration;
 ENDRECORD
 
 CONST num MAX_TRAJ_LENGTH := 100;

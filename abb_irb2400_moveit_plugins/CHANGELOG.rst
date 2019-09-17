@@ -2,6 +2,12 @@
 Changelog for package abb_irb2400_moveit_plugins
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.3.1 (2019-09-17)
+------------------
+* Update URDF shared pointers for melodic (`#159 <https://github.com/ros-industrial/abb/issues/159>`_)
+* Update maintainers (`#139 <https://github.com/ros-industrial/abb/issues/139>`_)
+* Contributors: Jonathan Binney, gavanderhoorn
+
 1.3.0 (2017-05-27)
 ------------------
 * kinetic-devel release of ros-industrial/abb

@@ -62,11 +62,11 @@ PROC ROS_receive_msg(VAR socketdev client_socket, VAR ROS_msg message, \num wait
     IF Present(wait_time) time_val := wait_time;
 
     ! TBD: need to determine whether this handles split/merged messages correctly
-    
+
     ! Read prefix INT (total message length)
     SocketReceive client_socket, \RawData:=buffer, \ReadNoOfBytes:=4, \Time:=time_val;
     UnpackRawBytes buffer, 1, msg_length, \IntX:=UDINT;
-    
+
     ! Read remaining message bytes
     SocketReceive client_socket, \RawData:=buffer, \ReadNoOfBytes:=msg_length, \NoRecBytes:=bytes_rcvd, \Time:=time_val;
     IF (bytes_rcvd <> msg_length) THEN
@@ -75,13 +75,13 @@ PROC ROS_receive_msg(VAR socketdev client_socket, VAR ROS_msg message, \num wait
                  \RL3:="Received: " + ValToStr(bytes_rcvd);
         RETURN;
     ENDIF
-    
+
     ! Unpack message header/data
     UnpackRawBytes buffer, 1, message.header.msg_type, \IntX:=DINT;
     UnpackRawBytes buffer, 5, message.header.comm_type, \IntX:=DINT;
     UnpackRawBytes buffer, 9, message.header.reply_code, \IntX:=DINT;
     CopyRawBytes   buffer, 13, message.data, 1;
-    
+
 ERROR
     RAISE;  ! raise errors to calling code
 ENDPROC
@@ -96,7 +96,7 @@ PROC ROS_send_msg(VAR socketdev client_socket, VAR ROS_msg message)
     CopyRawBytes message.data, 1,                buffer, 17;                 ! Message data
 
     SocketSend client_socket \RawData:=buffer;
-    
+
 ERROR
     RAISE;  ! raise errors to calling code
 ENDPROC

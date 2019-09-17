@@ -2,6 +2,11 @@
 Changelog for package abb
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.3.1 (2019-09-17)
+------------------
+* Update maintainers (`#139 <https://github.com/ros-industrial/abb/issues/139>`_)
+* Contributors: gavanderhoorn
+
 1.3.0 (2017-05-27)
 ------------------
 * Added 4400 support package to meta-package manifest of abb.

@@ -2,6 +2,11 @@
 Changelog for package abb_irb6600_support
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.3.1 (2019-09-17)
+------------------
+* Use the 'doc' attribute on 'arg' elements. (`#143 <https://github.com/ros-industrial/abb/issues/143>`_)
+* Contributors: Harsh Deshpande, gavanderhoorn
+
 1.3.0 (2017-05-27)
 ------------------
 * remove reference to source build and rebase to indigo devel.

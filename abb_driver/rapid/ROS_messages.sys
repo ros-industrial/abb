@@ -41,6 +41,7 @@ RECORD ROS_msg_joint_traj_pt
     ROS_msg_header header;
     num sequence_id;
     robjoint joints;  ! in DEGREES
+    extjoint ext_axes;
     num velocity;
     num duration;
 ENDRECORD
@@ -49,12 +50,26 @@ RECORD ROS_msg_joint_data
     ROS_msg_header header;
     num sequence_id;
     robjoint joints;  ! in DEGREES
+    extjoint ext_axes;
+ENDRECORD
+
+RECORD ROS_msg_robot_status
+    ROS_msg_header header;
+    num sequence_id;
+    num drives_powered;
+    num e_stopped;
+    num error_code;
+    num in_error;
+    num in_motion;
+    num mode;
+    num motion_possible;
 ENDRECORD
 
 ! Message Type Codes (from simple_message/simple_message.h)
 CONST num ROS_MSG_TYPE_INVALID       := 0;
 CONST num ROS_MSG_TYPE_JOINT         := 10;  ! joint-position feedback
 CONST num ROS_MSG_TYPE_JOINT_TRAJ_PT := 11;  ! joint-trajectory-point (for path downloading)
+CONST num ROS_MSG_TYPE_STATUS        := 13;  ! robot status message (for reporting the robot state)
 CONST num ROS_COM_TYPE_TOPIC         := 1;
 CONST num ROS_COM_TYPE_SRV_REQ       := 2;
 CONST num ROS_COM_TYPE_SRV_REPLY     := 3;
@@ -67,38 +82,50 @@ CONST num ROS_TRAJECTORY_START_DOWNLOAD := -1;
 CONST num ROS_TRAJECTORY_END := -3;
 CONST num ROS_TRAJECTORY_STOP := -4;
 
+! Robot mode codes (from industrial_msgs/RobotMode.msg)
+CONST num ROS_ROBOT_MODE_UNKNOWN     := -1; ! Unknown or unavailable
+CONST num ROS_ROBOT_MODE_MANUAL      := 1;  ! Teach OR manual mode
+CONST num ROS_ROBOT_MODE_AUTO        := 2;  ! Automatic mode
+
+! Tri-state values (from inudstrial/TriState.msg)
+CONST num ROS_TRISTATE_UNKNOWN       := -1;
+CONST num ROS_TRISTATE_TRUE          := 1;
+CONST num ROS_TRISTATE_ON            := 1;
+CONST num ROS_TRISTATE_FALSE         := 0;
+CONST num ROS_TRISTATE_OFF           := 0;
+
 ! Other message constants
 CONST num ROS_MSG_MAX_JOINTS := 10;  ! from joint_data.h
 
 PROC ROS_receive_msg_joint_traj_pt(VAR socketdev client_socket, VAR ROS_msg_joint_traj_pt message, \num wait_time)
     VAR ROS_msg raw_message;
-    
+
     ! Read raw message data
     IF Present(wait_time) THEN
         ROS_receive_msg client_socket, raw_message, \wait_time:=wait_time;
     ELSE
         ROS_receive_msg client_socket, raw_message;
     ENDIF
-    
+
     ! Integrity Check: Message Type
     IF (raw_message.header.msg_type <> ROS_MSG_TYPE_JOINT_TRAJ_PT) THEN
         ErrWrite \W, "ROS Socket Type Mismatch", "Unexpected message type",
-                \RL2:="expected: " + ValToStr(ROS_MSG_TYPE_JOINT_TRAJ_PT),
-                \RL3:="received: " + ValToStr(raw_message.header.msg_type);
+                 \RL2:="expected: " + ValToStr(ROS_MSG_TYPE_JOINT_TRAJ_PT),
+                 \RL3:="received: " + ValToStr(raw_message.header.msg_type);
         RAISE ERR_ARGVALERR;  ! TBD: define specific error code
     ENDIF
-    
+
     ! Integrity Check: Data Size
     IF (RawBytesLen(raw_message.data) < 52) THEN
         ErrWrite \W, "ROS Socket Missing Data", "Insufficient data for joint_trajectory_pt",
-                \RL2:="expected: 52",
-                \RL3:="received: " + ValToStr(RawBytesLen(raw_message.data));
+                 \RL2:="expected: 52",
+                 \RL3:="received: " + ValToStr(RawBytesLen(raw_message.data));
         RAISE ERR_OUTOFBND;  ! TBD: define specific error code
     ENDIF
-    
+
     ! Copy Header data
     message.header := raw_message.header;
-    
+
     ! Unpack data fields
     UnpackRawBytes raw_message.data, 1, message.sequence_id, \IntX:=DINT;
     UnpackRawBytes raw_message.data, 5, message.joints.rax_1, \Float4;
@@ -107,14 +134,18 @@ PROC ROS_receive_msg_joint_traj_pt(VAR socketdev client_socket, VAR ROS_msg_join
     UnpackRawBytes raw_message.data, 17, message.joints.rax_4, \Float4;
     UnpackRawBytes raw_message.data, 21, message.joints.rax_5, \Float4;
     UnpackRawBytes raw_message.data, 25, message.joints.rax_6, \Float4;
-    ! Skip bytes 29-44.  UNUSED.  Reserved for Joints 7-10.  TBD: copy to extAx?
-    UnpackRawBytes raw_message.data, 29+(ROS_MSG_MAX_JOINTS-6)*4, message.velocity, \Float4;
-    UnpackRawBytes raw_message.data, 33+(ROS_MSG_MAX_JOINTS-6)*4, message.duration, \Float4;
-    
+    UnpackRawBytes raw_message.data, 29, message.ext_axes.eax_a, \Float4;
+    UnpackRawBytes raw_message.data, 33, message.ext_axes.eax_b, \Float4;
+    UnpackRawBytes raw_message.data, 37, message.ext_axes.eax_c, \Float4;
+    UnpackRawBytes raw_message.data, 41, message.ext_axes.eax_d, \Float4;
+    UnpackRawBytes raw_message.data, 45, message.velocity, \Float4;
+    UnpackRawBytes raw_message.data, 49, message.duration, \Float4;
+
     ! Convert data from ROS units to ABB units
     message.joints := rad2deg_robjoint(message.joints);
+    message.ext_axes := m2mm_extjoint(message.ext_axes);
     ! TBD: convert velocity
-    
+
 ERROR
     RAISE;  ! raise errors to calling code
 ENDPROC
@@ -122,15 +153,17 @@ ENDPROC
 PROC ROS_send_msg_joint_data(VAR socketdev client_socket, ROS_msg_joint_data message)
     VAR ROS_msg raw_message;
     VAR robjoint ROS_joints;
+    VAR extjoint ROS_ext_axes;
     VAR num i;
-    
+
     ! Force message header to the correct values
     raw_message.header.msg_type := ROS_MSG_TYPE_JOINT;
     raw_message.header.comm_type := ROS_COM_TYPE_TOPIC;
     raw_message.header.reply_code := ROS_REPLY_TYPE_INVALID;
-    
+
     ! Convert data from ABB units to ROS units
     ROS_joints := deg2rad_robjoint(message.joints);
+    ROS_ext_axes := mm2m_extjoint(message.ext_axes);
 
     ! Pack data into message
     PackRawBytes message.sequence_id, raw_message.data,  1, \IntX:=DINT;
@@ -140,9 +173,33 @@ PROC ROS_send_msg_joint_data(VAR socketdev client_socket, ROS_msg_joint_data mes
     PackRawBytes ROS_joints.rax_4,    raw_message.data, 17, \Float4;
     PackRawBytes ROS_joints.rax_5,    raw_message.data, 21, \Float4;
     PackRawBytes ROS_joints.rax_6,    raw_message.data, 25, \Float4;
-    FOR i FROM 1 TO ROS_MSG_MAX_JOINTS-6 DO   ! Insert placeholders for joints 7-10 (message expects 10 joints)
-        PackRawBytes 0,               raw_message.data, 25+i*4, \Float4;
-    ENDFOR
+    PackRawBytes ROS_ext_axes.eax_a,  raw_message.data, 29, \Float4;
+    PackRawBytes ROS_ext_axes.eax_b,  raw_message.data, 33, \Float4;
+    PackRawBytes ROS_ext_axes.eax_c,  raw_message.data, 37, \Float4;
+    PackRawBytes ROS_ext_axes.eax_d,  raw_message.data, 41, \Float4;
+
+    ROS_send_msg client_socket, raw_message;
+
+ERROR
+    RAISE;  ! raise errors to calling code
+ENDPROC
+
+PROC ROS_send_msg_robot_status(VAR socketdev client_socket, ROS_msg_robot_status message)
+    VAR ROS_msg raw_message;
+
+    ! Force message header to the correct values
+    raw_message.header.msg_type := message.header.msg_type;
+    raw_message.header.comm_type := message.header.comm_type;
+    raw_message.header.reply_code := message.header.reply_code;
+
+    ! Pack data into message
+    PackRawBytes message.drives_powered,     raw_message.data,  1, \IntX:=DINT;
+    PackRawBytes message.e_stopped,          raw_message.data,  5, \IntX:=DINT;
+    PackRawBytes message.error_code,         raw_message.data,  9, \IntX:=DINT;
+    PackRawBytes message.in_error,           raw_message.data, 13, \IntX:=DINT;
+    PackRawBytes message.in_motion,          raw_message.data, 17, \IntX:=DINT;
+    PackRawBytes message.mode,               raw_message.data, 21, \IntX:=DINT;
+    PackRawBytes message.motion_possible,    raw_message.data, 25, \IntX:=DINT;
 
     ROS_send_msg client_socket, raw_message;
 
@@ -152,6 +209,35 @@ ENDPROC
 
 LOCAL FUNC num deg2rad(num deg)
     RETURN deg * pi / 180;
+ENDFUNC
+
+LOCAL FUNC num connected_eax(num eax)
+    ! The value 9E9 is defined for axes which are not connected
+    IF eax <> 9E9 THEN
+        RETURN eax;
+    ENDIF
+    RETURN 0;
+ENDFUNC
+
+! Returns only connected external axes in METERS
+LOCAL FUNC extjoint mm2m_extjoint(extjoint all_eax)
+    VAR extjoint eax;
+    eax.eax_a := connected_eax(all_eax.eax_a) / 1000;
+    eax.eax_b := connected_eax(all_eax.eax_b) / 1000;
+    eax.eax_c := connected_eax(all_eax.eax_c) / 1000;
+    eax.eax_d := connected_eax(all_eax.eax_d) / 1000;
+    RETURN eax;
+ENDFUNC
+
+! Returns external axes in MILLIMETERS
+LOCAL FUNC extjoint m2mm_extjoint(extjoint eax_in_m)
+    VAR extjoint eax_in_mm;
+    eax_in_mm.eax_a := eax_in_m.eax_a * 1000;
+    eax_in_mm.eax_b := eax_in_m.eax_b * 1000;
+    eax_in_mm.eax_c := eax_in_m.eax_c * 1000;
+    eax_in_mm.eax_d := eax_in_m.eax_d * 1000;
+
+    RETURN eax_in_mm;
 ENDFUNC
 
 LOCAL FUNC robjoint deg2rad_robjoint(robjoint deg)
@@ -178,7 +264,7 @@ LOCAL FUNC robjoint rad2deg_robjoint(robjoint rad)
     deg.rax_4 := rad2deg(rad.rax_4);
     deg.rax_5 := rad2deg(rad.rax_5);
     deg.rax_6 := rad2deg(rad.rax_6);
-    
+
     RETURN deg;
 ENDFUNC
 

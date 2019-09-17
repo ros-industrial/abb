@@ -1,6 +1,10 @@
 # ABB
 
-[![Build Status](http://build.ros.org/job/Idev__abb__ubuntu_trusty_amd64/badge/icon)](http://build.ros.org/job/Idev__abb__ubuntu_trusty_amd64)
+[![Build Status](http://build.ros.org/job/Kdev__abb__ubuntu_xenial_amd64/badge/icon)](http://build.ros.org/job/Kdev__abb__ubuntu_xenial_amd64)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
+
+[![support level: community](https://img.shields.io/badge/support%20level-community-lightgray.png)](http://rosindustrial.org/news/2016/10/7/better-supporting-a-growing-ros-industrial-software-platform)
 
 [ROS-Industrial][] ABB meta-package.  See the [ROS wiki][] page for more information.
 
@@ -23,8 +27,8 @@ All robot support packages and MoveIt configurations follow the naming conventio
 
 
 
-[ROS-Industrial]: http://www.ros.org/wiki/Industrial
-[ROS wiki]: http://ros.org/wiki/abb
+[ROS-Industrial]: http://wiki.ros.org/Industrial
+[ROS wiki]: http://wiki.ros.org/abb
 [abb_experimental]: https://github.com/ros-industrial/abb_experimental
 [subversion repository]: https://code.google.com/p/swri-ros-pkg/source/browse
 [REP-I0007]: https://github.com/ros-industrial/rep/blob/master/rep-I0007.rst
