@@ -29,7 +29,14 @@ MODULE ROS_socket(SYSMODULE)
 
 PROC ROS_init_socket(VAR socketdev server_socket, num port)
     IF (SocketGetStatus(server_socket) = SOCKET_CLOSED) SocketCreate server_socket;
-    IF (SocketGetStatus(server_socket) = SOCKET_CREATED) SocketBind server_socket, GetSysInfo(\LanIp), port;
+    IF (SocketGetStatus(server_socket) = SOCKET_CREATED) THEN
+        IF RobOS() THEN
+            SocketBind server_socket, GetSysInfo(\LanIp), port;
+        ELSE
+            ! replace "127.0.0.1" with the IP address of the NIC
+            SocketBind server_socket, "127.0.0.1", port;
+        ENDIF
+    ENDIF
     IF (SocketGetStatus(server_socket) = SOCKET_BOUND) SocketListen server_socket;
 
 ERROR
