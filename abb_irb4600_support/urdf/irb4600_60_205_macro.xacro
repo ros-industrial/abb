@@ -38,7 +38,7 @@
       </collision>
       <visual name="visual">
         <geometry>
-          <mesh filename="package://abb_irb4600_support/meshes/irb4600_60_205/visual/link_2.stl"/>
+          <mesh filename="package://abb_irb4600_support/meshes/irb4600_60_205/visual/link_2.dae"/>
         </geometry>
         <material name="yellow"/>
       </visual>
@@ -51,7 +51,7 @@
       </collision>
       <visual name="visual">
         <geometry>
-          <mesh filename="package://abb_irb4600_support/meshes/irb4600_60_205/visual/link_3.stl"/>
+          <mesh filename="package://abb_irb4600_support/meshes/irb4600_60_205/visual/link_3.dae"/>
         </geometry>
         <material name="yellow"/>
       </visual>
@@ -64,7 +64,7 @@
       </collision>
       <visual name="visual">
         <geometry>
-          <mesh filename="package://abb_irb4600_support/meshes/irb4600_60_205/visual/link_4.stl"/>
+          <mesh filename="package://abb_irb4600_support/meshes/irb4600_60_205/visual/link_4.dae"/>
         </geometry>
         <material name="yellow"/>
       </visual>
@@ -77,7 +77,7 @@
       </collision>
       <visual name="visual">
         <geometry>
-          <mesh filename="package://abb_irb4600_support/meshes/irb4600_60_205/visual/link_5.stl"/>
+          <mesh filename="package://abb_irb4600_support/meshes/irb4600_60_205/visual/link_5.dae"/>
         </geometry>
         <material name="yellow"/>
       </visual>
@@ -90,7 +90,7 @@
       </collision>
       <visual name="visual">
         <geometry>
-          <mesh filename="package://abb_irb4600_support/meshes/irb4600_60_205/visual/link_6.stl"/>
+          <mesh filename="package://abb_irb4600_support/meshes/irb4600_60_205/visual/link_6.dae"/>
         </geometry>
         <material name="yellow"/>
       </visual>
