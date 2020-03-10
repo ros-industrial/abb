@@ -95,7 +95,6 @@
         <material name="yellow"/>
       </visual>
     </link>
-    <link name="${prefix}tool0"/>
     <!-- end of link list -->
 
     <!-- joint list -->
@@ -141,19 +140,30 @@
       <child link="${prefix}link_6"/>
       <limit effort="0" lower="-6.981" upper="6.981" velocity="6.283"/>
     </joint>
-    <joint type="fixed" name="${prefix}joint_6-tool0">
-      <parent link="${prefix}link_6"/>
-      <child link="${prefix}tool0"/>
-      <origin xyz="0 0 0" rpy="0 1.57079632679 0"/>
-    </joint>
     <!-- end of joint list -->
 
-    <!-- ROS base_link to ABB World Coordinates transform -->
+    <!-- ROS-Industrial 'base' frame: base_link to ABB World Coordinates transform -->
     <link name="${prefix}base" />
     <joint name="${prefix}base_link-base" type="fixed">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <parent link="${prefix}base_link"/>
       <child link="${prefix}base"/>
+    </joint>
+
+    <!-- ROS-Industrial 'flange' frame: attachment point for EEF models -->
+    <link name="${prefix}flange"/>
+    <joint type="fixed" name="${prefix}joint_6-flange">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="${prefix}link_6"/>
+      <child link="${prefix}flange"/>
+    </joint>
+
+    <!-- ROS-Industrial 'tool0' frame: all-zeros tool frame -->
+    <link name="${prefix}tool0" />
+    <joint name="${prefix}link_6-tool0" type="fixed">
+      <origin xyz="0 0 0" rpy="0 ${pi/2.0} 0" />
+      <parent link="${prefix}flange" />
+      <child link="${prefix}tool0" />
     </joint>
   </xacro:macro>
 </robot>
