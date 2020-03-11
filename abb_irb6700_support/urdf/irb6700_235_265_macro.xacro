@@ -147,7 +147,6 @@
         <xacro:material_abb_yellow/>
       </collision>
     </link>
-    <link name="${prefix}tool0"/>
 
     <joint name="${prefix}joint_1" type="revolute">
       <origin xyz="0 0 0.78" rpy="0 0 0" />
@@ -191,12 +190,6 @@
       <axis xyz="1 0 0" />
       <limit lower="-${radians(360)}" upper="${radians(360)}" effort="0" velocity="${radians(190)}" />
     </joint>
-    <joint name="${prefix}joint_6_tool0" type="fixed">
-      <origin xyz="0 0 0" rpy="0 ${radians(90)} 0" />
-      <parent link="${prefix}link_6" />
-      <child link="${prefix}tool0" />
-      <axis xyz="0 0 0" />
-    </joint>
     <joint name="${prefix}cylinder_joint" type="revolute">
       <origin xyz="-0.349 -0.194 -0.142" rpy="0 0 0" />
       <parent link="${prefix}link_1" />
@@ -214,12 +207,28 @@
       <limit lower="-0.25" upper="0.25" effort="0" velocity="100" />
     </joint>
 
-    <!-- ROS base_link to ABB World Coordinates transform -->
-    <link name="${prefix}base"/>
-    <joint name="${prefix}base_link_base" type="fixed">
+    <!-- ROS-Industrial 'base' frame: base_link to ABB World Coordinates transform -->
+    <link name="${prefix}base" />
+    <joint name="${prefix}base_link-base" type="fixed">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <parent link="${prefix}base_link"/>
       <child link="${prefix}base"/>
+    </joint>
+
+    <!-- ROS-Industrial 'flange' frame: attachment point for EEF models -->
+    <link name="${prefix}flange"/>
+    <joint type="fixed" name="${prefix}joint_6-flange">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="${prefix}link_6"/>
+      <child link="${prefix}flange"/>
+    </joint>
+
+    <!-- ROS-Industrial 'tool0' frame: all-zeros tool frame -->
+    <link name="${prefix}tool0" />
+    <joint name="${prefix}link_6-tool0" type="fixed">
+      <origin xyz="0 0 0" rpy="0 ${radians(90)} 0" />
+      <parent link="${prefix}flange" />
+      <child link="${prefix}tool0" />
     </joint>
   </xacro:macro>
 </robot>
