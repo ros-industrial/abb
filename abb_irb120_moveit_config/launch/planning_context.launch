@@ -6,7 +6,7 @@
   <arg name="robot_description" default="robot_description"/>
 
   <!-- Load universal robot description format (URDF) -->
-  <param if="$(arg load_robot_description)" name="$(arg robot_description)" textfile="$(find abb_irb120_support)/urdf/irb120_3_58.urdf"/>
+  <param if="$(arg load_robot_description)" name="$(arg robot_description)" command="xacro --inorder  '$(find abb_irb120_support)/urdf/irb120_3_58.xacro'"/>
 
   <!-- The semantic description that corresponds to the URDF -->
   <param name="$(arg robot_description)_semantic" textfile="$(find abb_irb120_moveit_config)/config/abb_irb120_3_58.srdf" />
