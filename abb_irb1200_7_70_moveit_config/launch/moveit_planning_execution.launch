@@ -33,7 +33,7 @@
   <!--   - this typically includes: robot_state, motion_interface, and joint_trajectory_action nodes -->
   <!--   - replace these calls with appropriate robot-specific calls or launch files -->
   <group unless="$(arg sim)">
-    <include file="$(find abb_irb1200_support)/launch/robot_interface_streaming_irb1200_7_70.launch" >
+    <include file="$(find abb_irb1200_support)/launch/robot_interface_download_irb1200_7_70.launch" >
       <arg name="robot_ip" value="$(arg robot_ip)"/>
     </include>
   </group>
