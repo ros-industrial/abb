@@ -25,6 +25,11 @@ Older releases may be found in the old ROS-Industrial [subversion repository][].
 All robot support packages and MoveIt configurations follow the naming conventions as described in [REP-I0007][].
 
 
+## Migration of abb_driver
+
+The `abb_driver` package was migrated from this repository to [ros-industrial/abb_driver][] as part of [ros-industrial/abb#179][]. See that issue for rationale and a description of the process.
+
+Please file enhancement requests and report issues for `abb_driver` on the issue tracker of `ros-industrial/abb_driver`.
 
 
 [ROS-Industrial]: http://wiki.ros.org/Industrial
@@ -32,3 +37,5 @@ All robot support packages and MoveIt configurations follow the naming conventio
 [abb_experimental]: https://github.com/ros-industrial/abb_experimental
 [subversion repository]: https://code.google.com/p/swri-ros-pkg/source/browse
 [REP-I0007]: https://github.com/ros-industrial/rep/blob/master/rep-I0007.rst
+[ros-industrial/abb_driver]: https://github.com/ros-industrial/abb_driver
+[ros-industrial/abb#179]: https://github.com/ros-industrial/abb/issues/179
