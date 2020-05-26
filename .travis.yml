@@ -1,20 +1,27 @@
-sudo: required 
-dist: trusty 
-language: generic 
-compiler:
-  - gcc
-notifications:
-  email:
-    on_failure: always
+language: generic
+services:
+  - docker
+
+cache:
+  directories:
+    - $HOME/.ccache
+
+git:
+  quiet: true
 
 env:
+  global:
+    - CATKIN_LINT=true
+    - CCACHE_DIR=$HOME/.ccache
+    - ROS_REPO=ros
   matrix:
-    - USE_DEB=true ROS_DISTRO="kinetic" ROS_REPOSITORY_PATH=http://packages.ros.org/ros/ubuntu
-    - USE_DEB=true ROS_DISTRO="kinetic" ROS_REPOSITORY_PATH=http://packages.ros.org/ros-shadow-fixed/ubuntu
+    - ROS_DISTRO="kinetic"
+    - ROS_DISTRO="kinetic" ROS_REPO=ros-shadow-fixed
+    - ROS_DISTRO="melodic"
+    - ROS_DISTRO="melodic" ROS_REPO=ros-shadow-fixed
 
 install:
-  - git clone https://github.com/ros-industrial/industrial_ci.git .ci_config
+  - git clone --depth=1 -b master https://github.com/ros-industrial/industrial_ci.git .ci_config
 
-script: 
+script:
   - .ci_config/travis.sh
-
