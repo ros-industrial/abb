@@ -2,14 +2,14 @@
   Manipulator specific version of the state visualizer.
 
   Defaults provided for irb_6650s_90:
-   - J23_coupled = true
+   - J23_coupled = false
 
   Usage:
     robot_state_visualize_irb_6650s_90.launch robot_ip:=<value>
 -->
 <launch>
   <arg name="robot_ip" doc="IP of the controller" />
-  <arg name="J23_coupled" default="true" doc="If true, compensate for J2-J3 parallel linkage" />
+  <arg name="J23_coupled" default="false" doc="If true, compensate for J2-J3 parallel linkage" />
 
   <rosparam command="load" file="$(find abb_irb6650s_support)/config/joint_names_irb6650s_90_390.yaml" />
 
