@@ -9,7 +9,7 @@
 -->
 <launch>
   <arg name="robot_ip" doc="IP of the controller" />
-  <arg name="J23_coupled" default="true" doc="If true, compensate for J2-J3 parallel linkage" />
+  <arg name="J23_coupled" default="false" doc="If true, compensate for J2-J3 parallel linkage" />
 
   <rosparam command="load" file="$(find abb_irb1600_support)/config/joint_names_irb1600_10_145.yaml" />
 
