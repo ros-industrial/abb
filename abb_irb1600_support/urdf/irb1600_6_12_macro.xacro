@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="irb1600_6_12">
 <xacro:macro name="abb_irb1600_6_12" params="prefix">
+  <xacro:include filename="$(find abb_resources)/urdf/common_materials.xacro"/>
   <!-- link list -->
   <link name="${prefix}base_link">
     <visual>
@@ -8,17 +9,13 @@
       <geometry>
         <mesh filename="package://abb_irb1600_support/meshes/irb1600/visual/base_link.stl"/>
       </geometry>
-      <material name="abb_orange">
-        <color rgba="1 0.43 0 1"/>
-      </material>
+      <xacro:material_abb_orange/>
     </visual>
     <collision>
       <geometry>
         <mesh filename="package://abb_irb1600_support/meshes/irb1600/collision/base_link.stl"/>
       </geometry>
-      <material name="yellow">
-        <color rgba="0 1 1 1"/>
-      </material>
+      <xacro:material_abb_yellow/>
     </collision>
   </link>
   <link name="${prefix}link_1">
@@ -27,14 +24,14 @@
       <geometry>
         <mesh filename="package://abb_irb1600_support/meshes/irb1600/visual/link_1.stl"/>
       </geometry>
-      <material name="abb_orange"/>
+      <xacro:material_abb_orange/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
         <mesh filename="package://abb_irb1600_support/meshes/irb1600/collision/link_1.stl"/>
       </geometry>
-      <material name="yellow"/>
+      <xacro:material_abb_yellow/>
     </collision>
   </link>
   <link name="${prefix}link_2">
@@ -43,14 +40,14 @@
       <geometry>
         <mesh filename="package://abb_irb1600_support/meshes/irb1600_6_12/visual/link_2.stl"/>
       </geometry>
-      <material name="abb_orange"/>
+      <xacro:material_abb_orange/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
         <mesh filename="package://abb_irb1600_support/meshes/irb1600_6_12/collision/link_2.stl"/>
       </geometry>
-      <material name="yellow"/>
+      <xacro:material_abb_yellow/>
     </collision>
   </link>
   <link name="${prefix}link_3">
@@ -59,14 +56,14 @@
       <geometry>
         <mesh filename="package://abb_irb1600_support/meshes/irb1600/visual/link_3.stl"/>
       </geometry>
-      <material name="abb_orange"/>
+      <xacro:material_abb_orange/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
         <mesh filename="package://abb_irb1600_support/meshes/irb1600/collision/link_3.stl"/>
       </geometry>
-      <material name="yellow"/>
+      <xacro:material_abb_yellow/>
     </collision>
   </link>
   <link name="${prefix}link_4">
@@ -75,14 +72,14 @@
       <geometry>
         <mesh filename="package://abb_irb1600_support/meshes/irb1600/visual/link_4.stl"/>
       </geometry>
-      <material name="abb_orange"/>
+      <xacro:material_abb_orange/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
         <mesh filename="package://abb_irb1600_support/meshes/irb1600/collision/link_4.stl"/>
       </geometry>
-      <material name="yellow"/>
+      <xacro:material_abb_yellow/>
     </collision>
   </link>
   <link name="${prefix}link_5">
@@ -91,14 +88,14 @@
       <geometry>
         <mesh filename="package://abb_irb1600_support/meshes/irb1600/visual/link_5.stl"/>
       </geometry>
-      <material name="abb_orange"/>
+      <xacro:material_abb_orange/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
         <mesh filename="package://abb_irb1600_support/meshes/irb1600/collision/link_5.stl"/>
       </geometry>
-      <material name="yellow"/>
+      <xacro:material_abb_yellow/>
     </collision>
   </link>
   <link name="${prefix}link_6">
@@ -107,14 +104,14 @@
       <geometry>
         <mesh filename="package://abb_irb1600_support/meshes/irb1600/visual/link_6.stl"/>
       </geometry>
-      <material name="abb_orange"/>
+      <xacro:material_abb_orange/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
         <mesh filename="package://abb_irb1600_support/meshes/irb1600/collision/link_6.stl"/>
       </geometry>
-      <material name="yellow"/>
+      <xacro:material_abb_yellow/>
     </collision>
   </link>
   <!-- end of link list -->
