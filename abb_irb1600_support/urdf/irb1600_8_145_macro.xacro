@@ -38,14 +38,14 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://abb_irb1600_support/meshes/irb1600_8_145/visual/link_2.stl"/>
+          <mesh filename="package://abb_irb1600_support/meshes/irb1600_x_145/visual/link_2.stl"/>
         </geometry>
         <xacro:material_abb_orange />
       </visual>
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://abb_irb1600_support/meshes/irb1600_8_145/collision/link_2.stl"/>
+          <mesh filename="package://abb_irb1600_support/meshes/irb1600_x_145/collision/link_2.stl"/>
         </geometry>
         <xacro:material_abb_yellow />
       </collision>
