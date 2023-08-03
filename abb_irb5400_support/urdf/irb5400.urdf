@@ -171,50 +171,50 @@
   <link name="tool0"/>
   <!-- end of link list -->
   <!-- joint list -->
-  <joint name="joint1" type="revolute">
+  <joint name="joint_1" type="revolute">
     <parent link="base_link"/>
     <child link="link_1"/>
     <origin rpy="0 0 0" xyz="0 0 0"/>
     <axis xyz="0 0 1"/>
     <limit effort="100" lower="-2.617" upper="2.617" velocity="2.3911"/>
   </joint>
-  <joint name="joint2" type="revolute">
+  <joint name="joint_2" type="revolute">
     <parent link="link_1"/>
     <child link="link_2"/>
     <origin rpy="0 0 0" xyz="0.300 0 0.660"/>
     <axis xyz="0 1 0"/>
     <limit effort="100" lower="-1.396" upper="1.396" velocity="2.3911"/>
   </joint>
-  <joint name="joint3" type="revolute">
+  <joint name="joint_3" type="revolute">
     <parent link="link_2"/>
     <child link="link_3"/>
     <origin rpy="0 0 0" xyz="0 0 1.200"/>
     <axis xyz="0 1 0"/>
     <limit effort="100" lower="-1.308" upper="1.308" velocity="2.3911"/>
   </joint>
-  <joint name="joint4" type="revolute">
+  <joint name="joint_4" type="revolute">
     <parent link="link_3"/>
     <child link="link_4"/>
     <origin rpy="0 0 0" xyz="1.339 0 0.186"/>
     <axis xyz="1 0 0"/>
     <limit effort="100" lower="-6.0" upper="6.0" velocity="8.1157"/>
   </joint>
-  <joint name="joint5" type="revolute">
+  <joint name="joint_5" type="revolute">
     <parent link="link_4"/>
     <child link="link_5"/>
     <origin rpy="0 0.6109 0" xyz="0.0693 0 0"/>
     <axis xyz="1 0 0"/>
     <limit effort="100" lower="-6.0" upper="6.0" velocity="6.1086"/>
   </joint>
-  <joint name="joint5b" type="revolute">
+  <joint name="joint_5b" type="revolute">
     <parent link="link_5"/>
     <child link="link_5b"/>
     <origin rpy="0 -1.2217 0" xyz=".106246 0 0.074394"/>
     <axis xyz="1 0 0"/>
     <limit effort="100" lower="-6.0" upper="6.0" velocity="6.1086"/>
-    <mimic joint="joint5" multiplier="-1.0" offset="0"/>
+    <mimic joint="joint_5" multiplier="-1.0" offset="0"/>
   </joint>
-  <joint name="joint6" type="revolute">
+  <joint name="joint_6" type="revolute">
     <parent link="link_5b"/>
     <child link="link_6"/>
     <origin rpy="0 0.6109 0" xyz="0.0672 0 -0.0470"/>
