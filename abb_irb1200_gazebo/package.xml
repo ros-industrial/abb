@@ -23,8 +23,8 @@
       configuration you intend to use them with.
     </p>
   </description>
-  <author email="stephan@ironox.com">Stephan Wirth</author>
-  <maintainer email="lucas@ironox.com">Lucas Chiesa</maintainer>
+  <author>Stephan Wirth</author>
+  <author>Lucas Chiesa</author>
   <maintainer email="levi.armstrong@swri.org">Levi Armstrong (Southwest Research Institute)</maintainer>
   <maintainer email="g.a.vanderhoorn@tudelft.nl">G.A. vd. Hoorn (TU Delft Robotics Institute)</maintainer>
   <license>Apache 2.0</license>
