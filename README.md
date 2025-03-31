@@ -1,6 +1,5 @@
 # ABB
 
-[![Build Status: Ubuntu Bionic (Actions)](https://github.com/ros-industrial/abb/workflows/CI%20-%20Ubuntu%20Bionic/badge.svg?branch=kinetic-devel)](https://github.com/ros-industrial/abb/actions?query=workflow%3A%22CI+-+Ubuntu+Bionic%22)
 [![Build Status: Ubuntu Focal (Actions)](https://github.com/ros-industrial/abb/workflows/CI%20-%20Ubuntu%20Focal/badge.svg?branch=kinetic-devel)](https://github.com/ros-industrial/abb/actions?query=workflow%3A%22CI+-+Ubuntu+Focal%22)
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
