@@ -1,6 +1,6 @@
 # ABB IRB 120 Gazebo
 
-##Overview
+## Overview
 
 This package contains the files required to simulate the ABB IRB 120  manipulator (and variants) in Gazebo. 
 
