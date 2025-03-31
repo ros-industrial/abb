@@ -13,7 +13,7 @@
     </p>
   </description>
   <author email="assistant@moveit.ros.org">MoveIt Setup Assistant</author>
-  <maintainer email="culletom@tcd.ie">Mark Culleton (Trinity College Dublin)</maintainer>
+  <author>Mark Culleton (Trinity College Dublin)</author>
   <maintainer email="levi.armstrong@swri.org">Levi Armstrong (Southwest Research Institute)</maintainer>
 
   <license>BSD</license>
