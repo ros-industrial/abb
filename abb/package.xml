@@ -15,6 +15,15 @@
   <buildtool_depend>catkin</buildtool_depend>
 
   <exec_depend>abb_driver</exec_depend>
+  <exec_depend>abb_crb15000_support</exec_depend>
+  <exec_depend>abb_irb1200_5_90_moveit_config</exec_depend>
+  <exec_depend>abb_irb1200_7_70_moveit_config</exec_depend>
+  <exec_depend>abb_irb1200_gazebo</exec_depend>
+  <exec_depend>abb_irb1200_support</exec_depend>
+  <exec_depend>abb_irb120_gazebo</exec_depend>
+  <exec_depend>abb_irb120_moveit_config</exec_depend>
+  <exec_depend>abb_irb120_support</exec_depend>
+  <exec_depend>abb_irb120t_moveit_config</exec_depend>
   <exec_depend>abb_irb2400_moveit_config</exec_depend>
   <exec_depend>abb_irb2400_moveit_plugins</exec_depend>
   <exec_depend>abb_irb2400_support</exec_depend>
