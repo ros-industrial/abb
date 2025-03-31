@@ -2,7 +2,7 @@
 <?xml-model href="http://download.ros.org/schema/package_format2.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="2">
   <name>abb_crb15000_support</name>
-  <version>0.1.0</version>
+  <version>1.3.1</version>
   <description>
     <p>
       ROS-Industrial support for the ABB GoFa CRB 15000 (and variants).
@@ -45,8 +45,8 @@
   <license>Apache-2.0</license>
 
   <url type="website">http://wiki.ros.org/abb_crb15000_support</url>
-  <url type="bugtracker">https://github.com/ros-industrial/abb_experimental/issues</url>
-  <url type="repository">https://github.com/ros-industrial/abb_experimental</url>
+  <url type="bugtracker">https://github.com/ros-industrial/abb/issues</url>
+  <url type="repository">https://github.com/ros-industrial/abb</url>
 
   <buildtool_depend>catkin</buildtool_depend>
 
@@ -69,7 +69,6 @@
         <tag>ros-industrial</tag>
         <tag>crb15000</tag>
         <tag>gofa</tag>
-        <tag>experimental</tag>
       </tags>
     </rosindex>
     <ros_industrial>
