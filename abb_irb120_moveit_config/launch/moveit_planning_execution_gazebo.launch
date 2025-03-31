@@ -1,0 +1,44 @@
+<launch>
+  <!-- The planning and execution components of MoveIt! configured to run
+       against a Gazebo based, ros_control compatible simulation of the IRB 120.
+
+       This depends on the corresponding 'abb_irb120_gazebo' pkg to be installed
+       first. This dependency is not expressed in the MoveIt config pkg manifest,
+       as adding a run_depend there would cause Gazebo to be unconditionally
+       installed, even if the user never intends to use the MoveIt config with it.
+
+       Instead, installation is left to the user, as a kind of poor-mans optional
+       dependency.
+
+       Finally, this launch file assumes that gazebo is already running and that 
+       the IRB 120 and ros_controllers are loaded. This can be achieved by 
+       executing the the following command:
+
+       roslaunch abb_irb120_gazebo irb120_gazebo.launch
+
+  -->
+  <rosparam command="load" file="$(find abb_irb120_support)/config/joint_names_irb120_3_58.yaml" />
+
+  <!-- By default, we do not start a database (it can be large) -->
+  <arg name="db" default="false" />
+  <!-- Allow user to specify database location -->
+  <arg name="db_path" default="$(find abb_irb120_moveit_config)/default_warehouse_mongo_db" />
+
+  <!-- don't let planning_context load description, we've already done it -->
+  <include file="$(find abb_irb120_moveit_config)/launch/planning_context.launch">
+    <arg name="load_robot_description" value="false" />
+  </include>
+
+  <include file="$(find abb_irb120_moveit_config)/launch/move_group.launch">
+    <arg name="publish_monitored_planning_scene" value="true" />
+  </include>
+
+  <include file="$(find abb_irb120_moveit_config)/launch/moveit_rviz.launch">
+    <arg name="config" value="true"/>
+  </include>
+  
+  <!-- If database loading was enabled, start mongodb as well -->
+  <include file="$(find abb_irb120_moveit_config)/launch/default_warehouse_db.launch" if="$(arg db)">
+    <arg name="moveit_warehouse_database_path" value="$(arg db_path)"/>
+  </include>
+</launch>

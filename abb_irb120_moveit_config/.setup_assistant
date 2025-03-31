@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: abb_irb120_support
+    relative_path: urdf/irb120_3_58.xacro
+    xacro_args: "--inorder "
+  SRDF:
+    relative_path: config/abb_irb120_3_58.srdf
+  CONFIG:
+    author_name: Mark Culleton (Trinity College Dublin)
+    author_email: culletom@tcd.ie
+    generated_timestamp: 1583929320

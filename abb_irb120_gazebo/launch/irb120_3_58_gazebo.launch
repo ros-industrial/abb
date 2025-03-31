@@ -1,0 +1,30 @@
+<launch>
+	<arg name="paused" default="false" doc="Start gazebo in paused mode" />
+
+  <!-- remap topics to conform to ROS-I specifications -->
+  <remap from="/arm_controller/follow_joint_trajectory" to="/joint_trajectory_action" />
+  <remap from="/arm_controller/state" to="/feedback_states" />
+  <remap from="/arm_controller/command" to="/joint_path_command"/>
+
+  <!-- startup simulated world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="worlds/empty.world"/>
+    <arg name="gui" value="true"/>
+    <arg name="paused" value="$(arg paused)"/>
+  </include>
+
+  <!-- urdf xml robot description loaded on the Parameter Server, converting the xacro into a proper urdf file-->
+  <include file="$(find abb_irb120_gazebo)/launch/load_irb120_3_58.launch" />
+
+  <!-- push robot_description to factory and spawn robot in gazebo -->
+  <node name="abb_irb120_spawn" pkg="gazebo_ros" type="spawn_model" output="screen" args="-urdf -param robot_description -model abb_irb120_3_58" />
+
+    <!-- convert joint states to TF transforms for rviz, etc -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+  output="screen">
+  </node>
+
+  <!-- init and start Gazebo ros_control interface -->
+  <include file="$(find abb_irb120_gazebo)/launch/irb120_3_58_control.launch"/>
+
+</launch>
