@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<launch>
+  <group ns="load_crb15000_5_95__">
+    <include file="$(find abb_crb15000_support)/launch/load_crb15000_5_95.launch"/>
+  </group>
+
+  <group ns="test_crb15000_5_95__">
+    <include file="$(find abb_crb15000_support)/launch/test_crb15000_5_95.launch"/>
+  </group>
+</launch>
