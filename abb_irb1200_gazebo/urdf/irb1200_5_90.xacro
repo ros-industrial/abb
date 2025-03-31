@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+
+<robot name="abb_irb1200_5_90" xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find abb_irb1200_gazebo)/urdf/irb1200_5_90_macro.xacro" />
+
+  <xacro:abb_irb1200_5_90_gazebo prefix="" />
+
+  <!-- connect robot with world -->
+  <link name="world" />
+  <joint name="world_to_base_link_joint" type="fixed">
+    <parent link="world" />
+    <child link="base_link" />
+  </joint>
+
+  <!-- ros_control plugin -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+  </gazebo>
+
+</robot>

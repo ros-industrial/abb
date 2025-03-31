@@ -1,0 +1,28 @@
+<launch>
+  <arg name="paused" default="false"/>
+
+  <!-- remap topics to conform to ROS-I specifications -->
+  <remap from="/arm_controller/follow_joint_trajectory" to="/joint_trajectory_action" />
+  <remap from="/arm_controller/state" to="/feedback_states" />
+  <remap from="/arm_controller/command" to="/joint_path_command"/>
+
+  <!-- start simulated world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="worlds/empty.world"/>
+    <arg name="gui" value="true"/>
+    <arg name="paused" value="$(arg paused)"/>
+  </include>
+
+  <!-- load urdf -->
+  <include file="$(find abb_irb1200_gazebo)/launch/load_irb1200_5_90.launch" />
+
+  <!-- spawn robot in gazebo -->
+  <node name="abb_irb1200_spawn" pkg="gazebo_ros" type="spawn_model" output="screen" args="-urdf -param robot_description -model abb_irb1200_5_90" />
+
+  <!-- publish joint states in TF -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" output="screen" />
+
+  <!-- init and start Gazebo ros_control interface -->
+  <include file="$(find abb_irb1200_gazebo)/launch/irb1200_5_90_control.launch"/>
+
+</launch>
