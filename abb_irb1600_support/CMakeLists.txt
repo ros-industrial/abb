@@ -13,7 +13,5 @@ if (CATKIN_ENABLE_TESTING)
   roslaunch_add_file_check(tests/roslaunch_test_irb1600_10_145.xml)
 endif()
 
-foreach(dir config launch meshes urdf)
-   install(DIRECTORY ${dir}/
-      DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
-endforeach()
+install(DIRECTORY config launch meshes urdf
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
