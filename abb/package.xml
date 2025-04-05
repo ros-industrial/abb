@@ -29,6 +29,7 @@
   <exec_depend>abb_irb2400_moveit_config</exec_depend>
   <exec_depend>abb_irb2400_moveit_plugins</exec_depend>
   <exec_depend>abb_irb2400_support</exec_depend>
+  <exec_depend>abb_irb2600_support</exec_depend>
   <exec_depend>abb_irb4400_support</exec_depend>
   <exec_depend>abb_irb4600_support</exec_depend>
   <exec_depend>abb_irb52_support</exec_depend>
