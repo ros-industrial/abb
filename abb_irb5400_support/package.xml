@@ -35,7 +35,7 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <build_depend>roslaunch</build_depend>
+  <test_depend>roslaunch</test_depend>
 
   <exec_depend>abb_driver</exec_depend>
   <exec_depend>abb_resources</exec_depend>
