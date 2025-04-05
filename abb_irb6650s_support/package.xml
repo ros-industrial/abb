@@ -27,7 +27,7 @@
   <author>Michael Ripperger</author>
   <author>Levi Armstrong (SwRI)</author>
   <maintainer email="noreply@rosindustrial.org">ROS-Industrial community</maintainer>
-  <license>Apache 2.0</license>
+  <license>Apache-2.0</license>
 
   <url type="website">http://ros.org/wiki/abb_irb_6650s_support</url>
   <url type="bugtracker">https://github.com/ros-industrial/abb/issues</url>
