@@ -24,7 +24,7 @@
       robot model and configuration you intend to use them with.
     </p>
   </description>
-  <author email="michael.ripperger@swri.org">Michael Ripperger</author>
+  <author>Michael Ripperger</author>
   <maintainer email="levi.armstrong@swri.org">Levi Armstrong (Southwest Research Institute)</maintainer>
   <license>Apache 2.0</license>
 
