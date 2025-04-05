@@ -28,11 +28,10 @@
       robot model and configuration you intend to use them with.
     </p>
   </description>
-  <author email="cody.bressler@swri.org">Cody Bressler (SwRI)</author>
-  <author email="jonathan.meyer@swri.org">Jonathan Meyer (SwRI)</author>
+  <author>Cody Bressler (SwRI)</author>
+  <author>Jonathan Meyer (SwRI)</author>
   <author>Anouk Leunissen</author>
   <author>Menno Sytsma</author>
-  <maintainer email="jonathan.meyer@swri.org">Jonathan Meyer (SwRI)</maintainer>
   <maintainer email="levi.armstrong@swri.org">Levi Armstrong (Southwest Research Institute)</maintainer>
   <license>Apache2</license>
 
