@@ -24,9 +24,10 @@
       robot model and configuration you intend to use them with.
     </p>
   </description>
-  <author>Ahmed Abdelmawgoud (Southwest Research Institute)</author>
-  <author>Austin Deric (Southwest Research Institute)</author>
-  <maintainer email="levi.armstrong@swri.org">Levi Armstrong (Southwest Research Institute)</maintainer>
+  <author>Ahmed Abdelmawgoud (SwRI)</author>
+  <author>Austin Deric (SwRI)</author>
+  <author>Levi Armstrong (SwRI)</author>
+  <maintainer email="noreply@rosindustrial.org">ROS-Industrial community</maintainer>
   <license>Apache2</license>
 
   <url type="website">http://wiki.ros.org/abb_irb1600_support</url>

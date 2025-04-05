@@ -32,7 +32,8 @@
   <author>Jonathan Meyer (SwRI)</author>
   <author>Anouk Leunissen</author>
   <author>Menno Sytsma</author>
-  <maintainer email="levi.armstrong@swri.org">Levi Armstrong (Southwest Research Institute)</maintainer>
+  <author>Levi Armstrong (SwRI)</author>
+  <maintainer email="noreply@rosindustrial.org">ROS-Industrial community</maintainer>
   <license>Apache2</license>
 
   <url type="website">http://wiki.ros.org/abb_irb2600_support</url>

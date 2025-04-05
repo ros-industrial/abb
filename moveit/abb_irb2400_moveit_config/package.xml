@@ -12,8 +12,9 @@
       Framework.
     </p>
   </description>
-  <author email="assistant@moveit.ros.org">MoveIt Setup Assistant</author>
-  <maintainer email="levi.armstrong@swri.org">Levi Armstrong (Southwest Research Institute)</maintainer>
+  <author>MoveIt Setup Assistant</author>
+  <author>Levi Armstrong (SwRI)</author>
+  <maintainer email="noreply@rosindustrial.org">ROS-Industrial community</maintainer>
 
   <license>BSD</license>
 

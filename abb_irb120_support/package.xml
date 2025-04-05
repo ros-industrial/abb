@@ -32,7 +32,8 @@
   </description>
   <author>Mark Culleton (Trinity College Dublin)</author>
   <author>Kevin Kelly (Trinity College Dublin)</author>
-  <maintainer email="levi.armstrong@swri.org">Levi Armstrong (SwRI)</maintainer>
+  <author>Levi Armstrong (SwRI)</author>
+  <maintainer email="noreply@rosindustrial.org">ROS-Industrial community</maintainer>
   <license>Apache2</license>
 
   <url type="website">http://wiki.ros.org/abb_irb120_support</url>

@@ -13,7 +13,8 @@
     </p>
   </description>
   <author>Andrew Short</author>
-  <maintainer email="levi.armstrong@swri.org">Levi Armstrong (Southwest Research Institute)</maintainer>
+  <author>Levi Armstrong (SwRI)</author>
+  <maintainer email="noreply@rosindustrial.org">ROS-Industrial community</maintainer>
 
   <license>BSD</license>
 

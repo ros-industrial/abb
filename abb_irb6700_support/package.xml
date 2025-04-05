@@ -26,7 +26,8 @@
     </p>
   </description>
   <author>Michael Ripperger</author>
-  <maintainer email="levi.armstrong@swri.org">Levi Armstrong (Southwest Research Institute)</maintainer>
+  <author>Levi Armstrong (SwRI)</author>
+  <maintainer email="noreply@rosindustrial.org">ROS-Industrial community</maintainer>
   <license>Apache 2.0</license>
 
   <url type="website">http://wiki.ros.org/abb_irb6700_support</url>

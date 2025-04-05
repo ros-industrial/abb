@@ -4,7 +4,8 @@
   <version>1.3.1</version>
   <description>ROS-Industrial support for ABB manipulators (metapackage).</description>
   <author>Shaun Edwards</author>
-  <maintainer email="levi.armstrong@swri.org">Levi Armstrong (Southwest Research Institute)</maintainer>
+  <author>Levi Armstrong (SwRI)</author>
+  <maintainer email="noreply@rosindustrial.org">ROS-Industrial community</maintainer>
   <license>BSD</license>
   <license>Apache 2.0</license>
 

@@ -27,8 +27,9 @@
       use the abb_irb6640_support as a replacement.
     </p>
   </description>
-  <author>Dan Solomon (Southwest Research Institute)</author>
-  <maintainer email="levi.armstrong@swri.org">Levi Armstrong (Southwest Research Institute)</maintainer>
+  <author>Dan Solomon (SwRI)</author>
+  <author>Levi Armstrong (SwRI)</author>
+  <maintainer email="noreply@rosindustrial.org">ROS-Industrial community</maintainer>
   <license>Apache2</license>
 
   <url type="website">http://ros.org/wiki/abb_irb6600_support</url>
