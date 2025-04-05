@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format2.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="2">
   <name>abb_resources</name>
   <version>1.3.1</version>
@@ -11,9 +12,9 @@
       ABB related packages.
     </p>
   </description>
-  <author email="levi.armstrong@swri.org">Levi Armstrong (Southwest Research Institute)</author>
-  <maintainer email="levi.armstrong@swri.org">Levi Armstrong (Southwest Research Institute)</maintainer>
-  <license>Apache2</license>
+  <author>Levi Armstrong (SwRI)</author>
+  <maintainer email="noreply@rosindustrial.org">ROS-Industrial community</maintainer>
+  <license>Apache-2.0</license>
 
   <url type="website">http://wiki.ros.org/abb_resources</url>
   <url type="bugtracker">https://github.com/ros-industrial/abb/issues</url>

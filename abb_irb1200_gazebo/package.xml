@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format2.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="2">
   <name>abb_irb1200_gazebo</name>
   <version>1.3.1</version>
@@ -25,9 +26,10 @@
   </description>
   <author>Stephan Wirth</author>
   <author>Lucas Chiesa</author>
-  <maintainer email="levi.armstrong@swri.org">Levi Armstrong (Southwest Research Institute)</maintainer>
-  <maintainer email="g.a.vanderhoorn@tudelft.nl">G.A. vd. Hoorn (TU Delft Robotics Institute)</maintainer>
-  <license>Apache 2.0</license>
+  <author>Levi Armstrong (SwRI)</author>
+  <author>G.A. vd. Hoorn (TU Delft Robotics Institute)</author>
+  <maintainer email="noreply@rosindustrial.org">ROS-Industrial community</maintainer>
+  <license>Apache-2.0</license>
 
   <url type="website">http://wiki.ros.org/abb</url>
   <url type="bugtracker">https://github.com/ros-industrial/abb/issues</url>
