@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <package format="2">
   <name>abb_irb6650s_support</name>
-  <version>0.1.0</version>
+  <version>1.3.1</version>
   <description>
     <p>
       ROS-Industrial support for the ABB IRB_6650S (and variants).
@@ -29,8 +29,8 @@
   <license>Apache 2.0</license>
 
   <url type="website">http://ros.org/wiki/abb_irb_6650s_support</url>
-  <url type="bugtracker">https://github.com/ros-industrial/abb_experimental/issues</url>
-  <url type="repository">https://github.com/ros-industrial/abb_experimental</url>
+  <url type="bugtracker">https://github.com/ros-industrial/abb/issues</url>
+  <url type="repository">https://github.com/ros-industrial/abb</url>
 
   <buildtool_depend>catkin</buildtool_depend>
   <test_depend>roslaunch</test_depend>
