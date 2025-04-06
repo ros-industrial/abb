@@ -1,3 +1,4 @@
+<?xml version="1.0" ?>
 <launch>
   <include file="$(find abb_irb1600_support)/launch/load_irb1600_8_145.launch" />
 
