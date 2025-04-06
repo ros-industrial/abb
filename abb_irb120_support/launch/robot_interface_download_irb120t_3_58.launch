@@ -1,3 +1,4 @@
+<?xml version="1.0" ?>
 <!--
   Manipulator specific version of abb_driver's 'robot_interface.launch'.
 
@@ -18,4 +19,3 @@
     <arg name="J23_coupled" value="$(arg J23_coupled)" />
   </include>
 </launch>
- 
