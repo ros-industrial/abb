@@ -2,8 +2,8 @@
 Changelog for package abb_irb5400_support
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.5.0 (2025-04-08)
+------------------
 * Switch to JSP GUI in all support packages (`#221 <https://github.com/ros-industrial/abb/issues/221>`_).
 * Add preamble to launch files if missing (`#220 <https://github.com/ros-industrial/abb/issues/220>`_).
 * Fix joint names in the ``xacro:macro`` (`#219 <https://github.com/ros-industrial/abb/issues/219>`_).

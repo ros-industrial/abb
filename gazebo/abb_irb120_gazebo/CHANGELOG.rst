@@ -2,8 +2,8 @@
 Changelog for package abb_irb120_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.5.0 (2025-04-08)
+------------------
 * First release of this package.
 * Add missing run dependencies (`#222 <https://github.com/ros-industrial/abb/issues/222>`_).
 * Add preamble to launch files if missing (`#220 <https://github.com/ros-industrial/abb/issues/220>`_).

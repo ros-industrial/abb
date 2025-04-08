@@ -2,8 +2,8 @@
 Changelog for package abb_irb2400_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.5.0 (2025-04-08)
+------------------
 * Remove ``--inorder`` xacro arg everywhere (`#217 <https://github.com/ros-industrial/abb/issues/217>`_).
 * Update all manifests and build scripts (`#216 <https://github.com/ros-industrial/abb/issues/216>`_).
 * Switch to Trac-IK plugin (IKFast plugin has been deleted) (`#215 <https://github.com/ros-industrial/abb/issues/215>`_).

@@ -2,8 +2,8 @@
 Changelog for package abb
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.5.0 (2025-04-08)
+------------------
 * Update all manifests and build scripts (`#216 <https://github.com/ros-industrial/abb/issues/216>`_).
 * Delete deprecated (and broken) IKFast plugin for IRB 2400 (`#215 <https://github.com/ros-industrial/abb/issues/215>`_).
 * Update maintainers everywhere.

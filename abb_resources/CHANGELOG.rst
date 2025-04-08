@@ -2,8 +2,8 @@
 Changelog for package abb_resources
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.5.0 (2025-04-08)
+------------------
 * Update all manifests and build scripts (`#216 <https://github.com/ros-industrial/abb/issues/216>`_).
 * Update maintainers everywhere.
 * Add license files and install them.

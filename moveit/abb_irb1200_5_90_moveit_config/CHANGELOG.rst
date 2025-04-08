@@ -2,8 +2,8 @@
 Changelog for package abb_irb1200_5_90_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.5.0 (2025-04-08)
+------------------
 * First release of this package.
 * Remove ``--inorder`` xacro arg everywhere (`#217 <https://github.com/ros-industrial/abb/issues/217>`_).
 * Update all manifests and build scripts (`#216 <https://github.com/ros-industrial/abb/issues/216>`_).
