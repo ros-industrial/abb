@@ -2,6 +2,15 @@
 Changelog for package abb_resources
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Update all manifests and build scripts (`#216 <https://github.com/ros-industrial/abb/issues/216>`_).
+* Update maintainers everywhere.
+* Add license files and install them.
+* Use SPDX license identifiers everywhere.
+* For a complete list of changes see the `commit log for 1.5.0 <https://github.com/ros-industrial/abb/compare/1.3.1...1.5.0>`_.
+* Contributors: gavanderhoorn
+
 1.3.1 (2019-09-17)
 ------------------
 * Add Olive Green as a color (`#160 <https://github.com/ros-industrial/abb/issues/160>`_)

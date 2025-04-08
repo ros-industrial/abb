@@ -2,6 +2,20 @@
 Changelog for package abb_irb5400_support
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Switch to JSP GUI in all support packages (`#221 <https://github.com/ros-industrial/abb/issues/221>`_).
+* Add preamble to launch files if missing (`#220 <https://github.com/ros-industrial/abb/issues/220>`_).
+* Fix joint names in the ``xacro:macro`` (`#219 <https://github.com/ros-industrial/abb/issues/219>`_).
+* Remove ``--inorder`` xacro arg everywhere (`#217 <https://github.com/ros-industrial/abb/issues/217>`_).
+* Update all manifests and build scripts (`#216 <https://github.com/ros-industrial/abb/issues/216>`_).
+* Update maintainers everywhere.
+* Add license files and install them.
+* Use SPDX license identifiers everywhere.
+* Remove URDF files from packages: only provide XACROs.
+* For a complete list of changes see the `commit log for 1.5.0 <https://github.com/ros-industrial/abb/compare/1.3.1...1.5.0>`_.
+* Contributors: Aaryan Murgunde, gavanderhoorn
+
 1.3.1 (2019-09-17)
 ------------------
 * Use the 'doc' attribute on 'arg' elements. (`#143 <https://github.com/ros-industrial/abb/issues/143>`_)

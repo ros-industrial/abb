@@ -2,6 +2,18 @@
 Changelog for package abb_irb6640_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Remove irrelevant C++ compiler settings (`#218 <https://github.com/ros-industrial/abb/issues/218>`_).
+* Remove ``--inorder`` xacro arg everywhere (`#217 <https://github.com/ros-industrial/abb/issues/217>`_).
+* Update all manifests and build scripts (`#216 <https://github.com/ros-industrial/abb/issues/216>`_).
+* Update maintainers everywhere.
+* Add license files and install them.
+* Use SPDX license identifiers everywhere.
+* Promote experimental packages for IRB 52, 120, 1200, 1600, 2600, 4600, 6650s, 6700, 7600 and CRB 15000 to main repository.
+* For a complete list of changes see the `commit log for 1.5.0 <https://github.com/ros-industrial/abb/compare/1.3.1...1.5.0>`_.
+* Contributors: gavanderhoorn
+
 1.3.1 (2019-09-17)
 ------------------
 * Update maintainers (`#139 <https://github.com/ros-industrial/abb/issues/139>`_)

@@ -2,6 +2,18 @@
 Changelog for package abb_irb4400_support
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Switch to JSP GUI in all support packages (`#221 <https://github.com/ros-industrial/abb/issues/221>`_).
+* Add preamble to launch files if missing (`#220 <https://github.com/ros-industrial/abb/issues/220>`_).
+* Remove ``--inorder`` xacro arg everywhere (`#217 <https://github.com/ros-industrial/abb/issues/217>`_).
+* Update all manifests and build scripts (`#216 <https://github.com/ros-industrial/abb/issues/216>`_).
+* Update maintainers everywhere.
+* Add license files and install them.
+* Use SPDX license identifiers everywhere.
+* For a complete list of changes see the `commit log for 1.5.0 <https://github.com/ros-industrial/abb/compare/1.3.1...1.5.0>`_.
+* Contributors: gavanderhoorn
+
 1.3.1 (2019-09-17)
 ------------------
 * remove roslaunch test deps (`#167 <https://github.com/ros-industrial/abb/issues/167>`_)
