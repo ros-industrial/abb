@@ -1,4 +1,4 @@
-name: CI - Ubuntu Focal
+name: CI - ROS 1
 
 on:
   # direct pushes to protected branches are not supported
