@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<launch>
+  <let name="xacro_path" value="$(find-pkg-share abb_irb6700_support)/urdf/irb6700_200_260.xacro" />
+  <let name="rviz_cfg" value="$(find-pkg-share abb_resources)/rviz/view_robot.rviz" />
+
+  <node pkg="robot_state_publisher" exec="robot_state_publisher">
+    <param name="robot_description" type="str" value="$(command 'xacro $(var xacro_path)')" />
+  </node>
+  <node pkg="joint_state_publisher_gui" exec="joint_state_publisher_gui" />
+  <node pkg="rviz2" exec="rviz2" output="screen" args="-d $(var rviz_cfg)" />
+</launch>
