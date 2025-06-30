@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format2.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="2">
   <name>abb</name>
   <version>1.5.0</version>
@@ -9,13 +10,11 @@
   <license>BSD-3-Clause</license>
   <license>Apache-2.0</license>
 
-  <url type="website">http://ros.org/wiki/abb</url>
   <url type="repository">https://github.com/ros-industrial/abb</url>
   <url type="bugtracker">https://github.com/ros-industrial/abb/issues</url>
 
-  <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>ament_cmake</buildtool_depend>
 
-  <exec_depend>abb_driver</exec_depend>
   <exec_depend>abb_crb15000_support</exec_depend>
   <exec_depend>abb_irb1200_support</exec_depend>
   <exec_depend>abb_irb120_support</exec_depend>
@@ -34,7 +33,7 @@
   <exec_depend>abb_resources</exec_depend>
 
   <export>
-    <metapackage/>
     <architecture_independent/>
+    <build_type>ament_cmake</build_type>
   </export>
 </package>
