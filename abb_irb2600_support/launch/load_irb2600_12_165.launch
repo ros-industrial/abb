@@ -1,4 +1,0 @@
-<?xml version="1.0" ?>
-<launch>
-  <param name="robot_description" command="$(find xacro)/xacro '$(find abb_irb2600_support)/urdf/irb2600_12_165.xacro'" />
-</launch>
