@@ -23,10 +23,6 @@
       in this package, be sure to check they are correct for the particular
       robot model and configuration you intend to use them with.
     </p>
-    <p>
-      The unqualified IRB 6400 model will be removed in ROS-Lunar, please
-      use the abb_irb6640_support as a replacement.
-    </p>
   </description>
   <author>Dan Solomon (SwRI)</author>
   <author>Levi Armstrong (SwRI)</author>
