@@ -12,9 +12,9 @@ The [abb_experimental][] repository may contain additional packages.
 
 ## Contents
 
-Branch naming follows the ROS distribution they are compatible with. `-devel`
-branches may be unstable. Releases are made from the distribution branches
-(`noetic` and `ros2`).
+Branch naming follows the ROS distribution they are compatible with.
+`-devel` branches may be unstable.
+Releases are made from the distribution branches (`noetic` and `ros2`).
 
 Branching is done ***only*** if and when needed (ie: because of breaking changes between distributions), otherwise the most recent distribution branch is expected to be upwards compatible with newer ROS releases.
 
@@ -95,7 +95,8 @@ Even though it was written for ROS 1, the [Working With ROS-Industrial Robot Sup
 
 This repository does not host any drivers for ABB robots.
 
-The community supported ROS 1 `abb_driver` package was migrated from this repository to [ros-industrial/abb_driver][] as part of [ros-industrial/abb#179][]. See that issue for rationale and a description of the process.
+The community supported ROS 1 `abb_driver` package was migrated from this repository to [ros-industrial/abb_driver][] as part of [ros-industrial/abb#179][].
+See that issue for rationale and a description of the process.
 
 ROS 2 has several community supported drivers for ABB robots, and the support packages in this repository are expected to be compatible with those, as long as those drivers are compatible with basic URDFs and/or XACROs.
 
