@@ -30,8 +30,8 @@
   <maintainer email="noreply@rosindustrial.org">ROS-Industrial community</maintainer>
   <license>Apache-2.0</license>
 
-  <url type="bugtracker">https://github.com/ros-industrial/abb_experimental/issues</url>
-  <url type="repository">https://github.com/ros-industrial/abb_experimental</url>
+  <url type="bugtracker">https://github.com/ros-industrial/abb/issues</url>
+  <url type="repository">https://github.com/ros-industrial/abb</url>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
